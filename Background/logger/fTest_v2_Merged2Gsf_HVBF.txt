@@ -1,0 +1,484 @@
+Warning in <TClassTable::Add>: class RooPowerLaw already in TClassTable
+Warning in <TClassTable::Add>: class RooPowerLaw already in TClassTable
+Warning in <TClassTable::Add>: class RooPowerLawSum already in TClassTable
+Warning in <TClassTable::Add>: class WSTFileWrapper already in TClassTable
+Warning in <TClassTable::Add>: class RooExponentialSum already in TClassTable
+Warning in <TClassTable::Add>: class ProfileMultiplePdfs already in TClassTable
+Warning in <TClassTable::Add>: class PdfModelBuilder already in TClassTable
+[INFO] Save multiPdf model: ./multipdf/CMS_HLLG_multipdf_13TeV_Merged2Gsf_HVBF.root
+[INFO] FitResults file: plots/fTest/fTestResults_Merged2Gsf_HVBF.txt
+[INFO] Got mass from ws: CMS_higgs_mass
+[INFO] Open data for data_obs_Merged2Gsf_HVBF. Sum of entries: 137
+[INFO] Perform the F-test on:  category Merged2Gsf_HVBF, ftest_pdf_Merged2Gsf_HVBF_13TeV_bern1
+[INFO] Function: Bernstein, order: 1, prevNll: 0, thisNll: 554.748, chi2: -1109.5, prob: 0
+[INFO] Perform the F-test on:  category Merged2Gsf_HVBF, ftest_pdf_Merged2Gsf_HVBF_13TeV_bern2
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein2_Merged2Gsf_HVBF_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein2_Merged2Gsf_HVBF_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.28
+[INFO] Function: Bernstein, order: 2, prevNll: 554.748, thisNll: 554.161, chi2: 1.17476, prob: 0.28
+[INFO] Determining Envelope Functions for Family: Bernstein, cat: Merged2Gsf_HVBF
+[INFO] Upper end Threshold for highest order function 0.1
+[INFO] Function: Bernstein, order: 1, prevNll: 0, thisNll: 554.748, chi2: -1109.5, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein1_Merged2Gsf_HVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 19.563
+[INFO] p-value = 0.931
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein1_Merged2Gsf_HVBF_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_HVBF_13TeV_bern1 0.931 2xNLL + c is 1111.5
+[INFO] Function: Bernstein, order: 2, prevNll: 554.748, thisNll: 554.161, chi2: 1.17476, prob: 0.278426
+[INFO] Calculating GOF for pdf ext, using 3 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein2_Merged2Gsf_HVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 19.5991
+[INFO] p-value = 0.925
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein2_Merged2Gsf_HVBF_13TeV.pdf has been created
+--------------------------
+[INFO] Perform the F-test on:  category Merged2Gsf_HVBF, ftest_pdf_Merged2Gsf_HVBF_13TeV_exp1
+[INFO] Function: Exponential, order: 1, prevNll: 0, thisNll: 554.334, chi2: -1108.67, prob: 0
+ERROR -- addExponential -- only odd number of params allowed
+--------------------------
+[INFO] Perform the F-test on:  category Merged2Gsf_HVBF, ftest_pdf_Merged2Gsf_HVBF_13TeV_exp3
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Exponential3_Merged2Gsf_HVBF_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Exponential3_Merged2Gsf_HVBF_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.42067
+[INFO] Function: Exponential, order: 3, prevNll: 554.334, thisNll: 554.104, chi2: 0.460368, prob: 0.42067
+[INFO] Determining Envelope Functions for Family: Exponential, cat: Merged2Gsf_HVBF
+[INFO] Upper end Threshold for highest order function 0.1
+--------------------------
+[INFO] Function: Exponential, order: 1, prevNll: 0, thisNll: 554.334, chi2: -1108.67, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Exponential1_Merged2Gsf_HVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 19.505
+[INFO] p-value = 0.939
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Exponential1_Merged2Gsf_HVBF_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_HVBF_13TeV_exp1 0.939 2xNLL + c is 1110.67
+ERROR -- addExponential -- only odd number of params allowed
+--------------------------
+[INFO] Function: Exponential, order: 3, prevNll: 554.334, thisNll: 554.104, chi2: 0.460368, prob: 0.794387
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Exponential3_Merged2Gsf_HVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 19.6837
+[INFO] p-value = 0.892
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Exponential3_Merged2Gsf_HVBF_13TeV.pdf has been created
+[INFO] Perform the F-test on:  category Merged2Gsf_HVBF, ftest_pdf_Merged2Gsf_HVBF_13TeV_pow1
+[INFO] Function: PowerLaw, order: 1, prevNll: 0, thisNll: 554.219, chi2: -1108.44, prob: 0
+ERROR -- addPowerLaw -- only odd number of params allowed
+[INFO] Perform the F-test on:  category Merged2Gsf_HVBF, ftest_pdf_Merged2Gsf_HVBF_13TeV_pow3
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_PowerLaw3_Merged2Gsf_HVBF_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_PowerLaw3_Merged2Gsf_HVBF_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.602541
+[INFO] Function: PowerLaw, order: 3, prevNll: 554.219, thisNll: 554.111, chi2: 0.216697, prob: 0.602541
+[INFO] Determining Envelope Functions for Family: PowerLaw, cat: Merged2Gsf_HVBF
+[INFO] Upper end Threshold for highest order function 0.1
+[INFO] Function: PowerLaw, order: 1, prevNll: 0, thisNll: 554.219, chi2: -1108.44, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/PowerLaw1_Merged2Gsf_HVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 19.4987
+[INFO] p-value = 0.927
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/PowerLaw1_Merged2Gsf_HVBF_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_HVBF_13TeV_pow1 0.927 2xNLL + c is 1110.44
+ERROR -- addPowerLaw -- only odd number of params allowed
+[INFO] Function: PowerLaw, order: 3, prevNll: 554.219, thisNll: 554.111, chi2: 0.216697, prob: 0.897315
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/PowerLaw3_Merged2Gsf_HVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 19.7018
+[INFO] p-value = 0.888
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/PowerLaw3_Merged2Gsf_HVBF_13TeV.pdf has been created
+[INFO] Perform the F-test on:  category Merged2Gsf_HVBF, ftest_pdf_Merged2Gsf_HVBF_13TeV_lau1
+[INFO] Function: Laurent, order: 1, prevNll: 0, thisNll: 556.564, chi2: -1113.13, prob: 0
+[INFO] Perform the F-test on:  category Merged2Gsf_HVBF, ftest_pdf_Merged2Gsf_HVBF_13TeV_lau2
+Info in <Minuit2>: MnGlobalCorrelationCoeff: inversion of matrix fails.
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in <Minuit2>: MnGlobalCorrelationCoeff: inversion of matrix fails.
+Info in <Minuit2>: MnGlobalCorrelationCoeff: inversion of matrix fails.
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent2_Merged2Gsf_HVBF_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent2_Merged2Gsf_HVBF_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.00813008
+[INFO] Function: Laurent, order: 2, prevNll: 556.564, thisNll: 554.484, chi2: 4.16099, prob: 0.00813008
+[INFO] Perform the F-test on:  category Merged2Gsf_HVBF, ftest_pdf_Merged2Gsf_HVBF_13TeV_lau3
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent3_Merged2Gsf_HVBF_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent3_Merged2Gsf_HVBF_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.40367
+[INFO] Function: Laurent, order: 3, prevNll: 554.484, thisNll: 554.484, chi2: 0, prob: 0.40367
+[INFO] Determining Envelope Functions for Family: Laurent, cat: Merged2Gsf_HVBF
+[INFO] Upper end Threshold for highest order function 0.1
+[INFO] Function: Laurent, order: 1, prevNll: 0, thisNll: 556.564, chi2: -1113.13, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent1_Merged2Gsf_HVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 23.8093
+[INFO] p-value = 0.769
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent1_Merged2Gsf_HVBF_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_HVBF_13TeV_lau1 0.769 2xNLL + c is 1115.13
+[INFO] Function: Laurent, order: 2, prevNll: 556.564, thisNll: 554.484, chi2: 4.16099, prob: 0.0413651
+[INFO] Calculating GOF for pdf ext, using 3 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent2_Merged2Gsf_HVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 20.4254
+[INFO] p-value = 0.93
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent2_Merged2Gsf_HVBF_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_HVBF_13TeV_lau2 0.93 2xNLL + c is 1111.97
+[INFO] Function: Laurent, order: 3, prevNll: 554.484, thisNll: 554.484, chi2: 0, prob: 1
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent3_Merged2Gsf_HVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 20.4608
+[INFO] p-value = 0.927
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent3_Merged2Gsf_HVBF_13TeV.pdf has been created
+// ------------------------------------------------------------------------- //
+[INFO] Created MultiPdf CMS_higgs_Merged2Gsf_HVBF_13TeV_bkgshape, in Category 0 with a total of 5 pdfs
+RooArgList::store = (env_pdf_Merged2Gsf_HVBF_13TeV_bern1,env_pdf_Merged2Gsf_HVBF_13TeV_exp1,env_pdf_Merged2Gsf_HVBF_13TeV_pow1,env_pdf_Merged2Gsf_HVBF_13TeV_lau1,env_pdf_Merged2Gsf_HVBF_13TeV_lau2)
+[INFO] Best Fit Pdf = 2, env_pdf_Merged2Gsf_HVBF_13TeV_pow1
+// ------------------------------------------------------------------------- //
+[INFO] Simple check of index 2
+env_pdf_Merged2Gsf_HVBF_13TeV_bern1
+env_pdf_Merged2Gsf_HVBF_13TeV_exp1
+env_pdf_Merged2Gsf_HVBF_13TeV_pow1
+env_pdf_Merged2Gsf_HVBF_13TeV_lau1
+env_pdf_Merged2Gsf_HVBF_13TeV_lau2
+H #rightarrow #gamma*#gamma #rightarrow ee#gamma
+[INFO]: CMS_lumi_mod.C macro is done!
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 0 : xtmp 110.5  ytmp 4 bkgval  3.8518 ytmp-bkgval 0.148196
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 1 : xtmp 111.5  ytmp 3 bkgval  3.76605 ytmp-bkgval -0.766046
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 2 : xtmp 112.5  ytmp 4 bkgval  3.68294 ytmp-bkgval 0.317062
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 3 : xtmp 113.5  ytmp 3 bkgval  3.60237 ytmp-bkgval -0.602375
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 4 : xtmp 114.5  ytmp 2 bkgval  3.52426 ytmp-bkgval -1.52426
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 5 : xtmp 115.5  ytmp 6 bkgval  3.44849 ytmp-bkgval 2.55151
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 6 : xtmp 116.5  ytmp 4 bkgval  3.37499 ytmp-bkgval 0.625012
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 7 : xtmp 117.5  ytmp 6 bkgval  3.30366 ytmp-bkgval 2.69634
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 8 : xtmp 118.5  ytmp 3 bkgval  3.23442 ytmp-bkgval -0.234423
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 9 : xtmp 119.5  ytmp 3 bkgval  3.1672 ytmp-bkgval -0.167202
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 10 : xtmp 130.5  ytmp 1 bkgval  2.54155 ytmp-bkgval -1.54155
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 11 : xtmp 131.5  ytmp 3 bkgval  2.49352 ytmp-bkgval 0.506476
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 12 : xtmp 132.5  ytmp 5 bkgval  2.44676 ytmp-bkgval 2.55324
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 13 : xtmp 133.5  ytmp 0 bkgval  2.40121 ytmp-bkgval -2.40121
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 14 : xtmp 134.5  ytmp 3 bkgval  2.35684 ytmp-bkgval 0.64316
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 15 : xtmp 135.5  ytmp 5 bkgval  2.31361 ytmp-bkgval 2.68639
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 16 : xtmp 136.5  ytmp 2 bkgval  2.27148 ytmp-bkgval -0.271482
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 17 : xtmp 137.5  ytmp 3 bkgval  2.23042 ytmp-bkgval 0.76958
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 18 : xtmp 138.5  ytmp 5 bkgval  2.19039 ytmp-bkgval 2.80961
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 19 : xtmp 139.5  ytmp 0 bkgval  2.15136 ytmp-bkgval -2.15136
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 20 : xtmp 140.5  ytmp 3 bkgval  2.1133 ytmp-bkgval 0.886705
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 21 : xtmp 141.5  ytmp 1 bkgval  2.07617 ytmp-bkgval -1.07617
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 22 : xtmp 142.5  ytmp 1 bkgval  2.03995 ytmp-bkgval -1.03995
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 23 : xtmp 143.5  ytmp 2 bkgval  2.0046 ytmp-bkgval -0.00460426
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 24 : xtmp 144.5  ytmp 1 bkgval  1.97011 ytmp-bkgval -0.970113
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 25 : xtmp 145.5  ytmp 1 bkgval  1.93645 ytmp-bkgval -0.936448
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 26 : xtmp 146.5  ytmp 0 bkgval  1.90358 ytmp-bkgval -1.90358
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 27 : xtmp 147.5  ytmp 1 bkgval  1.87149 ytmp-bkgval -0.871493
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 28 : xtmp 148.5  ytmp 2 bkgval  1.84016 ytmp-bkgval 0.159845
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 29 : xtmp 149.5  ytmp 3 bkgval  1.80955 ytmp-bkgval 1.19045
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 30 : xtmp 150.5  ytmp 3 bkgval  1.77965 ytmp-bkgval 1.22035
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 31 : xtmp 151.5  ytmp 1 bkgval  1.75044 ytmp-bkgval -0.750435
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 32 : xtmp 152.5  ytmp 1 bkgval  1.72189 ytmp-bkgval -0.72189
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 33 : xtmp 153.5  ytmp 1 bkgval  1.69399 ytmp-bkgval -0.693992
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 34 : xtmp 154.5  ytmp 1 bkgval  1.66672 ytmp-bkgval -0.666723
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 35 : xtmp 155.5  ytmp 1 bkgval  1.64006 ytmp-bkgval -0.640065
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 36 : xtmp 156.5  ytmp 1 bkgval  1.614 ytmp-bkgval -0.614
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 37 : xtmp 157.5  ytmp 4 bkgval  1.58851 ytmp-bkgval 2.41149
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 38 : xtmp 158.5  ytmp 2 bkgval  1.56358 ytmp-bkgval 0.436418
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 39 : xtmp 159.5  ytmp 2 bkgval  1.5392 ytmp-bkgval 0.460802
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 40 : xtmp 160.5  ytmp 3 bkgval  1.51534 ytmp-bkgval 1.48466
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 41 : xtmp 161.5  ytmp 2 bkgval  1.492 ytmp-bkgval 0.507998
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 42 : xtmp 162.5  ytmp 3 bkgval  1.46916 ytmp-bkgval 1.53084
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 43 : xtmp 163.5  ytmp 2 bkgval  1.44681 ytmp-bkgval 0.553192
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 44 : xtmp 164.5  ytmp 0 bkgval  1.42493 ytmp-bkgval -1.42493
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 45 : xtmp 165.5  ytmp 1 bkgval  1.40351 ytmp-bkgval -0.403507
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 46 : xtmp 166.5  ytmp 2 bkgval  1.38254 ytmp-bkgval 0.617465
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 47 : xtmp 167.5  ytmp 1 bkgval  1.362 ytmp-bkgval -0.362
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 48 : xtmp 168.5  ytmp 1 bkgval  1.34189 ytmp-bkgval -0.341888
+[INFO] plotdata->Integral() 13 ( bins 60) hbkgplots[i]->Integral() 12.9997 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV setting point 49 : xtmp 169.5  ytmp 1 bkgval  1.32219 ytmp-bkgval -0.322191
+Info in <TCanvas::Print>: pdf file plots/fTest/multipdf_Merged2Gsf_HVBF_13TeV.pdf has been created
+[INFO] datfile for BiasStudy: ./dat/fTest_Merged2Gsf_HVBF.dat
+[RESULT] Recommended options
+Cat [Merged2Gsf_HVBF, 0]
+	Bernstein - 1
+	Exponential - 1
+	Laurent - 2
+	PowerLaw - 1

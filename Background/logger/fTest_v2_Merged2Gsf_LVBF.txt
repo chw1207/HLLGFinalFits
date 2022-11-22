@@ -1,0 +1,250 @@
+Warning in <TClassTable::Add>: class RooPowerLaw already in TClassTable
+Warning in <TClassTable::Add>: class RooPowerLaw already in TClassTable
+Warning in <TClassTable::Add>: class RooPowerLawSum already in TClassTable
+Warning in <TClassTable::Add>: class WSTFileWrapper already in TClassTable
+Warning in <TClassTable::Add>: class RooExponentialSum already in TClassTable
+Warning in <TClassTable::Add>: class ProfileMultiplePdfs already in TClassTable
+Warning in <TClassTable::Add>: class PdfModelBuilder already in TClassTable
+[INFO] Save multiPdf model: ./multipdf/CMS_HLLG_multipdf_13TeV_Merged2Gsf_LVBF.root
+[INFO] FitResults file: plots/fTest/fTestResults_Merged2Gsf_LVBF.txt
+[INFO] Got mass from ws: CMS_higgs_mass
+[INFO] Open data for data_obs_Merged2Gsf_LVBF. Sum of entries: 96
+[INFO] Perform the F-test on:  category Merged2Gsf_LVBF, ftest_pdf_Merged2Gsf_LVBF_13TeV_bern1
+[INFO] Function: Bernstein, order: 1, prevNll: 0, thisNll: 382.572, chi2: -765.145, prob: 0
+[INFO] Perform the F-test on:  category Merged2Gsf_LVBF, ftest_pdf_Merged2Gsf_LVBF_13TeV_bern2
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein2_Merged2Gsf_LVBF_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein2_Merged2Gsf_LVBF_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.696
+[INFO] Function: Bernstein, order: 2, prevNll: 382.572, thisNll: 382.506, chi2: 0.132856, prob: 0.696
+[INFO] Determining Envelope Functions for Family: Bernstein, cat: Merged2Gsf_LVBF
+[INFO] Upper end Threshold for highest order function 0.1
+[INFO] Function: Bernstein, order: 1, prevNll: 0, thisNll: 382.572, chi2: -765.145, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein1_Merged2Gsf_LVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 28.2379
+[INFO] p-value = 0.263
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein1_Merged2Gsf_LVBF_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_LVBF_13TeV_bern1 0.263 2xNLL + c is 767.145
+[INFO] Function: Bernstein, order: 2, prevNll: 382.572, thisNll: 382.506, chi2: 0.132856, prob: 0.715489
+[INFO] Calculating GOF for pdf ext, using 3 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein2_Merged2Gsf_LVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 28.1541
+[INFO] p-value = 0.214
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein2_Merged2Gsf_LVBF_13TeV.pdf has been created
+--------------------------
+[INFO] Perform the F-test on:  category Merged2Gsf_LVBF, ftest_pdf_Merged2Gsf_LVBF_13TeV_exp1
+[INFO] Function: Exponential, order: 1, prevNll: 0, thisNll: 383.646, chi2: -767.292, prob: 0
+ERROR -- addExponential -- only odd number of params allowed
+--------------------------
+[INFO] Perform the F-test on:  category Merged2Gsf_LVBF, ftest_pdf_Merged2Gsf_LVBF_13TeV_exp3
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Exponential3_Merged2Gsf_LVBF_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Exponential3_Merged2Gsf_LVBF_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.721143
+[INFO] Function: Exponential, order: 3, prevNll: 383.646, thisNll: 383.646, chi2: 0, prob: 0.721143
+[INFO] Determining Envelope Functions for Family: Exponential, cat: Merged2Gsf_LVBF
+[INFO] Upper end Threshold for highest order function 0.1
+--------------------------
+[INFO] Function: Exponential, order: 1, prevNll: 0, thisNll: 383.646, chi2: -767.292, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Exponential1_Merged2Gsf_LVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 28.5602
+[INFO] p-value = 0.196
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Exponential1_Merged2Gsf_LVBF_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_LVBF_13TeV_exp1 0.196 2xNLL + c is 769.292
+ERROR -- addExponential -- only odd number of params allowed
+--------------------------
+[INFO] Function: Exponential, order: 3, prevNll: 383.646, thisNll: 383.646, chi2: 0, prob: 1
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Exponential3_Merged2Gsf_LVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 29.0197
+[INFO] p-value = 0.179
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Exponential3_Merged2Gsf_LVBF_13TeV.pdf has been created
+[INFO] Perform the F-test on:  category Merged2Gsf_LVBF, ftest_pdf_Merged2Gsf_LVBF_13TeV_pow1
+[INFO] Function: PowerLaw, order: 1, prevNll: 0, thisNll: 383.993, chi2: -767.985, prob: 0
+ERROR -- addPowerLaw -- only odd number of params allowed
+[INFO] Perform the F-test on:  category Merged2Gsf_LVBF, ftest_pdf_Merged2Gsf_LVBF_13TeV_pow3
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_PowerLaw3_Merged2Gsf_LVBF_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_PowerLaw3_Merged2Gsf_LVBF_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.775204
+[INFO] Function: PowerLaw, order: 3, prevNll: 383.993, thisNll: 383.993, chi2: 0, prob: 0.775204
+[INFO] Determining Envelope Functions for Family: PowerLaw, cat: Merged2Gsf_LVBF
+[INFO] Upper end Threshold for highest order function 0.1
+[INFO] Function: PowerLaw, order: 1, prevNll: 0, thisNll: 383.993, chi2: -767.985, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/PowerLaw1_Merged2Gsf_LVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 28.6061
+[INFO] p-value = 0.187
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/PowerLaw1_Merged2Gsf_LVBF_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_LVBF_13TeV_pow1 0.187 2xNLL + c is 769.985
+ERROR -- addPowerLaw -- only odd number of params allowed
+[INFO] Function: PowerLaw, order: 3, prevNll: 383.993, thisNll: 383.993, chi2: 0, prob: 1
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/PowerLaw3_Merged2Gsf_LVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 29.0704
+[INFO] p-value = 0.18
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/PowerLaw3_Merged2Gsf_LVBF_13TeV.pdf has been created
+[INFO] Perform the F-test on:  category Merged2Gsf_LVBF, ftest_pdf_Merged2Gsf_LVBF_13TeV_lau1
+[INFO] Function: Laurent, order: 1, prevNll: 0, thisNll: 384.172, chi2: -768.343, prob: 0
+[INFO] Perform the F-test on:  category Merged2Gsf_LVBF, ftest_pdf_Merged2Gsf_LVBF_13TeV_lau2
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent2_Merged2Gsf_LVBF_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent2_Merged2Gsf_LVBF_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.29705
+[INFO] Function: Laurent, order: 2, prevNll: 384.172, thisNll: 384.018, chi2: 0.30642, prob: 0.29705
+[INFO] Determining Envelope Functions for Family: Laurent, cat: Merged2Gsf_LVBF
+[INFO] Upper end Threshold for highest order function 0.1
+[INFO] Function: Laurent, order: 1, prevNll: 0, thisNll: 384.172, chi2: -768.343, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent1_Merged2Gsf_LVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 29.7168
+[INFO] p-value = 0.2
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent1_Merged2Gsf_LVBF_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_LVBF_13TeV_lau1 0.2 2xNLL + c is 770.343
+[INFO] Function: Laurent, order: 2, prevNll: 384.172, thisNll: 384.018, chi2: 0.30642, prob: 0.579886
+[INFO] Calculating GOF for pdf ext, using 3 fitted parameters
+[INFO] Few entries, running toys for GOF test 
+[INFO] complete
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent2_Merged2Gsf_LVBF_13TeV_gofTest.pdf has been created
+[INFO] Chi2 in Observed = 28.8723
+[INFO] p-value = 0.211
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent2_Merged2Gsf_LVBF_13TeV.pdf has been created
+// ------------------------------------------------------------------------- //
+[INFO] Created MultiPdf CMS_higgs_Merged2Gsf_LVBF_13TeV_bkgshape, in Category 1 with a total of 4 pdfs
+RooArgList::store = (env_pdf_Merged2Gsf_LVBF_13TeV_bern1,env_pdf_Merged2Gsf_LVBF_13TeV_exp1,env_pdf_Merged2Gsf_LVBF_13TeV_pow1,env_pdf_Merged2Gsf_LVBF_13TeV_lau1)
+[INFO] Best Fit Pdf = 0, env_pdf_Merged2Gsf_LVBF_13TeV_bern1
+// ------------------------------------------------------------------------- //
+[INFO] Simple check of index 0
+env_pdf_Merged2Gsf_LVBF_13TeV_bern1
+env_pdf_Merged2Gsf_LVBF_13TeV_exp1
+env_pdf_Merged2Gsf_LVBF_13TeV_pow1
+env_pdf_Merged2Gsf_LVBF_13TeV_lau1
+H #rightarrow #gamma*#gamma #rightarrow ee#gamma
+[INFO]: CMS_lumi_mod.C macro is done!
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 0 : xtmp 110.5  ytmp 6 bkgval  2.84548 ytmp-bkgval 3.15452
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 1 : xtmp 111.5  ytmp 5 bkgval  2.80326 ytmp-bkgval 2.19674
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 2 : xtmp 112.5  ytmp 2 bkgval  2.76104 ytmp-bkgval -0.761045
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 3 : xtmp 113.5  ytmp 0 bkgval  2.71882 ytmp-bkgval -2.71882
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 4 : xtmp 114.5  ytmp 2 bkgval  2.67661 ytmp-bkgval -0.676605
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 5 : xtmp 115.5  ytmp 1 bkgval  2.63439 ytmp-bkgval -1.63439
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 6 : xtmp 116.5  ytmp 0 bkgval  2.59217 ytmp-bkgval -2.59217
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 7 : xtmp 117.5  ytmp 3 bkgval  2.54995 ytmp-bkgval 0.450054
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 8 : xtmp 118.5  ytmp 1 bkgval  2.50773 ytmp-bkgval -1.50773
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 9 : xtmp 119.5  ytmp 6 bkgval  2.46551 ytmp-bkgval 3.53449
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 10 : xtmp 130.5  ytmp 2 bkgval  2.00109 ytmp-bkgval -0.00108819
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 11 : xtmp 131.5  ytmp 4 bkgval  1.95887 ytmp-bkgval 2.04113
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 12 : xtmp 132.5  ytmp 3 bkgval  1.91665 ytmp-bkgval 1.08335
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 13 : xtmp 133.5  ytmp 3 bkgval  1.87443 ytmp-bkgval 1.12557
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 14 : xtmp 134.5  ytmp 2 bkgval  1.83221 ytmp-bkgval 0.167791
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 15 : xtmp 135.5  ytmp 3 bkgval  1.78999 ytmp-bkgval 1.21001
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 16 : xtmp 136.5  ytmp 0 bkgval  1.74777 ytmp-bkgval -1.74777
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 17 : xtmp 137.5  ytmp 2 bkgval  1.70555 ytmp-bkgval 0.29445
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 18 : xtmp 138.5  ytmp 2 bkgval  1.66333 ytmp-bkgval 0.33667
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 19 : xtmp 139.5  ytmp 2 bkgval  1.62111 ytmp-bkgval 0.37889
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 20 : xtmp 140.5  ytmp 3 bkgval  1.57889 ytmp-bkgval 1.42111
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 21 : xtmp 141.5  ytmp 1 bkgval  1.53667 ytmp-bkgval -0.53667
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 22 : xtmp 142.5  ytmp 0 bkgval  1.49445 ytmp-bkgval -1.49445
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 23 : xtmp 143.5  ytmp 0 bkgval  1.45223 ytmp-bkgval -1.45223
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 24 : xtmp 144.5  ytmp 5 bkgval  1.41001 ytmp-bkgval 3.58999
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 25 : xtmp 145.5  ytmp 0 bkgval  1.36779 ytmp-bkgval -1.36779
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 26 : xtmp 146.5  ytmp 2 bkgval  1.32557 ytmp-bkgval 0.674429
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 27 : xtmp 147.5  ytmp 2 bkgval  1.28335 ytmp-bkgval 0.716649
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 28 : xtmp 148.5  ytmp 3 bkgval  1.24113 ytmp-bkgval 1.75887
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 29 : xtmp 149.5  ytmp 2 bkgval  1.19891 ytmp-bkgval 0.801088
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 30 : xtmp 150.5  ytmp 1 bkgval  1.15669 ytmp-bkgval -0.156692
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 31 : xtmp 151.5  ytmp 1 bkgval  1.11447 ytmp-bkgval -0.114472
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 32 : xtmp 152.5  ytmp 1 bkgval  1.07225 ytmp-bkgval -0.0722524
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 33 : xtmp 153.5  ytmp 0 bkgval  1.03003 ytmp-bkgval -1.03003
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 34 : xtmp 154.5  ytmp 0 bkgval  0.987813 ytmp-bkgval -0.987813
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 35 : xtmp 155.5  ytmp 1 bkgval  0.945593 ytmp-bkgval 0.054407
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 36 : xtmp 156.5  ytmp 2 bkgval  0.903373 ytmp-bkgval 1.09663
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 37 : xtmp 157.5  ytmp 1 bkgval  0.861153 ytmp-bkgval 0.138847
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 38 : xtmp 158.5  ytmp 0 bkgval  0.818934 ytmp-bkgval -0.818934
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 39 : xtmp 159.5  ytmp 2 bkgval  0.776714 ytmp-bkgval 1.22329
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 40 : xtmp 160.5  ytmp 0 bkgval  0.734494 ytmp-bkgval -0.734494
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 41 : xtmp 161.5  ytmp 0 bkgval  0.692274 ytmp-bkgval -0.692274
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 42 : xtmp 162.5  ytmp 0 bkgval  0.650054 ytmp-bkgval -0.650054
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 43 : xtmp 163.5  ytmp 0 bkgval  0.607834 ytmp-bkgval -0.607834
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 44 : xtmp 164.5  ytmp 0 bkgval  0.565615 ytmp-bkgval -0.565615
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 45 : xtmp 165.5  ytmp 0 bkgval  0.523395 ytmp-bkgval -0.523395
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 46 : xtmp 166.5  ytmp 1 bkgval  0.481175 ytmp-bkgval 0.518825
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 47 : xtmp 167.5  ytmp 0 bkgval  0.438955 ytmp-bkgval -0.438955
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 48 : xtmp 168.5  ytmp 2 bkgval  0.396735 ytmp-bkgval 1.60326
+[INFO] plotdata->Integral() 84 ( bins 60) hbkgplots[i]->Integral() 84 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV setting point 49 : xtmp 169.5  ytmp 0 bkgval  0.354516 ytmp-bkgval -0.354516
+Info in <TCanvas::Print>: pdf file plots/fTest/multipdf_Merged2Gsf_LVBF_13TeV.pdf has been created
+[INFO] datfile for BiasStudy: ./dat/fTest_Merged2Gsf_LVBF.dat
+[RESULT] Recommended options
+Cat [Merged2Gsf_LVBF, 1]
+	Bernstein - 1
+	Exponential - 1
+	Laurent - 1
+	PowerLaw - 1

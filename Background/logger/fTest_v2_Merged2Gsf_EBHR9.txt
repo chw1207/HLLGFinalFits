@@ -1,0 +1,313 @@
+Warning in <TClassTable::Add>: class RooPowerLaw already in TClassTable
+Warning in <TClassTable::Add>: class RooPowerLaw already in TClassTable
+Warning in <TClassTable::Add>: class RooPowerLawSum already in TClassTable
+Warning in <TClassTable::Add>: class WSTFileWrapper already in TClassTable
+Warning in <TClassTable::Add>: class RooExponentialSum already in TClassTable
+Warning in <TClassTable::Add>: class ProfileMultiplePdfs already in TClassTable
+Warning in <TClassTable::Add>: class PdfModelBuilder already in TClassTable
+[INFO] Save multiPdf model: ./multipdf/CMS_HLLG_multipdf_13TeV_Merged2Gsf_EBHR9.root
+[INFO] FitResults file: plots/fTest/fTestResults_Merged2Gsf_EBHR9.txt
+[INFO] Got mass from ws: CMS_higgs_mass
+[INFO] Open data for data_obs_Merged2Gsf_EBHR9. Sum of entries: 10361
+[INFO] Perform the F-test on:  category Merged2Gsf_EBHR9, ftest_pdf_Merged2Gsf_EBHR9_13TeV_bern1
+[INFO] Function: Bernstein, order: 1, prevNll: 0, thisNll: 41705.9, chi2: -83411.8, prob: 0
+[INFO] Perform the F-test on:  category Merged2Gsf_EBHR9, ftest_pdf_Merged2Gsf_EBHR9_13TeV_bern2
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein2_Merged2Gsf_EBHR9_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein2_Merged2Gsf_EBHR9_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0
+[INFO] Function: Bernstein, order: 2, prevNll: 41705.9, thisNll: 41687.2, chi2: 37.43, prob: 0
+[INFO] Perform the F-test on:  category Merged2Gsf_EBHR9, ftest_pdf_Merged2Gsf_EBHR9_13TeV_bern3
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein3_Merged2Gsf_EBHR9_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein3_Merged2Gsf_EBHR9_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.254
+[INFO] Function: Bernstein, order: 3, prevNll: 41687.2, thisNll: 41686.6, chi2: 1.18315, prob: 0.254
+[INFO] Determining Envelope Functions for Family: Bernstein, cat: Merged2Gsf_EBHR9
+[INFO] Upper end Threshold for highest order function 0.1
+[INFO] Function: Bernstein, order: 1, prevNll: 0, thisNll: 41705.9, chi2: -83411.8, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Chi2 in Observed = 96.6709
+[INFO] p-value = 0.00108542
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein1_Merged2Gsf_EBHR9_13TeV.pdf has been created
+[INFO] Function: Bernstein, order: 2, prevNll: 41705.9, thisNll: 41687.2, chi2: 37.43, prob: 9.47528e-10
+[INFO] Calculating GOF for pdf ext, using 3 fitted parameters
+[INFO] Chi2 in Observed = 59.4658
+[INFO] p-value = 0.385923
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein2_Merged2Gsf_EBHR9_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_EBHR9_13TeV_bern2 0.385923 2xNLL + c is 83377.3
+[INFO] Function: Bernstein, order: 3, prevNll: 41687.2, thisNll: 41686.6, chi2: 1.18315, prob: 0.276716
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Chi2 in Observed = 58.3219
+[INFO] p-value = 0.39002
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein3_Merged2Gsf_EBHR9_13TeV.pdf has been created
+--------------------------
+[INFO] Perform the F-test on:  category Merged2Gsf_EBHR9, ftest_pdf_Merged2Gsf_EBHR9_13TeV_exp1
+[INFO] Function: Exponential, order: 1, prevNll: 0, thisNll: 41688.4, chi2: -83376.7, prob: 0
+ERROR -- addExponential -- only odd number of params allowed
+--------------------------
+[INFO] Perform the F-test on:  category Merged2Gsf_EBHR9, ftest_pdf_Merged2Gsf_EBHR9_13TeV_exp3
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Exponential3_Merged2Gsf_EBHR9_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Exponential3_Merged2Gsf_EBHR9_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.695172
+[INFO] Function: Exponential, order: 3, prevNll: 41688.4, thisNll: 41688.4, chi2: 0, prob: 0.695172
+[INFO] Determining Envelope Functions for Family: Exponential, cat: Merged2Gsf_EBHR9
+[INFO] Upper end Threshold for highest order function 0.1
+--------------------------
+[INFO] Function: Exponential, order: 1, prevNll: 0, thisNll: 41688.4, chi2: -83376.7, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Chi2 in Observed = 61.7038
+[INFO] p-value = 0.345146
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Exponential1_Merged2Gsf_EBHR9_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_EBHR9_13TeV_exp1 0.345146 2xNLL + c is 83378.7
+ERROR -- addExponential -- only odd number of params allowed
+--------------------------
+[INFO] Function: Exponential, order: 3, prevNll: 41688.4, thisNll: 41688.4, chi2: 0, prob: 1
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Chi2 in Observed = 61.7089
+[INFO] p-value = 0.279388
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Exponential3_Merged2Gsf_EBHR9_13TeV.pdf has been created
+[INFO] Perform the F-test on:  category Merged2Gsf_EBHR9, ftest_pdf_Merged2Gsf_EBHR9_13TeV_pow1
+[INFO] Function: PowerLaw, order: 1, prevNll: 0, thisNll: 41693, chi2: -83386.1, prob: 0
+ERROR -- addPowerLaw -- only odd number of params allowed
+[INFO] Perform the F-test on:  category Merged2Gsf_EBHR9, ftest_pdf_Merged2Gsf_EBHR9_13TeV_pow3
+[WARNING] Warning -- Fit status for ftest_pdf_Merged2Gsf_EBHR9_13TeV_pow3 at 1
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged2Gsf_EBHR9_13TeV_pow3) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_PowerLaw3_Merged2Gsf_EBHR9_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_PowerLaw3_Merged2Gsf_EBHR9_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.83592
+[INFO] Function: PowerLaw, order: 3, prevNll: 41693, thisNll: 41693, chi2: 0, prob: 0.83592
+[INFO] Determining Envelope Functions for Family: PowerLaw, cat: Merged2Gsf_EBHR9
+[INFO] Upper end Threshold for highest order function 0.1
+[INFO] Function: PowerLaw, order: 1, prevNll: 0, thisNll: 41693, chi2: -83386.1, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Chi2 in Observed = 70.5623
+[INFO] p-value = 0.124591
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/PowerLaw1_Merged2Gsf_EBHR9_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_EBHR9_13TeV_pow1 0.124591 2xNLL + c is 83388.1
+ERROR -- addPowerLaw -- only odd number of params allowed
+[INFO] Function: PowerLaw, order: 3, prevNll: 41693, thisNll: 41693, chi2: 0, prob: 1
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Chi2 in Observed = 70.5624
+[INFO] p-value = 0.0911207
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/PowerLaw3_Merged2Gsf_EBHR9_13TeV.pdf has been created
+[INFO] Perform the F-test on:  category Merged2Gsf_EBHR9, ftest_pdf_Merged2Gsf_EBHR9_13TeV_lau1
+[INFO] Function: Laurent, order: 1, prevNll: 0, thisNll: 41769.9, chi2: -83539.9, prob: 0
+[INFO] Perform the F-test on:  category Merged2Gsf_EBHR9, ftest_pdf_Merged2Gsf_EBHR9_13TeV_lau2
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged2Gsf_EBHR9_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged2Gsf_EBHR9_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent2_Merged2Gsf_EBHR9_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent2_Merged2Gsf_EBHR9_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0
+[INFO] Function: Laurent, order: 2, prevNll: 41769.9, thisNll: 41693, chi2: 153.802, prob: 0
+[INFO] Perform the F-test on:  category Merged2Gsf_EBHR9, ftest_pdf_Merged2Gsf_EBHR9_13TeV_lau3
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent3_Merged2Gsf_EBHR9_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent3_Merged2Gsf_EBHR9_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.23774
+[INFO] Function: Laurent, order: 3, prevNll: 41693, thisNll: 41693, chi2: 0.00283302, prob: 0.23774
+[INFO] Determining Envelope Functions for Family: Laurent, cat: Merged2Gsf_EBHR9
+[INFO] Upper end Threshold for highest order function 0.1
+[INFO] Function: Laurent, order: 1, prevNll: 0, thisNll: 41769.9, chi2: -83539.9, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Chi2 in Observed = 223.995
+[INFO] p-value = 2.38242e-21
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent1_Merged2Gsf_EBHR9_13TeV.pdf has been created
+[INFO] Function: Laurent, order: 2, prevNll: 41769.9, thisNll: 41693, chi2: 153.802, prob: 2.55898e-35
+[INFO] Calculating GOF for pdf ext, using 3 fitted parameters
+[INFO] Chi2 in Observed = 70.5727
+[INFO] p-value = 0.106808
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent2_Merged2Gsf_EBHR9_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_EBHR9_13TeV_lau2 0.106808 2xNLL + c is 83389.1
+[INFO] Function: Laurent, order: 3, prevNll: 41693, thisNll: 41693, chi2: 0.00283302, prob: 0.957552
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Chi2 in Observed = 70.5704
+[INFO] p-value = 0.0910148
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent3_Merged2Gsf_EBHR9_13TeV.pdf has been created
+// ------------------------------------------------------------------------- //
+[INFO] Created MultiPdf CMS_higgs_Merged2Gsf_EBHR9_13TeV_bkgshape, in Category 3 with a total of 4 pdfs
+RooArgList::store = (env_pdf_Merged2Gsf_EBHR9_13TeV_bern2,env_pdf_Merged2Gsf_EBHR9_13TeV_exp1,env_pdf_Merged2Gsf_EBHR9_13TeV_pow1,env_pdf_Merged2Gsf_EBHR9_13TeV_lau2)
+[INFO] Best Fit Pdf = 0, env_pdf_Merged2Gsf_EBHR9_13TeV_bern2
+// ------------------------------------------------------------------------- //
+[INFO] Simple check of index 0
+env_pdf_Merged2Gsf_EBHR9_13TeV_bern2
+env_pdf_Merged2Gsf_EBHR9_13TeV_exp1
+env_pdf_Merged2Gsf_EBHR9_13TeV_pow1
+env_pdf_Merged2Gsf_EBHR9_13TeV_lau2
+H #rightarrow #gamma*#gamma #rightarrow ee#gamma
+[INFO]: CMS_lumi_mod.C macro is done!
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 0 : xtmp 110.5  ytmp 313 bkgval  303.655 ytmp-bkgval 9.34497
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 1 : xtmp 111.5  ytmp 285 bkgval  297.795 ytmp-bkgval -12.7955
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 2 : xtmp 112.5  ytmp 298 bkgval  292.009 ytmp-bkgval 5.99061
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 3 : xtmp 113.5  ytmp 265 bkgval  286.297 ytmp-bkgval -21.2967
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 4 : xtmp 114.5  ytmp 292 bkgval  280.658 ytmp-bkgval 11.3425
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 5 : xtmp 115.5  ytmp 263 bkgval  275.092 ytmp-bkgval -12.0918
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 6 : xtmp 116.5  ytmp 280 bkgval  269.6 ytmp-bkgval 10.4005
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 7 : xtmp 117.5  ytmp 278 bkgval  264.181 ytmp-bkgval 13.8193
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 8 : xtmp 118.5  ytmp 238 bkgval  258.835 ytmp-bkgval -20.8353
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 9 : xtmp 119.5  ytmp 247 bkgval  253.563 ytmp-bkgval -6.56332
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 10 : xtmp 130.5  ytmp 210 bkgval  200.42 ytmp-bkgval 9.58038
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 11 : xtmp 131.5  ytmp 198 bkgval  196.029 ytmp-bkgval 1.97092
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 12 : xtmp 132.5  ytmp 174 bkgval  191.712 ytmp-bkgval -17.712
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 13 : xtmp 133.5  ytmp 173 bkgval  187.468 ytmp-bkgval -14.4683
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 14 : xtmp 134.5  ytmp 206 bkgval  183.298 ytmp-bkgval 22.7019
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 15 : xtmp 135.5  ytmp 193 bkgval  179.201 ytmp-bkgval 13.7986
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 16 : xtmp 136.5  ytmp 172 bkgval  175.178 ytmp-bkgval -3.17811
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 17 : xtmp 137.5  ytmp 174 bkgval  171.228 ytmp-bkgval 2.77174
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 18 : xtmp 138.5  ytmp 174 bkgval  167.352 ytmp-bkgval 6.64813
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 19 : xtmp 139.5  ytmp 166 bkgval  163.549 ytmp-bkgval 2.45107
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 20 : xtmp 140.5  ytmp 165 bkgval  159.819 ytmp-bkgval 5.18057
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 21 : xtmp 141.5  ytmp 150 bkgval  156.163 ytmp-bkgval -6.16339
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 22 : xtmp 142.5  ytmp 149 bkgval  152.581 ytmp-bkgval -3.5808
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 23 : xtmp 143.5  ytmp 144 bkgval  149.072 ytmp-bkgval -5.07165
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 24 : xtmp 144.5  ytmp 131 bkgval  145.636 ytmp-bkgval -14.636
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 25 : xtmp 145.5  ytmp 155 bkgval  142.274 ytmp-bkgval 12.7263
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 26 : xtmp 146.5  ytmp 140 bkgval  138.985 ytmp-bkgval 1.01507
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 27 : xtmp 147.5  ytmp 113 bkgval  135.77 ytmp-bkgval -22.7696
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 28 : xtmp 148.5  ytmp 120 bkgval  132.628 ytmp-bkgval -12.6277
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 29 : xtmp 149.5  ytmp 109 bkgval  129.559 ytmp-bkgval -20.5592
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 30 : xtmp 150.5  ytmp 158 bkgval  126.564 ytmp-bkgval 31.4357
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 31 : xtmp 151.5  ytmp 109 bkgval  123.643 ytmp-bkgval -14.6427
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 32 : xtmp 152.5  ytmp 125 bkgval  120.795 ytmp-bkgval 4.20538
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 33 : xtmp 153.5  ytmp 116 bkgval  118.02 ytmp-bkgval -2.01998
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 34 : xtmp 154.5  ytmp 99 bkgval  115.319 ytmp-bkgval -16.3188
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 35 : xtmp 155.5  ytmp 121 bkgval  112.691 ytmp-bkgval 8.30895
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 36 : xtmp 156.5  ytmp 123 bkgval  110.137 ytmp-bkgval 12.8632
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 37 : xtmp 157.5  ytmp 113 bkgval  107.656 ytmp-bkgval 5.34409
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 38 : xtmp 158.5  ytmp 111 bkgval  105.249 ytmp-bkgval 5.75148
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 39 : xtmp 159.5  ytmp 113 bkgval  102.915 ytmp-bkgval 10.0854
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 40 : xtmp 160.5  ytmp 100 bkgval  100.654 ytmp-bkgval -0.654088
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 41 : xtmp 161.5  ytmp 91 bkgval  98.467 ytmp-bkgval -7.46705
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 42 : xtmp 162.5  ytmp 104 bkgval  96.3535 ytmp-bkgval 7.64654
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 43 : xtmp 163.5  ytmp 73 bkgval  94.3133 ytmp-bkgval -21.3133
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 44 : xtmp 164.5  ytmp 84 bkgval  92.3466 ytmp-bkgval -8.34662
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 45 : xtmp 165.5  ytmp 99 bkgval  90.4534 ytmp-bkgval 8.54662
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 46 : xtmp 166.5  ytmp 78 bkgval  88.6336 ytmp-bkgval -10.6336
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 47 : xtmp 167.5  ytmp 88 bkgval  86.8873 ytmp-bkgval 1.11275
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 48 : xtmp 168.5  ytmp 88 bkgval  85.2144 ytmp-bkgval 2.78564
+[INFO] plotdata->Integral() 1909 ( bins 60) hbkgplots[i]->Integral() 1908.97 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV setting point 49 : xtmp 169.5  ytmp 96 bkgval  83.6149 ytmp-bkgval 12.3851
+Info in <TCanvas::Print>: pdf file plots/fTest/multipdf_Merged2Gsf_EBHR9_13TeV.pdf has been created
+[INFO] datfile for BiasStudy: ./dat/fTest_Merged2Gsf_EBHR9.dat
+[RESULT] Recommended options
+Cat [Merged2Gsf_EBHR9, 3]
+	Bernstein - 2
+	Exponential - 1
+	Laurent - 2
+	PowerLaw - 1

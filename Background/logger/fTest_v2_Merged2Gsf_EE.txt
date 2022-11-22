@@ -1,0 +1,446 @@
+Warning in <TClassTable::Add>: class RooPowerLaw already in TClassTable
+Warning in <TClassTable::Add>: class RooPowerLaw already in TClassTable
+Warning in <TClassTable::Add>: class RooPowerLawSum already in TClassTable
+Warning in <TClassTable::Add>: class WSTFileWrapper already in TClassTable
+Warning in <TClassTable::Add>: class RooExponentialSum already in TClassTable
+Warning in <TClassTable::Add>: class ProfileMultiplePdfs already in TClassTable
+Warning in <TClassTable::Add>: class PdfModelBuilder already in TClassTable
+[INFO] Save multiPdf model: ./multipdf/CMS_HLLG_multipdf_13TeV_Merged2Gsf_EE.root
+[INFO] FitResults file: plots/fTest/fTestResults_Merged2Gsf_EE.txt
+[INFO] Got mass from ws: CMS_higgs_mass
+[INFO] Open data for data_obs_Merged2Gsf_EE. Sum of entries: 10840
+[INFO] Perform the F-test on:  category Merged2Gsf_EE, ftest_pdf_Merged2Gsf_EE_13TeV_bern1
+[INFO] Function: Bernstein, order: 1, prevNll: 0, thisNll: 43450.7, chi2: -86901.4, prob: 0
+[INFO] Perform the F-test on:  category Merged2Gsf_EE, ftest_pdf_Merged2Gsf_EE_13TeV_bern2
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein2_Merged2Gsf_EE_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein2_Merged2Gsf_EE_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0
+[INFO] Function: Bernstein, order: 2, prevNll: 43450.7, thisNll: 43417.8, chi2: 65.7524, prob: 0
+[INFO] Perform the F-test on:  category Merged2Gsf_EE, ftest_pdf_Merged2Gsf_EE_13TeV_bern3
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein3_Merged2Gsf_EE_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein3_Merged2Gsf_EE_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.076
+[INFO] Function: Bernstein, order: 3, prevNll: 43417.8, thisNll: 43416.4, chi2: 2.89942, prob: 0.076
+[INFO] Determining Envelope Functions for Family: Bernstein, cat: Merged2Gsf_EE
+[INFO] Upper end Threshold for highest order function 0.1
+[INFO] Function: Bernstein, order: 1, prevNll: 0, thisNll: 43450.7, chi2: -86901.4, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Chi2 in Observed = 106.377
+[INFO] p-value = 0.000111558
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein1_Merged2Gsf_EE_13TeV.pdf has been created
+[INFO] Function: Bernstein, order: 2, prevNll: 43450.7, thisNll: 43417.8, chi2: 65.7524, prob: 5.11289e-16
+[INFO] Calculating GOF for pdf ext, using 3 fitted parameters
+[INFO] Chi2 in Observed = 40.6064
+[INFO] p-value = 0.950478
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein2_Merged2Gsf_EE_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_EE_13TeV_bern2 0.950478 2xNLL + c is 86838.6
+[INFO] Function: Bernstein, order: 3, prevNll: 43417.8, thisNll: 43416.4, chi2: 2.89942, prob: 0.0886115
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Chi2 in Observed = 37.661
+[INFO] p-value = 0.971559
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein3_Merged2Gsf_EE_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_EE_13TeV_bern3 0.971559 2xNLL + c is 86836.7
+[INFO] Function: Bernstein, order: 4, prevNll: 43416.4, thisNll: 43416.1, chi2: 0.561221, prob: 0.453769
+[INFO] Calculating GOF for pdf ext, using 5 fitted parameters
+[INFO] Chi2 in Observed = 37.2685
+[INFO] p-value = 0.967927
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein4_Merged2Gsf_EE_13TeV.pdf has been created
+--------------------------
+[INFO] Perform the F-test on:  category Merged2Gsf_EE, ftest_pdf_Merged2Gsf_EE_13TeV_exp1
+[INFO] Function: Exponential, order: 1, prevNll: 0, thisNll: 43416.7, chi2: -86833.4, prob: 0
+ERROR -- addExponential -- only odd number of params allowed
+--------------------------
+[INFO] Perform the F-test on:  category Merged2Gsf_EE, ftest_pdf_Merged2Gsf_EE_13TeV_exp3
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Exponential3_Merged2Gsf_EE_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Exponential3_Merged2Gsf_EE_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.690407
+[INFO] Function: Exponential, order: 3, prevNll: 43416.7, thisNll: 43416.7, chi2: 0, prob: 0.690407
+[INFO] Determining Envelope Functions for Family: Exponential, cat: Merged2Gsf_EE
+[INFO] Upper end Threshold for highest order function 0.1
+--------------------------
+[INFO] Function: Exponential, order: 1, prevNll: 0, thisNll: 43416.7, chi2: -86833.4, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Chi2 in Observed = 38.2715
+[INFO] p-value = 0.97882
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Exponential1_Merged2Gsf_EE_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_EE_13TeV_exp1 0.97882 2xNLL + c is 86835.4
+ERROR -- addExponential -- only odd number of params allowed
+--------------------------
+[INFO] Function: Exponential, order: 3, prevNll: 43416.7, thisNll: 43416.7, chi2: 0, prob: 1
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Chi2 in Observed = 38.2706
+[INFO] p-value = 0.966325
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Exponential3_Merged2Gsf_EE_13TeV.pdf has been created
+[INFO] Perform the F-test on:  category Merged2Gsf_EE, ftest_pdf_Merged2Gsf_EE_13TeV_pow1
+[INFO] Function: PowerLaw, order: 1, prevNll: 0, thisNll: 43419.9, chi2: -86839.8, prob: 0
+ERROR -- addPowerLaw -- only odd number of params allowed
+[INFO] Perform the F-test on:  category Merged2Gsf_EE, ftest_pdf_Merged2Gsf_EE_13TeV_pow3
+[WARNING] Warning -- Fit status for ftest_pdf_Merged2Gsf_EE_13TeV_pow3 at 1
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_PowerLaw3_Merged2Gsf_EE_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_PowerLaw3_Merged2Gsf_EE_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.873051
+[INFO] Function: PowerLaw, order: 3, prevNll: 43419.9, thisNll: 43419.9, chi2: 0, prob: 0.873051
+[INFO] Determining Envelope Functions for Family: PowerLaw, cat: Merged2Gsf_EE
+[INFO] Upper end Threshold for highest order function 0.1
+[INFO] Function: PowerLaw, order: 1, prevNll: 0, thisNll: 43419.9, chi2: -86839.8, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Chi2 in Observed = 43.8112
+[INFO] p-value = 0.916214
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/PowerLaw1_Merged2Gsf_EE_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_EE_13TeV_pow1 0.916214 2xNLL + c is 86841.8
+ERROR -- addPowerLaw -- only odd number of params allowed
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+[WARNING] Warning -- Fit status for env_pdf_Merged2Gsf_EE_13TeV_pow3 at 1
+[INFO] Function: PowerLaw, order: 3, prevNll: 43419.9, thisNll: 43419.9, chi2: 0, prob: 1
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Chi2 in Observed = 98.6604
+[INFO] p-value = 0.000378284
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/PowerLaw3_Merged2Gsf_EE_13TeV.pdf has been created
+[INFO] Perform the F-test on:  category Merged2Gsf_EE, ftest_pdf_Merged2Gsf_EE_13TeV_lau1
+[INFO] Function: Laurent, order: 1, prevNll: 0, thisNll: 43449.9, chi2: -86899.9, prob: 0
+[INFO] Perform the F-test on:  category Merged2Gsf_EE, ftest_pdf_Merged2Gsf_EE_13TeV_lau2
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged2Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged2Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged2Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged2Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged2Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent2_Merged2Gsf_EE_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent2_Merged2Gsf_EE_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0
+[INFO] Function: Laurent, order: 2, prevNll: 43449.9, thisNll: 43420.4, chi2: 59.1786, prob: 0
+[INFO] Perform the F-test on:  category Merged2Gsf_EE, ftest_pdf_Merged2Gsf_EE_13TeV_lau3
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent3_Merged2Gsf_EE_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent3_Merged2Gsf_EE_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.447307
+[INFO] Function: Laurent, order: 3, prevNll: 43420.4, thisNll: 43420.4, chi2: 0, prob: 0.447307
+[INFO] Determining Envelope Functions for Family: Laurent, cat: Merged2Gsf_EE
+[INFO] Upper end Threshold for highest order function 0.1
+[INFO] Function: Laurent, order: 1, prevNll: 0, thisNll: 43449.9, chi2: -86899.9, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Chi2 in Observed = 103.701
+[INFO] p-value = 0.000213686
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent1_Merged2Gsf_EE_13TeV.pdf has been created
+[INFO] Function: Laurent, order: 2, prevNll: 43449.9, thisNll: 43420.4, chi2: 59.1786, prob: 1.43992e-14
+[INFO] Calculating GOF for pdf ext, using 3 fitted parameters
+[INFO] Chi2 in Observed = 44.6253
+[INFO] p-value = 0.883313
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent2_Merged2Gsf_EE_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged2Gsf_EE_13TeV_lau2 0.883313 2xNLL + c is 86843.7
+[INFO] Function: Laurent, order: 3, prevNll: 43420.4, thisNll: 43420.4, chi2: 0, prob: 1
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Chi2 in Observed = 44.6265
+[INFO] p-value = 0.862876
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent3_Merged2Gsf_EE_13TeV.pdf has been created
+// ------------------------------------------------------------------------- //
+[INFO] Created MultiPdf CMS_higgs_Merged2Gsf_EE_13TeV_bkgshape, in Category 5 with a total of 5 pdfs
+RooArgList::store = (env_pdf_Merged2Gsf_EE_13TeV_bern2,env_pdf_Merged2Gsf_EE_13TeV_bern3,env_pdf_Merged2Gsf_EE_13TeV_exp1,env_pdf_Merged2Gsf_EE_13TeV_pow1,env_pdf_Merged2Gsf_EE_13TeV_lau2)
+[INFO] Best Fit Pdf = 2, env_pdf_Merged2Gsf_EE_13TeV_exp1
+// ------------------------------------------------------------------------- //
+[INFO] Simple check of index 2
+env_pdf_Merged2Gsf_EE_13TeV_bern2
+env_pdf_Merged2Gsf_EE_13TeV_bern3
+env_pdf_Merged2Gsf_EE_13TeV_exp1
+env_pdf_Merged2Gsf_EE_13TeV_pow1
+env_pdf_Merged2Gsf_EE_13TeV_lau2
+H #rightarrow #gamma*#gamma #rightarrow ee#gamma
+[INFO]: CMS_lumi_mod.C macro is done!
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 0 : xtmp 110.5  ytmp 352 bkgval  344.916 ytmp-bkgval 7.08378
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 1 : xtmp 111.5  ytmp 329 bkgval  336.383 ytmp-bkgval -7.38326
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 2 : xtmp 112.5  ytmp 324 bkgval  328.061 ytmp-bkgval -4.06139
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 3 : xtmp 113.5  ytmp 318 bkgval  319.945 ytmp-bkgval -1.9454
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 4 : xtmp 114.5  ytmp 311 bkgval  312.03 ytmp-bkgval -1.0302
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 5 : xtmp 115.5  ytmp 299 bkgval  304.311 ytmp-bkgval -5.31081
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 6 : xtmp 116.5  ytmp 295 bkgval  296.782 ytmp-bkgval -1.78239
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 7 : xtmp 117.5  ytmp 305 bkgval  289.44 ytmp-bkgval 15.5598
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 8 : xtmp 118.5  ytmp 278 bkgval  282.28 ytmp-bkgval -4.27969
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 9 : xtmp 119.5  ytmp 275 bkgval  275.296 ytmp-bkgval -0.296303
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 10 : xtmp 130.5  ytmp 204 bkgval  208.992 ytmp-bkgval -4.99151
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 11 : xtmp 131.5  ytmp 206 bkgval  203.821 ytmp-bkgval 2.17878
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 12 : xtmp 132.5  ytmp 191 bkgval  198.779 ytmp-bkgval -7.77884
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 13 : xtmp 133.5  ytmp 199 bkgval  193.861 ytmp-bkgval 5.1388
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 14 : xtmp 134.5  ytmp 182 bkgval  189.065 ytmp-bkgval -7.06522
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 15 : xtmp 135.5  ytmp 174 bkgval  184.388 ytmp-bkgval -10.3879
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 16 : xtmp 136.5  ytmp 178 bkgval  179.826 ytmp-bkgval -1.82628
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 17 : xtmp 137.5  ytmp 186 bkgval  175.378 ytmp-bkgval 10.6225
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 18 : xtmp 138.5  ytmp 149 bkgval  171.039 ytmp-bkgval -22.0388
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 19 : xtmp 139.5  ytmp 173 bkgval  166.807 ytmp-bkgval 6.19257
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 20 : xtmp 140.5  ytmp 156 bkgval  162.681 ytmp-bkgval -6.68075
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 21 : xtmp 141.5  ytmp 141 bkgval  158.656 ytmp-bkgval -17.6561
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 22 : xtmp 142.5  ytmp 143 bkgval  154.731 ytmp-bkgval -11.7311
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 23 : xtmp 143.5  ytmp 176 bkgval  150.903 ytmp-bkgval 25.0968
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 24 : xtmp 144.5  ytmp 144 bkgval  147.17 ytmp-bkgval -3.16995
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 25 : xtmp 145.5  ytmp 131 bkgval  143.529 ytmp-bkgval -12.5291
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 26 : xtmp 146.5  ytmp 143 bkgval  139.978 ytmp-bkgval 3.02172
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 27 : xtmp 147.5  ytmp 141 bkgval  136.515 ytmp-bkgval 4.48467
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 28 : xtmp 148.5  ytmp 144 bkgval  133.138 ytmp-bkgval 10.862
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 29 : xtmp 149.5  ytmp 133 bkgval  129.844 ytmp-bkgval 3.15569
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 30 : xtmp 150.5  ytmp 139 bkgval  126.632 ytmp-bkgval 12.3679
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 31 : xtmp 151.5  ytmp 119 bkgval  123.499 ytmp-bkgval -4.49928
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 32 : xtmp 152.5  ytmp 140 bkgval  120.444 ytmp-bkgval 19.556
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 33 : xtmp 153.5  ytmp 116 bkgval  117.464 ytmp-bkgval -1.46431
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 34 : xtmp 154.5  ytmp 104 bkgval  114.558 ytmp-bkgval -10.5583
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 35 : xtmp 155.5  ytmp 123 bkgval  111.724 ytmp-bkgval 11.2758
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 36 : xtmp 156.5  ytmp 107 bkgval  108.96 ytmp-bkgval -1.96027
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 37 : xtmp 157.5  ytmp 109 bkgval  106.265 ytmp-bkgval 2.73532
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 38 : xtmp 158.5  ytmp 91 bkgval  103.636 ytmp-bkgval -12.6358
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 39 : xtmp 159.5  ytmp 102 bkgval  101.072 ytmp-bkgval 0.928102
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 40 : xtmp 160.5  ytmp 105 bkgval  98.5715 ytmp-bkgval 6.42854
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 41 : xtmp 161.5  ytmp 95 bkgval  96.1329 ytmp-bkgval -1.13287
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 42 : xtmp 162.5  ytmp 89 bkgval  93.7546 ytmp-bkgval -4.75462
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 43 : xtmp 163.5  ytmp 100 bkgval  91.4352 ytmp-bkgval 8.5648
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 44 : xtmp 164.5  ytmp 80 bkgval  89.1732 ytmp-bkgval -9.17316
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 45 : xtmp 165.5  ytmp 83 bkgval  86.9671 ytmp-bkgval -3.96709
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 46 : xtmp 166.5  ytmp 91 bkgval  84.8156 ytmp-bkgval 6.18441
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 47 : xtmp 167.5  ytmp 90 bkgval  82.7173 ytmp-bkgval 7.28268
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 48 : xtmp 168.5  ytmp 76 bkgval  80.671 ytmp-bkgval -4.67095
+[INFO] plotdata->Integral() 1820 ( bins 60) hbkgplots[i]->Integral() 1819.95 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged2Gsf_EE_13TeV setting point 49 : xtmp 169.5  ytmp 70 bkgval  78.6752 ytmp-bkgval -8.67521
+Info in <TCanvas::Print>: pdf file plots/fTest/multipdf_Merged2Gsf_EE_13TeV.pdf has been created
+[INFO] datfile for BiasStudy: ./dat/fTest_Merged2Gsf_EE.dat
+[RESULT] Recommended options
+Cat [Merged2Gsf_EE, 5]
+	Bernstein - 2
+	Exponential - 1
+	Laurent - 2
+	PowerLaw - 1

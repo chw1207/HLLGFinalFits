@@ -1,0 +1,528 @@
+Warning in <TClassTable::Add>: class RooPowerLaw already in TClassTable
+Warning in <TClassTable::Add>: class RooPowerLaw already in TClassTable
+Warning in <TClassTable::Add>: class RooPowerLawSum already in TClassTable
+Warning in <TClassTable::Add>: class WSTFileWrapper already in TClassTable
+Warning in <TClassTable::Add>: class RooExponentialSum already in TClassTable
+Warning in <TClassTable::Add>: class ProfileMultiplePdfs already in TClassTable
+Warning in <TClassTable::Add>: class PdfModelBuilder already in TClassTable
+[INFO] Save multiPdf model: ./multipdf/CMS_HLLG_multipdf_13TeV_Merged1Gsf_EE.root
+[INFO] FitResults file: plots/fTest/fTestResults_Merged1Gsf_EE.txt
+[INFO] Got mass from ws: CMS_higgs_mass
+[INFO] Open data for data_obs_Merged1Gsf_EE. Sum of entries: 58116
+[INFO] Perform the F-test on:  category Merged1Gsf_EE, ftest_pdf_Merged1Gsf_EE_13TeV_bern1
+[INFO] Function: Bernstein, order: 1, prevNll: 0, thisNll: 232115, chi2: -464230, prob: 0
+[INFO] Perform the F-test on:  category Merged1Gsf_EE, ftest_pdf_Merged1Gsf_EE_13TeV_bern2
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein2_Merged1Gsf_EE_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein2_Merged1Gsf_EE_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0
+[INFO] Function: Bernstein, order: 2, prevNll: 232115, thisNll: 231758, chi2: 713.76, prob: 0
+[INFO] Perform the F-test on:  category Merged1Gsf_EE, ftest_pdf_Merged1Gsf_EE_13TeV_bern3
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein3_Merged1Gsf_EE_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein3_Merged1Gsf_EE_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0
+[INFO] Function: Bernstein, order: 3, prevNll: 231758, thisNll: 231738, chi2: 40.2773, prob: 0
+[INFO] Perform the F-test on:  category Merged1Gsf_EE, ftest_pdf_Merged1Gsf_EE_13TeV_bern4
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein4_Merged1Gsf_EE_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Bernstein4_Merged1Gsf_EE_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.594
+[INFO] Function: Bernstein, order: 4, prevNll: 231738, thisNll: 231738, chi2: 0.301351, prob: 0.594
+[INFO] Determining Envelope Functions for Family: Bernstein, cat: Merged1Gsf_EE
+[INFO] Upper end Threshold for highest order function 0.1
+[INFO] Function: Bernstein, order: 1, prevNll: 0, thisNll: 232115, chi2: -464230, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Chi2 in Observed = 789.477
+[INFO] p-value = 6.48129e-129
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein1_Merged1Gsf_EE_13TeV.pdf has been created
+[INFO] Function: Bernstein, order: 2, prevNll: 232115, thisNll: 231758, chi2: 713.76, prob: 3.04507e-157
+[INFO] Calculating GOF for pdf ext, using 3 fitted parameters
+[INFO] Chi2 in Observed = 95.1598
+[INFO] p-value = 0.00114145
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein2_Merged1Gsf_EE_13TeV.pdf has been created
+[INFO] Function: Bernstein, order: 3, prevNll: 231758, thisNll: 231738, chi2: 40.2773, prob: 2.20351e-10
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Chi2 in Observed = 54.279
+[INFO] p-value = 0.540266
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein3_Merged1Gsf_EE_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged1Gsf_EE_13TeV_bern3 0.540266 2xNLL + c is 463480
+[INFO] Function: Bernstein, order: 4, prevNll: 231738, thisNll: 231738, chi2: 0.301351, prob: 0.583037
+[INFO] Calculating GOF for pdf ext, using 5 fitted parameters
+[INFO] Chi2 in Observed = 53.5929
+[INFO] p-value = 0.528526
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Bernstein4_Merged1Gsf_EE_13TeV.pdf has been created
+--------------------------
+[INFO] Perform the F-test on:  category Merged1Gsf_EE, ftest_pdf_Merged1Gsf_EE_13TeV_exp1
+[INFO] Function: Exponential, order: 1, prevNll: 0, thisNll: 231749, chi2: -463499, prob: 0
+ERROR -- addExponential -- only odd number of params allowed
+--------------------------
+[INFO] Perform the F-test on:  category Merged1Gsf_EE, ftest_pdf_Merged1Gsf_EE_13TeV_exp3
+[WARNING] Warning -- Fit status for ftest_pdf_Merged1Gsf_EE_13TeV_exp3 at 1
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Exponential3_Merged1Gsf_EE_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Exponential3_Merged1Gsf_EE_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0
+[INFO] Function: Exponential, order: 3, prevNll: 231749, thisNll: 231738, chi2: 22.5373, prob: 0
+ERROR -- addExponential -- only odd number of params allowed
+--------------------------
+[INFO] Perform the F-test on:  category Merged1Gsf_EE, ftest_pdf_Merged1Gsf_EE_13TeV_exp5
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_exp5) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Exponential5_Merged1Gsf_EE_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Exponential5_Merged1Gsf_EE_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.236486
+[INFO] Function: Exponential, order: 5, prevNll: 231738, thisNll: 231740, chi2: 0, prob: 0.236486
+[INFO] Determining Envelope Functions for Family: Exponential, cat: Merged1Gsf_EE
+[INFO] Upper end Threshold for highest order function 0.1
+--------------------------
+[INFO] Function: Exponential, order: 1, prevNll: 0, thisNll: 231749, chi2: -463499, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Chi2 in Observed = 77.9668
+[INFO] p-value = 0.0412752
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Exponential1_Merged1Gsf_EE_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged1Gsf_EE_13TeV_exp1 0.0412752 2xNLL + c is 463501
+ERROR -- addExponential -- only odd number of params allowed
+--------------------------
+[WARNING] Warning -- Fit status for env_pdf_Merged1Gsf_EE_13TeV_exp3 at 1
+[INFO] Function: Exponential, order: 3, prevNll: 231749, thisNll: 231738, chi2: 22.5364, prob: 1.27727e-05
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Chi2 in Observed = 74.9643
+[INFO] p-value = 0.0461318
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Exponential3_Merged1Gsf_EE_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged1Gsf_EE_13TeV_exp3 0.0461318 2xNLL + c is 463480
+ERROR -- addExponential -- only odd number of params allowed
+--------------------------
+[INFO] Function: Exponential, order: 5, prevNll: 231738, thisNll: 231740, chi2: 0, prob: 1
+[INFO] Calculating GOF for pdf ext, using 6 fitted parameters
+[INFO] Chi2 in Observed = 57.5688
+[INFO] p-value = 0.344584
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Exponential5_Merged1Gsf_EE_13TeV.pdf has been created
+[INFO] Perform the F-test on:  category Merged1Gsf_EE, ftest_pdf_Merged1Gsf_EE_13TeV_pow1
+[INFO] Function: PowerLaw, order: 1, prevNll: 0, thisNll: 231740, chi2: -463479, prob: 0
+ERROR -- addPowerLaw -- only odd number of params allowed
+[INFO] Perform the F-test on:  category Merged1Gsf_EE, ftest_pdf_Merged1Gsf_EE_13TeV_pow3
+[WARNING] Warning -- Fit status for ftest_pdf_Merged1Gsf_EE_13TeV_pow3 at 1
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_pow3) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_pow3) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_pow3) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_pow3) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_PowerLaw3_Merged1Gsf_EE_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_PowerLaw3_Merged1Gsf_EE_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.600462
+[INFO] Function: PowerLaw, order: 3, prevNll: 231740, thisNll: 231740, chi2: 0, prob: 0.600462
+[INFO] Determining Envelope Functions for Family: PowerLaw, cat: Merged1Gsf_EE
+[INFO] Upper end Threshold for highest order function 0.1
+[INFO] Function: PowerLaw, order: 1, prevNll: 0, thisNll: 231740, chi2: -463479, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Chi2 in Observed = 56.7653
+[INFO] p-value = 0.521294
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/PowerLaw1_Merged1Gsf_EE_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged1Gsf_EE_13TeV_pow1 0.521294 2xNLL + c is 463481
+ERROR -- addPowerLaw -- only odd number of params allowed
+[WARNING] Warning -- Fit status for env_pdf_Merged1Gsf_EE_13TeV_pow3 at 1
+[INFO] Function: PowerLaw, order: 3, prevNll: 231740, thisNll: 231740, chi2: 0, prob: 1
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Chi2 in Observed = 22656
+[INFO] p-value = 0
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/PowerLaw3_Merged1Gsf_EE_13TeV.pdf has been created
+[INFO] Perform the F-test on:  category Merged1Gsf_EE, ftest_pdf_Merged1Gsf_EE_13TeV_lau1
+[INFO] Function: Laurent, order: 1, prevNll: 0, thisNll: 231771, chi2: -463542, prob: 0
+[INFO] Perform the F-test on:  category Merged1Gsf_EE, ftest_pdf_Merged1Gsf_EE_13TeV_lau2
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_lau2) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent2_Merged1Gsf_EE_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent2_Merged1Gsf_EE_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0
+[INFO] Function: Laurent, order: 2, prevNll: 231771, thisNll: 231740, chi2: 61.5019, prob: 0
+[INFO] Perform the F-test on:  category Merged1Gsf_EE, ftest_pdf_Merged1Gsf_EE_13TeV_lau3
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+[#0] ERROR:Fitting -- RooAbsPdf::fitTo(ftest_pdf_Merged1Gsf_EE_13TeV_lau3) ERROR: Cannot apply sum-of-weights correction to covariance matrix: correction matrix calculated with weight-squared is singular
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in ROOT::Math::ParameterSettings>: lower/upper bounds outside current parameter value. The value will be set to (low+up)/2 
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Reached call limit
+Warning in <ROOT::Math::Fitter::CalculateHessErrors>: Error when calculating Hessian
+Info in <Minuit2>: Minuit2Minimizer::Minimize : Minimization did NOT converge, Edm is above max
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent3_Merged1Gsf_EE_13TeV.pdf has been created
+Info in <TCanvas::Print>: pdf file plots/fTest/Ftest_from_Laurent3_Merged1Gsf_EE_13TeV.pdf_fitstatus.pdf has been created
+[INFO] F-test Prob(chi2>chi2(data)) == 0.359593
+[INFO] Function: Laurent, order: 3, prevNll: 231740, thisNll: 231740, chi2: 0, prob: 0.359593
+[INFO] Determining Envelope Functions for Family: Laurent, cat: Merged1Gsf_EE
+[INFO] Upper end Threshold for highest order function 0.1
+[INFO] Function: Laurent, order: 1, prevNll: 0, thisNll: 231771, chi2: -463542, prob: 0
+[INFO] Calculating GOF for pdf ext, using 2 fitted parameters
+[INFO] Chi2 in Observed = 118.67
+[INFO] p-value = 4.63416e-06
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent1_Merged1Gsf_EE_13TeV.pdf has been created
+[INFO] Function: Laurent, order: 2, prevNll: 231771, thisNll: 231740, chi2: 61.5019, prob: 4.42323e-15
+[INFO] Calculating GOF for pdf ext, using 3 fitted parameters
+[INFO] Chi2 in Observed = 57.7529
+[INFO] p-value = 0.447243
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent2_Merged1Gsf_EE_13TeV.pdf has been created
+[INFO] Adding to Envelope env_pdf_Merged1Gsf_EE_13TeV_lau2 0.447243 2xNLL + c is 463483
+[INFO] Function: Laurent, order: 3, prevNll: 231740, thisNll: 231740, chi2: 0, prob: 1
+[INFO] Calculating GOF for pdf ext, using 4 fitted parameters
+[INFO] Chi2 in Observed = 57.751
+[INFO] p-value = 0.41035
+Info in <TCanvas::Print>: pdf file plots/fTest/single_fit/Laurent3_Merged1Gsf_EE_13TeV.pdf has been created
+// ------------------------------------------------------------------------- //
+[INFO] Created MultiPdf CMS_higgs_Merged1Gsf_EE_13TeV_bkgshape, in Category 11 with a total of 5 pdfs
+RooArgList::store = (env_pdf_Merged1Gsf_EE_13TeV_bern3,env_pdf_Merged1Gsf_EE_13TeV_exp1,env_pdf_Merged1Gsf_EE_13TeV_exp3,env_pdf_Merged1Gsf_EE_13TeV_pow1,env_pdf_Merged1Gsf_EE_13TeV_lau2)
+[INFO] Best Fit Pdf = 0, env_pdf_Merged1Gsf_EE_13TeV_bern3
+// ------------------------------------------------------------------------- //
+[INFO] Simple check of index 0
+env_pdf_Merged1Gsf_EE_13TeV_bern3
+env_pdf_Merged1Gsf_EE_13TeV_exp1
+env_pdf_Merged1Gsf_EE_13TeV_exp3
+env_pdf_Merged1Gsf_EE_13TeV_pow1
+env_pdf_Merged1Gsf_EE_13TeV_lau2
+H #rightarrow #gamma*#gamma #rightarrow ee#gamma
+[INFO]: CMS_lumi_mod.C macro is done!
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 0 : xtmp 110.5  ytmp 2040 bkgval  2014.09 ytmp-bkgval 25.9052
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 1 : xtmp 111.5  ytmp 1958 bkgval  1952.96 ytmp-bkgval 5.04174
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 2 : xtmp 112.5  ytmp 1913 bkgval  1893.66 ytmp-bkgval 19.3389
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 3 : xtmp 113.5  ytmp 1785 bkgval  1836.17 ytmp-bkgval -51.1675
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 4 : xtmp 114.5  ytmp 1817 bkgval  1780.44 ytmp-bkgval 36.5583
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 5 : xtmp 115.5  ytmp 1785 bkgval  1726.45 ytmp-bkgval 58.5521
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 6 : xtmp 116.5  ytmp 1635 bkgval  1674.15 ytmp-bkgval -39.1503
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 7 : xtmp 117.5  ytmp 1655 bkgval  1623.51 ytmp-bkgval 31.4869
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 8 : xtmp 118.5  ytmp 1499 bkgval  1574.5 ytmp-bkgval -75.5005
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 9 : xtmp 119.5  ytmp 1549 bkgval  1527.08 ytmp-bkgval 21.9233
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 10 : xtmp 130.5  ytmp 1073 bkgval  1100.04 ytmp-bkgval -27.0352
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 11 : xtmp 131.5  ytmp 1038 bkgval  1068.88 ytmp-bkgval -30.8842
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 12 : xtmp 132.5  ytmp 1016 bkgval  1038.86 ytmp-bkgval -22.8567
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 13 : xtmp 133.5  ytmp 964 bkgval  1009.92 ytmp-bkgval -45.9167
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 14 : xtmp 134.5  ytmp 989 bkgval  982.029 ytmp-bkgval 6.97147
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 15 : xtmp 135.5  ytmp 922 bkgval  955.156 ytmp-bkgval -33.1563
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 16 : xtmp 136.5  ytmp 974 bkgval  929.264 ytmp-bkgval 44.7358
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 17 : xtmp 137.5  ytmp 861 bkgval  904.316 ytmp-bkgval -43.3165
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 18 : xtmp 138.5  ytmp 867 bkgval  880.277 ytmp-bkgval -13.2773
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 19 : xtmp 139.5  ytmp 882 bkgval  857.111 ytmp-bkgval 24.8891
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 20 : xtmp 140.5  ytmp 822 bkgval  834.782 ytmp-bkgval -12.7815
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 21 : xtmp 141.5  ytmp 859 bkgval  813.253 ytmp-bkgval 45.7468
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 22 : xtmp 142.5  ytmp 818 bkgval  792.49 ytmp-bkgval 25.5097
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 23 : xtmp 143.5  ytmp 797 bkgval  772.457 ytmp-bkgval 24.5431
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 24 : xtmp 144.5  ytmp 769 bkgval  753.117 ytmp-bkgval 15.8827
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 25 : xtmp 145.5  ytmp 753 bkgval  734.436 ytmp-bkgval 18.5644
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 26 : xtmp 146.5  ytmp 695 bkgval  716.376 ytmp-bkgval -21.3761
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 27 : xtmp 147.5  ytmp 675 bkgval  698.903 ytmp-bkgval -23.9029
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 28 : xtmp 148.5  ytmp 725 bkgval  681.98 ytmp-bkgval 43.0197
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 29 : xtmp 149.5  ytmp 650 bkgval  665.572 ytmp-bkgval -15.5724
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 30 : xtmp 150.5  ytmp 645 bkgval  649.643 ytmp-bkgval -4.64348
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 31 : xtmp 151.5  ytmp 645 bkgval  634.158 ytmp-bkgval 10.8423
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 32 : xtmp 152.5  ytmp 617 bkgval  619.079 ytmp-bkgval -2.07923
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 33 : xtmp 153.5  ytmp 564 bkgval  604.372 ytmp-bkgval -40.3723
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 34 : xtmp 154.5  ytmp 576 bkgval  590.001 ytmp-bkgval -14.0011
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 35 : xtmp 155.5  ytmp 614 bkgval  575.93 ytmp-bkgval 38.0701
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 36 : xtmp 156.5  ytmp 520 bkgval  562.123 ytmp-bkgval -42.1228
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 37 : xtmp 157.5  ytmp 564 bkgval  548.544 ytmp-bkgval 15.456
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 38 : xtmp 158.5  ytmp 537 bkgval  535.158 ytmp-bkgval 1.84221
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 39 : xtmp 159.5  ytmp 498 bkgval  521.928 ytmp-bkgval -23.9283
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 40 : xtmp 160.5  ytmp 503 bkgval  508.82 ytmp-bkgval -5.81971
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 41 : xtmp 161.5  ytmp 508 bkgval  495.796 ytmp-bkgval 12.2037
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 42 : xtmp 162.5  ytmp 491 bkgval  482.822 ytmp-bkgval 8.17786
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 43 : xtmp 163.5  ytmp 454 bkgval  469.862 ytmp-bkgval -15.8616
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 44 : xtmp 164.5  ytmp 452 bkgval  456.879 ytmp-bkgval -4.87868
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 45 : xtmp 165.5  ytmp 459 bkgval  443.838 ytmp-bkgval 15.1623
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 46 : xtmp 166.5  ytmp 427 bkgval  430.703 ytmp-bkgval -3.70292
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 47 : xtmp 167.5  ytmp 432 bkgval  417.438 ytmp-bkgval 14.5616
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 48 : xtmp 168.5  ytmp 421 bkgval  404.008 ytmp-bkgval 16.9916
+[INFO] plotdata->Integral() 14274 ( bins 60) hbkgplots[i]->Integral() 14273.5 (bins 60
+[INFO] Channel  plots/fTest/multipdf_Merged1Gsf_EE_13TeV setting point 49 : xtmp 169.5  ytmp 373 bkgval  390.377 ytmp-bkgval -17.3772
+Info in <TCanvas::Print>: pdf file plots/fTest/multipdf_Merged1Gsf_EE_13TeV.pdf has been created
+[INFO] datfile for BiasStudy: ./dat/fTest_Merged1Gsf_EE.dat
+[RESULT] Recommended options
+Cat [Merged1Gsf_EE, 11]
+	Bernstein - 3
+	Exponential - 3
+	Laurent - 2
+	PowerLaw - 1

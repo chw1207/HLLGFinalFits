@@ -1,0 +1,8 @@
+cat = [Merged2Gsf_EBHR9, 3]
+truth = Bernstein:2:pol2
+truth = Exponential:1:exp1
+truth = Laurent:2:lau2
+truth = PowerLaw:1:pow1
+paul = Exponential:1:exp1
+paul = PowerLaw:1:pow1
+
