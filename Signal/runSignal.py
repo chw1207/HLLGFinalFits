@@ -10,9 +10,9 @@ from commonObjects import massBaseList, years, category__, twd__, productionMode
 
 def get_parser():
     parser = ArgumentParser(description="Script for submitting signal fitting jobs for finalfitslite")
-    parser.add_argument("-y",  "--year",            help="specify the year [2016, 2017, 2018, all], default = all",                     default="all", type=str)
-    parser.add_argument("-s",  "--script",          help="Which script to run. Options: [signalFit, makeModelPlot, calcShapeSyst]",     default="", type=str)
-    parser.add_argument("-n",  "--nCPUs",           help="Number of CPUs used to submit signal jobs(default: 10)",                      default=10, type=int)
+    parser.add_argument("-s",  "--script",          help="Which script to run. Options: [signalFit, makeModelPlot, calcShapeSyst]",     default="",     type=str)
+    parser.add_argument("-y",  "--year",            help="specify the year [2016, 2017, 2018, all], default = all",                     default="all",  type=str)
+    parser.add_argument("-n",  "--nCPUs",           help="Number of CPUs used to submit signal jobs(default: 10)",                      default=10,     type=int)
     parser.add_argument("-ds", "--doSystematics",   help="Estimate the shape uncertainties",                                            default=False,  action="store_true")
 
     return parser

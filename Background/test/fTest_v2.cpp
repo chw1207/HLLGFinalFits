@@ -666,7 +666,7 @@ int main(int argc, char** argv){
     setTDRStyle();
 
     string fileName; // input file contains workspace
-    string WSname = "tagsDumper/cms_hllg_13TeV"; // input workspace name
+    string WSname = "tagsDumper/cms_heeg_13TeV"; // input workspace name
     string outDir = "plots/fTest"; // out directory for plots
     bool verbose = false;
     string ext = "13TeV";
