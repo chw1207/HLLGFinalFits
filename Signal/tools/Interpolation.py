@@ -2,6 +2,7 @@ import sys, os
 import ROOT
 import numpy as np
 from CMS_lumi import CMS_lumi
+from commonObjects import decayMode
 from commonTools import rooiter
 from collections import OrderedDict as od
 
@@ -139,8 +140,8 @@ class Interpolator:
                 # create the factory for the shape uncertainties
                 if doSystematics:
                     # set the initial value to be 1 (inside the square brackets are the initial values)
-                    scale_var = "CMS_HLLG_elePho_scale_{}_{}_{}[1]".format(self.proc, self.year, self.cat)
-                    resol_var = "CMS_HLLG_elePho_resol_{}_{}_{}[1]".format(self.proc, self.year, self.cat)
+                    scale_var = "CMS_{}_scale_{}_{}_{}[1]".format(decayMode, self.proc, mass, self.cat)
+                    resol_var = "CMS_{}_resol_{}_{}_{}[1]".format(decayMode, self.proc, mass, self.cat)
                     ws.factory(scale_var)
                     ws.factory(resol_var)
 

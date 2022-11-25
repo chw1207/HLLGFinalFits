@@ -64,7 +64,11 @@ def main():
             outWSDir = "{}/WS/Interpolation/{}".format(swd__, args.year)
             interp = Interpolator(yields, fitres, 110, 170, args.year, proc, args.category)
             interp.calcPolation()
-            interp.buildFinalPdfs(save=True, outWS=outputWSName__, outWSDir=outWSDir, doSystematics=args.doSystematics)
+            interp.buildFinalPdfs(
+                save=True,
+                outWS=outputWSName__, outWSDir=outWSDir,
+                doSystematics=args.doSystematics
+            )
 
             # VISUALIZATION: draw the fitting
             outPlotName = "{}/plots/Interpolation/{}/CMS_HLLG_Interp_{}_{}_{}.pdf".format(swd__, args.year, proc, args.year, args.category)

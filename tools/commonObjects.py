@@ -72,6 +72,12 @@ category__["Merged1Gsf_EBLR9"]  = "category == 11"
 category__["Merged1Gsf_EE"]     = "category == 12"
 category__["Resolved"]          = "category == 13"
 
+categoryTag = od()
+categoryTag["M2Untag"] = ["Merged2Gsf_EBHR9", "Merged2Gsf_EBLR9", "Merged2Gsf_EE"]
+categoryTag["M1Untag"] = ["Merged1Gsf_EBHR9", "Merged1Gsf_EBLR9", "Merged1Gsf_EE"]
+categoryTag["M2tag"]   = ["Merged2Gsf_HVBF", "Merged2Gsf_LVBF", "Merged2Gsf_BST"]
+categoryTag["M1tag"]   = ["Merged1Gsf_HVBF", "Merged1Gsf_LVBF", "Merged1Gsf_BST"]
+
 # function to converte process to production mode in dataset name
 procToDatacardNameMap = od()
 procToDatacardNameMap["ggH"] = "ggH"

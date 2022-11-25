@@ -1,10 +1,10 @@
 # Script to calculate shape systematics of photon and electron
 # * https://twiki.cern.ch/twiki/bin/view/CMS/EgammaMiniAODV2#Energy_Scale_and_Smearing
-# * Run script once per category per mass point, loops over signal processes
+# * Run script once per category, loops over signal processes.
 # * photon shape: uncertainties of standard EGM calibration
 # * merged electron shape: uncertainties of dedicated HDALITZ calibration
 # * resolved electron shape: uncertainties of standard EGM calibration
-# * Outputs are pandas dataframes for scale and resolutions respectively
+# * Outputs are pandas dataframes for scale and resolutions respectively @ all mass points
 
 import os, sys
 sys.path.append("./tools")
@@ -15,11 +15,11 @@ import numpy as np
 import pandas as pd
 from sigmaEff import sigmaEff
 from argparse import ArgumentParser
-from commonObjects import productionModes, inputWSName__, swd__
+from commonObjects import productionModes, inputWSName__, swd__, massBaseList, decayMode
+from commonTools import color
 
 def get_parser():
     parser = ArgumentParser(description="Script to calculate effect of the shape systematic uncertainties")
-    parser.add_argument("-m",   "--mass",            help="Higgs mass point[120, 15, 130]",                          default="",     type=str)
     parser.add_argument("-c",   "--category",        help="RECO category",                                           default="",     type=str)
     parser.add_argument("-y",   "--year",            help="year",                                                    default="",     type=str)
     parser.add_argument("-i",   "--inputWSDir",      help="Input WS directory",                                      default="",     type=str)
@@ -90,7 +90,7 @@ def getSigmaVar(_sets):
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-def main():
+def main(mass):
     shape_variations = [
         "PhoScaleStat",
         "PhoScaleSyst",
@@ -128,14 +128,14 @@ def main():
 
     # Loop over processes and add row to dataframe
     for _proc in productionModes:
-        _WSFileName = "%s/signal_%s_%s.root" %(args.inputWSDir, _proc, args.mass)
-        _nominalDataName = "set_%s_%s" %(args.mass, args.category)
-        data_scale = data_scale.append({"proc":_proc, "cat":args.category, "mass":args.mass, "year":args.year, "inputWSFile":_WSFileName, "nominalDataName":_nominalDataName}, ignore_index=True, sort=False)
-        data_resol = data_resol.append({"proc":_proc, "cat":args.category, "mass":args.mass, "year":args.year, "inputWSFile":_WSFileName, "nominalDataName":_nominalDataName}, ignore_index=True, sort=False)
+        _WSFileName = "%s/signal_%s_%s.root" %(args.inputWSDir, _proc, mass)
+        _nominalDataName = "set_%s_%s" %(mass, args.category)
+        data_scale = data_scale.append({"proc":_proc, "cat":args.category, "mass":mass, "year":args.year, "inputWSFile":_WSFileName, "nominalDataName":_nominalDataName}, ignore_index=True, sort=False)
+        data_resol = data_resol.append({"proc":_proc, "cat":args.category, "mass":mass, "year":args.year, "inputWSFile":_WSFileName, "nominalDataName":_nominalDataName}, ignore_index=True, sort=False)
 
     # add the scale unc to dataframe
     for ir, r in data_scale.iterrows():
-        print(" --> Processing ({proc:>4}, {cat}, {mass}, {y:<5}) scale uncertainties".format(proc=r["proc"], cat=args.category, mass=r["mass"], y=r["year"]))
+        print(" --> Processing ({proc:>4}, {cat}, {m}, {y:<5}) scale uncertainties".format(proc=r["proc"], cat=args.category, m=r["mass"], y=r["year"]))
         # Open ROOT file and extract workspace
         f = ROOT.TFile(r["inputWSFile"], "READ")
         if f.IsZombie():
@@ -166,7 +166,7 @@ def main():
 
     # add the resolution unc to dataframe
     for ir, r in data_resol.iterrows():
-        print(" --> Processing ({proc:>4}, {cat}, {mass}, {y:<5}) resol uncertainties".format(proc=r["proc"], cat=args.category, mass=r["mass"], y=r["year"]))
+        print(" --> Processing ({proc:>4}, {cat}, {m}, {y:<5}) resol uncertainties".format(proc=r["proc"], cat=args.category, m=r["mass"], y=r["year"]))
         # Open ROOT file and extract workspace
         f = ROOT.TFile(r["inputWSFile"])
         if f.IsZombie():
@@ -195,23 +195,54 @@ def main():
     # root of quadrature sum electron and photon
     data_resol["TotalResol"] = np.sqrt(np.power(data_resol[["EleTotalResol", "PhoTotalResol"]], 2).sum(axis=1))
 
-    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    return data_scale, data_resol
+
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+def calcFactory(df, shape=""):
+    if shape not in ["scale", "resol"]:
+        print("Error: unknown shape type: {}, available type [scale, resol]".format(shape))
+        sys.exit(1)
+
+    mass_interp = np.linspace(massBaseList[0], massBaseList[-1], 11, endpoint=True).astype(int)
+    column_title = ["proc", "cat", "mass", "year", "factory", "value"]
+    df_data = pd.DataFrame(columns=column_title)
+
+    for proc in df["proc"].unique():
+        unc = []
+        for ir, r in df.iterrows():
+            if proc != r["proc"]:
+                continue
+            if shape == "scale":
+                unc.append(r["TotalScale"])
+            else:
+                unc.append(r["TotalResol"])
+        unc_interp = np.interp(mass_interp, np.array(massBaseList), np.array(unc))
+
+        for i, _mp in enumerate(mass_interp):
+            factory_name = "CMS_{}_{}_{}_{}_{}".format(decayMode, shape, proc, _mp, args.category)
+            df_data.loc[len(df_data)] = [proc, args.category, _mp, args.year, factory_name, unc_interp[i]]
+
     # Output dataFrame as pickle file
     if not os.path.exists("{}/syst".format(swd__)):
         os.system("mkdir -p {}/syst".format(swd__))
-
-    with open("{}/syst/shape_syst_scale_{}_{}_{}.pkl".format(swd__, args.category, args.mass, args.year), "wb") as f:
-        pickle.dump(data_scale, f)
-    print(" --> Successfully saved scale systematics as pkl file: {}/syst/shape_syst_scale_{}_{}_{}.pkl".format(swd__, args.category, args.mass, args.year))
-
-    with open("{}/syst/shape_syst_resol_{}_{}_{}.pkl".format(swd__, args.category, args.mass, args.year), "wb") as f:
-        pickle.dump(data_resol, f)
-    print(" --> Successfully saved resol systematics as pkl file: {}/syst/shape_syst_resol_{}_{}_{}.pkl".format(swd__, args.category, args.mass, args.year))
+    with open("{}/syst/shape_syst_{}_{}_{}.pkl".format(swd__, shape, args.category, args.year), "wb") as f:
+        pickle.dump(df_data, f)
+    print(" --> Successfully saved {} systematics as pkl file: {}/syst/shape_syst_{}_{}_{}.pkl".format(shape, swd__, shape, args.category, args.year))
 
 
 if __name__ == "__main__" :
-    # Extract information from config file:
     parser = get_parser()
     args = parser.parse_args()
 
-    main()
+    df_scale_list, df_resol_list = [], []
+    for _m in massBaseList:
+        df_scale, df_resol = main(_m)
+        df_scale_list.append(df_scale)
+        df_resol_list.append(df_resol)
+
+    df_scale_mass = pd.concat(df_scale_list, ignore_index=True, axis=0, sort=False)
+    df_resol_mass = pd.concat(df_resol_list, ignore_index=True, axis=0, sort=False)
+
+    calcFactory(df_scale_mass, shape="scale")
+    calcFactory(df_resol_mass, shape="resol")

@@ -37,12 +37,11 @@ def main():
     queue = []
     if script == "calcShapeSyst":
         for cat in category__.keys():
-            for m in massBaseList:
-                if year == "all":
-                    for i in range(len(years)):
-                        queue.append("python calcShapeSyst.py --mass {} --category {} --inputWSDir {} --year {} &> ./logger/calcSyst_{}_{}_{}.txt".format(m, cat, inWS[i], years[i], cat, m, years[i]))
-                else:
-                    queue.append("python calcShapeSyst.py --mass {} --category {} --inputWSDir {} --year {} &> ./logger/calcSyst_{}_{}_{}.txt".format(m, cat, inWS[i], years[i], cat, m, years[i]))
+            if year == "all":
+                for i in range(len(years)):
+                    queue.append("python calcShapeSyst.py --category {} --inputWSDir {} --year {} &> ./logger/calcSyst_{}_{}.txt".format(cat, inWS[i], years[i], cat, years[i]))
+            else:
+                queue.append("python calcShapeSyst.py --category {} --inputWSDir {} --year {} &> ./logger/calcSyst_{}_{}.txt".format(cat, inWS[i], years[i], cat, years[i]))
 
     if script == "signalFit":
         for cat in category__.keys():
@@ -75,7 +74,6 @@ def main():
 
 
 if __name__ == "__main__" :
-    # Extract information from config file:
     parser = get_parser()
     args = parser.parse_args()
 
