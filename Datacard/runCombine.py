@@ -77,7 +77,7 @@ def main():
             card_comb = "./cards/datacard_{}_runII_{}_{}.txt".format(decayMode, opt, mass)
             if opt == "re":
                 card_comb = "./cards/datacard_{}_runII_Resolved_{}.txt".format(decayMode, mass)
-            queue.append("combineTool.py {} -M AsymptoticLimits -n _{}_{} {} {} &> ./logger/limit_{}_{}.txt".format(card_comb, opt, mass, exp_opt_str, unb_opt_str, opt, mass))
+            queue.append("combineTool.py {} -M AsymptoticLimits -n _{}_{} -m {} {} {} &> ./logger/limit_{}_{}.txt".format(card_comb, opt, mass, mass, exp_opt_str, unb_opt_str, opt, mass))
         print("---> Executing the following commands using {} cores".format(n))
         pprint(queue)
         submit(queue)
