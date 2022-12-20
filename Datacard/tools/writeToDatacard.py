@@ -128,22 +128,29 @@ class DCWriter:
     def writeParamSystematic(self, s):
         # self.fout.write("----------------------------------------------------------------------------------------------------------------------------------\n")
         if s["prior"] == "param":
-            for proc in self.df["procOriginal"].unique():
-                if ((proc == "data_obs") or (proc == "bkg_mass")):
+            for ir, r in self.df[self.df["cat"] == self.cat].iterrows():
+                if (r["mass"] != self.mass):
                     continue
+                col_name = "{}_{}_{}_{}_{}".format(s["name"], r["procOriginal"], r["mass"], self.cat, r["year"])
+                # self.fout.write("{0:{sp0}}{1:<7}{2:<5}{3:<12}\n".format(col_name, "param", str(1), str(round(r[s["name"]], 7)), sp0=self.space0+self.space1+self.space2))
+                self.fout.write("{0:{sp0}}{1:<7}{2:<5}{3:<12}\n".format(col_name, "param", str(1), str(round(r[s["name"]], 7)), sp0=self.space0+self.space1+self.space2))
+        # if s["prior"] == "param":
+        #     for proc in self.df["procOriginal"].unique():
+        #         if ((proc == "data_obs") or (proc == "bkg_mass")):
+        #             continue
 
-                val_years = []
-                for year in self.df["year"].unique():
-                    if year == "merged":
-                        continue
-                    mask = (self.df["type"] == "sig") & (self.df["year"] == year) & (self.df["cat"] == self.cat) & (self.df["procOriginal"] == proc) & (self.df["mass"] == self.mass)
-                    # try:
-                    idx = self.df.index[mask]
-                    val = self.df.iloc[idx][s["name"]].item()
-                    val_years.append(val)
+        #         val_years = []
+        #         for year in self.df["year"].unique():
+        #             if year == "merged":
+        #                 continue
+        #             mask = (self.df["type"] == "sig") & (self.df["year"] == year) & (self.df["cat"] == self.cat) & (self.df["procOriginal"] == proc) & (self.df["mass"] == self.mass)
+        #             # try:
+        #             idx = self.df.index[mask]
+        #             val = self.df.iloc[idx][s["name"]].item()
+        #             val_years.append(val)
 
-                col_name = "{}_{}_{}_{}".format(s["name"], proc, self.mass, self.cat)
-                self.fout.write("{0:{sp0}}{1:<7}{2:<5}{3:<12}{4:<12}{5:<12}\n".format(col_name, "param", str(1), str(round(val_years[0], 7)), str(round(val_years[1], 7)), str(round(val_years[2], 7)), sp0=self.space0+self.space1+self.space2))
+        #         col_name = "{}_{}_{}_{}".format(s["name"], proc, self.mass, self.cat)
+        #         self.fout.write("{0:{sp0}}{1:<7}{2:<5}{3:<12}{4:<12}{5:<12}\n".format(col_name, "param", str(1), str(round(val_years[0], 7)), str(round(val_years[1], 7)), str(round(val_years[2], 7)), sp0=self.space0+self.space1+self.space2))
 
 
     def writePdfIndex(self, ext="13TeV"):

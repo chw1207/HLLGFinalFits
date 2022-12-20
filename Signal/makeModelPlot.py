@@ -24,7 +24,7 @@ def get_parser():
 
 def get_ws(fwname, wname):
     fw = ROOT.TFile(fwname, "READ")
-    if fw.IsZombie:
+    if fw.IsZombie():
         sys.exit(1)
     inWS = ROOT.RooWorkspace()
     fw.GetObject(wname, inWS)

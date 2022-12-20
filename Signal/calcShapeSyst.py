@@ -25,7 +25,6 @@ def get_parser():
     parser.add_argument("-i",   "--inputWSDir",      help="Input WS directory",                                      default="",     type=str)
     parser.add_argument("-tm",  "--thresholdMean",   help="Reject mean variations if larger than thresholdMean",     default=0.05,   type=float)
     parser.add_argument("-ts",  "--thresholdSigma",  help="Reject mean variations if larger than thresholdSigma",    default=0.5,    type=float)
-    parser.add_argument("-tr",  "--thresholdRate",   help="Reject mean variations if larger than thresholdRate",     default=0.05,   type=float)
 
     return parser
 
@@ -220,7 +219,7 @@ def calcFactory(df, shape=""):
         unc_interp = np.interp(mass_interp, np.array(massBaseList), np.array(unc))
 
         for i, _mp in enumerate(mass_interp):
-            factory_name = "CMS_{}_{}_{}_{}_{}".format(decayMode, shape, proc, _mp, args.category)
+            factory_name = "CMS_{}_{}_{}_{}_{}_{}".format(decayMode, shape, proc, _mp, args.category, args.year)
             df_data.loc[len(df_data)] = [proc, args.category, _mp, args.year, factory_name, unc_interp[i]]
 
     # Output dataFrame as pickle file

@@ -16,19 +16,31 @@ class simpleFit:
         _pars = od()
         _pars["DCB"] = od()
         _pars["DCB"]["mean"] = [self.MH, self.MH - 3, self.MHHigh + 3] # nominal, lower, upper (fitting range)
-        _pars["DCB"]["sigma"] = [2.5 , 0.1, 5.]
-        _pars["DCB"]["n1"] = [5, 0, 20]
-        _pars["DCB"]["n2"] = [3, 0, 20]
-        _pars["DCB"]["a1"] = [2, 0, 10]
+        _pars["DCB"]["sigma"] = [1.5, 0.1, 5]
+        _pars["DCB"]["n1"] = [2, 0, 15]
+        _pars["DCB"]["n2"] = [1, 0, 15]
+        _pars["DCB"]["a1"] = [1, 0, 10]
         _pars["DCB"]["a2"] = [5, 0, 10]
         _pars["DCB"]["frac"] = [0.9, 0.6, 0.9999999999] # fraction of DCB
         _pars["Gaus"] = od()
         _pars["Gaus"]["sigma"] = [25., 16, 100]
+
+        # _pars["DCB"] = od()
+        # _pars["DCB"]["mean"] = [self.MH, self.MH - 3, self.MHHigh + 3] # nominal, lower, upper (fitting range)
+        # _pars["DCB"]["sigma"] = [2.5 , 0.1, 5.]
+        # _pars["DCB"]["n1"] = [5, 0, 20]
+        # _pars["DCB"]["n2"] = [3, 0, 20]
+        # _pars["DCB"]["a1"] = [2, 0, 10]
+        # _pars["DCB"]["a2"] = [5, 0, 10]
+        # _pars["DCB"]["frac"] = [0.9, 0.6, 0.9999999999] # fraction of DCB
+        # _pars["Gaus"] = od()
+        # _pars["Gaus"]["sigma"] = [25., 16, 100]
         self.pars = _pars
 
         # Dicts to store all fit vars, polynomials, pdfs
         self.Vars = od()
         self.Pdfs = od()
+        self.useDCB = False
 
         # Fit containers
         self.nBins = 60
@@ -56,11 +68,19 @@ class simpleFit:
         self.Pdfs["SigPdf"] = ROOT.RooAddPdf("SigPdf", "SigPdf", self.Pdfs["DCB"], self.Pdfs["Gaus"], self.Vars["frac_dcb"])
 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    def buildDCB(self, floatingParm="all"):
+        for f in ["mean", "sigma", "n1", "n2", "a1", "a2"]:
+            k = "%s_dcb"%f
+            self.Vars[k] = ROOT.RooRealVar(k, k, self.pars["DCB"][f][0], self.pars["DCB"][f][1], self.pars["DCB"][f][2])
+        self.Pdfs["SigPdf"] = ROOT.RooDoubleCB("SigPdf", "SigPdf", self.xvar, self.Vars["mean_dcb"], self.Vars["sigma_dcb"], self.Vars["a1_dcb"], self.Vars["n1_dcb"], self.Vars["a2_dcb"], self.Vars["n2_dcb"])
+        self.useDCB = True
+
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     def runFit(self):
         fRes = self.Pdfs["SigPdf"].fitTo(
             self.data,
             ROOT.RooFit.Save(ROOT.kTRUE),
-            ROOT.RooFit.Range("NormRange"), ROOT.RooFit.Minimizer("Minuit2", "minimize"),
+            ROOT.RooFit.Range("NormRange"), ROOT.RooFit.Minimizer("Minuit", "minimize"),
             ROOT.RooFit.SumW2Error(ROOT.kTRUE), ROOT.RooFit.PrintLevel(-1)
         )
         self.FitResults = fRes
@@ -103,15 +123,16 @@ class simpleFit:
             ROOT.RooFit.LineColor(ROOT.TColor.GetColor("#5893D4")), ROOT.RooFit.LineWidth(4)
         )
 
-        self.Pdfs["SigPdf"].plotOn(
-            xframe, ROOT.RooFit.Components("DCB"), ROOT.RooFit.Name("DCB"),
-            ROOT.RooFit.LineColor(ROOT.TColor.GetColor("#1C7747")), ROOT.RooFit.LineWidth(4), ROOT.RooFit.LineStyle(7)
-        )
+        if not self.useDCB:
+            self.Pdfs["SigPdf"].plotOn(
+                xframe, ROOT.RooFit.Components("DCB"), ROOT.RooFit.Name("DCB"),
+                ROOT.RooFit.LineColor(ROOT.TColor.GetColor("#1C7747")), ROOT.RooFit.LineWidth(4), ROOT.RooFit.LineStyle(7)
+            )
 
-        self.Pdfs["SigPdf"].plotOn(
-            xframe, ROOT.RooFit.Components("Gaus"), ROOT.RooFit.Name("Gaus"),
-            ROOT.RooFit.LineColor(ROOT.TColor.GetColor("#E23E57")), ROOT.RooFit.LineWidth(4), ROOT.RooFit.LineStyle(7)
-        )
+            self.Pdfs["SigPdf"].plotOn(
+                xframe, ROOT.RooFit.Components("Gaus"), ROOT.RooFit.Name("Gaus"),
+                ROOT.RooFit.LineColor(ROOT.TColor.GetColor("#E23E57")), ROOT.RooFit.LineWidth(4), ROOT.RooFit.LineStyle(7)
+            )
 
         self.data.plotOn(
             xframe, ROOT.RooFit.Name("set"),
@@ -164,14 +185,15 @@ class simpleFit:
         leg1.AddEntry(xframe.findObject("sigfit"), "Parametric model", "l")
         leg1.Draw()
 
-        leg2 = ROOT.TLegend(0.61, 0.62, 0.9, 0.7)
-        leg2.SetTextFont(42)
-        leg2.SetTextSize(0.033)
-        leg2.SetFillColor(0)
-        leg2.SetLineColor(0)
-        leg2.AddEntry(xframe.findObject("DCB"), "DCB", "l")
-        leg2.AddEntry(xframe.findObject("Gaus"), "Gauss", "l")
-        leg2.Draw("same")
+        if not self.useDCB:
+            leg2 = ROOT.TLegend(0.61, 0.62, 0.9, 0.7)
+            leg2.SetTextFont(42)
+            leg2.SetTextSize(0.033)
+            leg2.SetFillColor(0)
+            leg2.SetLineColor(0)
+            leg2.AddEntry(xframe.findObject("DCB"), "DCB", "l")
+            leg2.AddEntry(xframe.findObject("Gaus"), "Gauss", "l")
+            leg2.Draw("same")
 
         # create the output dir
         outDir = os.path.dirname(outName)

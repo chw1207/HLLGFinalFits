@@ -46,8 +46,10 @@ def main():
 
             # FIT: unbinned ML fit
             fit = simpleFit(data, xvar, mass, 110, 170)
-            fit.buildDCBplusGaussian()
+            # fit.buildDCBplusGaussian()
+            fit.buildDCB()
             fitres[mass] = fit.runFit()
+            fitres[mass].Print()
             yields[mass] = data.sumEntries()
 
             # VISUALIZATION: draw the fitting

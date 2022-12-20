@@ -66,6 +66,7 @@ int mllg_high = 170;
 int blind_low = 120;
 int blind_high = 130;
 int nBinsForMass = 60;
+int _ntoys = 2000;
 
 // plot setting
 string massName = "M_{ee#gamma} [GeV]"; // use to plot the x title
@@ -114,7 +115,7 @@ void runFit(RooAbsPdf* pdf, RooDataSet* data, double* NLL, int* stat_t, int MaxT
     while ((stat != 0) && (ntries <= MaxTries)){
         RooFitResult *fitTest = pdf->fitTo(
             *data,
-            RooFit::Save(1), RooFit::Minimizer("Minuit2", "minimize"),
+            RooFit::Save(1), RooFit::Minimizer("Minuit", "minimize"),
             RooFit::SumW2Error(true)
         );
         stat = fitTest->status();
@@ -139,12 +140,12 @@ double getProbabilityFtest(double chi2, int ndof, RooAbsPdf* pdfNull, RooAbsPdf*
     RooFitResult* fitNullData = pdfNull->fitTo(
         *data,
         RooFit::Save(1), RooFit::Strategy(1),
-        RooFit::Minimizer("Minuit2","minimize"), RooFit::SumW2Error(true), RooFit::PrintLevel(-1)
+        RooFit::Minimizer("Minuit","minimize"), RooFit::SumW2Error(true), RooFit::PrintLevel(-1)
     );
     RooFitResult* fitTestData = pdfTest->fitTo(
         *data,
         RooFit::Save(1), RooFit::Strategy(1),
-        RooFit::Minimizer("Minuit2", "minimize"), RooFit::SumW2Error(true), RooFit::PrintLevel(-1)
+        RooFit::Minimizer("Minuit", "minimize"), RooFit::SumW2Error(true), RooFit::PrintLevel(-1)
     );
 
     // Ok we want to check the distribution in toys then
@@ -156,7 +157,7 @@ double getProbabilityFtest(double chi2, int ndof, RooAbsPdf* pdfNull, RooAbsPdf*
     RooArgSet preParams_test;
     params_test->snapshot(preParams_test);
 
-    int ntoys = 1000;
+    int ntoys = _ntoys;
     TCanvas* canv = new TCanvas();
     canv->SetLogy();
     TH1F toyhist(Form("toys_fTest_%s.pdf", pdfNull->GetName()), ";Chi2;", 60, -2, 10);
@@ -196,7 +197,7 @@ double getProbabilityFtest(double chi2, int ndof, RooAbsPdf* pdfNull, RooAbsPdf*
             RooFitResult *fitNull = pdfNull->fitTo(
                 *binnedtoy,
                 RooFit::Save(1), RooFit::Strategy(1),
-                RooFit::Minimizer("Minuit2", "minimize"), RooFit::PrintLevel(-1)
+                RooFit::Minimizer("Minuit", "minimize"), RooFit::PrintLevel(-1)
             );
             //,RooFit::Optimize(0));
 
@@ -214,7 +215,7 @@ double getProbabilityFtest(double chi2, int ndof, RooAbsPdf* pdfNull, RooAbsPdf*
             RooFitResult *fitTest = pdfTest->fitTo(
                 *binnedtoy,
                 RooFit::Save(1), RooFit::Strategy(1), RooFit::SumW2Error(true), //FIXME
-                RooFit::Minimizer("Minuit2", "minimize"), RooFit::PrintLevel(-1)
+                RooFit::Minimizer("Minuit", "minimize"), RooFit::PrintLevel(-1)
             );
             nllTest = fitTest->minNll();
             stat_t = fitTest->status();
@@ -289,7 +290,7 @@ double getProbabilityFtest(double chi2, int ndof, RooAbsPdf* pdfNull, RooAbsPdf*
 
 double getGoodnessOfFit(RooRealVar* mass, RooAbsPdf* mpdf, RooDataSet* data, string name){
     double prob;
-    int ntoys = 1000;
+    int ntoys = _ntoys;
 
     // Routine to calculate the goodness of fit.
     name += "_gofTest.pdf";
@@ -328,7 +329,7 @@ double getGoodnessOfFit(RooRealVar* mass, RooAbsPdf* mpdf, RooDataSet* data, str
             RooDataHist* binnedtoy = pdf->generateBinned(RooArgSet(*mass), nToyEvents, 0, 1);
             pdf->fitTo(
                 *binnedtoy,
-                RooFit::Minimizer("Minuit2", "minimize"),
+                RooFit::Minimizer("Minuit", "minimize"),
                 RooFit::PrintLevel(-1)
             );
 
@@ -442,7 +443,7 @@ int getBestFitFunction(RooMultiPdf* bkg, RooDataSet* data, RooCategory* cat, boo
 
 		double minNll = 0; //(nllm->getVal())+bkg->getCorrection();
 		int fitStatus = 1;
-		runFit(bkg->getCurrentPdf(), data, &minNll, &fitStatus, /*max iterations*/3);
+		runFit(bkg->getCurrentPdf(), data, &minNll, &fitStatus, /*max iterations*/5);
 
         // Add the penalty
 		minNll = minNll + bkg->getCorrection();
@@ -500,7 +501,7 @@ string ReplaceAll(string str, const string& from, const string& to){
 void plot_best(RooRealVar* mass, RooMultiPdf* pdfs, RooCategory* catIndex, RooDataSet* data, string name, vector<string> HLLGCats, int cat, int bestFitPdf = -1){
     gStyle->SetOptFit(0);
 
-    TLegend* leg = new TLegend(0.42, 0.57, 0.92, 0.86);
+    TLegend* leg = new TLegend(0.42, 0.52, 0.92, 0.84);
     leg->SetFillColor(0);
     leg->SetLineColor(0);
     leg->SetTextSize(0.047);
@@ -549,7 +550,7 @@ void plot_best(RooRealVar* mass, RooMultiPdf* pdfs, RooCategory* catIndex, RooDa
     int bestcol = -1;
     for (int icat = 0; icat < catIndex->numTypes(); icat++){
         catIndex->setIndex(icat);
-        pdfs->getCurrentPdf()->fitTo(*data, RooFit::Minimizer("Minuit2", "minimize"));
+        pdfs->getCurrentPdf()->fitTo(*data, RooFit::Minimizer("Minuit", "minimize"));
         pdfs->getCurrentPdf()->plotOn(plot, LineColor(TColor::GetColorPalette((icat) * (int)(280/catIndex->numTypes() - 1))), LineStyle(style));
         TObject* pdfLeg = plot->getObject(int(plot->numItems() - 1));
         string ext = "";
@@ -819,7 +820,7 @@ int main(int argc, char** argv){
                     cout << "[INFO] Perform the F-test on: " << " category " << HLLGCats[cat] << ", " << bkgPdf->GetName() << endl;
                     // bkgPdf->Print();
 
-                    runFit(bkgPdf, data, &thisNll, &fitStatus, /*max iterations*/3);
+                    runFit(bkgPdf, data, &thisNll, &fitStatus, /*max iterations*/5);
                     if (fitStatus != 0)
                         cout << "[WARNING] Warning -- Fit status for " << bkgPdf->GetName() << " at " << fitStatus <<endl;
 
@@ -878,7 +879,7 @@ int main(int argc, char** argv){
                 else{
                     //RooFitResult *fitRes;
                     int fitStatus = 0;
-                    runFit(bkgPdf, data, &thisNll, &fitStatus, /*max iterations*/3);//bkgPdf->fitTo(*data,Save(true),RooFit::Minimizer("Minuit2","minimize"));
+                    runFit(bkgPdf, data, &thisNll, &fitStatus, /*max iterations*/5);//bkgPdf->fitTo(*data,Save(true),RooFit::Minimizer("Minuit","minimize"));
                     //thisNll = fitRes->minNll();
                     if (fitStatus != 0)
                     cout << "[WARNING] Warning -- Fit status for " << bkgPdf->GetName() << " at " << fitStatus <<endl;

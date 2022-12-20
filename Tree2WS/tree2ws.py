@@ -41,7 +41,7 @@ def add_vars_to_workspace(_ws, _var_list):
         if var == "CMS_higgs_mass":
             _vars[var] = ROOT.RooRealVar(var, var, mass, 110, 170, "GeV") # initial, lower bound, upper bound
             _vars[var].setBins(60)
-        elif var == "weight":
+        elif "weight" in var:
             _vars[var] = ROOT.RooRealVar(var, var, 0.)
         else:
             _vars[var] = ROOT.RooRealVar(var, var, 1., -999999, 999999)
@@ -67,19 +67,27 @@ def main():
         sdata = pd.DataFrame()
     print("[INFO] Read file:")
     pprint(inputTreeFile)
-    data = read_root(inputTreeFile, inputTreeName, columns=TreeVars+["category"])
+    data = read_root(inputTreeFile, inputTreeName, columns=TreeVars)
     data["type"] = "nominal"
 
     # For systematics trees: only for events in experimental phase space
+    rate_syst_list = []
     if doSystematics:
         sdf = pd.DataFrame()
         for s in systematics:
             streeName = "{}_{}".format(inputTreeName, s)
-            sdf = read_root(inputTreeFile, streeName, columns=TreeVars+["category"])
+            sdf = read_root(inputTreeFile, streeName, columns=TreeVars)
             sdf["type"] = s
             sdata = pd.concat([sdata, sdf], ignore_index=True, axis=0, sort=False)
 
-    # # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        for sw in systWeis:
+            sdf = read_root(inputTreeFile, inputTreeName, columns=TreeVars+[sw]).drop("weight", axis=1).rename(columns={sw: "weight"})
+            rate_syst = sw.replace("weight_", "")
+            rate_syst_list.append(rate_syst)
+            sdf["type"] = rate_syst
+            sdata = pd.concat([sdata, sdf], ignore_index=True, axis=0, sort=False)
+
+    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # 2) Convert pandas dataframe to RooWorkspace
     # Define output workspace file
     outputWSDir = os.path.dirname(outputWSFile)
@@ -135,6 +143,24 @@ def main():
                 dset_unc.Delete()
                 del sa
 
+            for sw in rate_syst_list:
+                # Create mask for systematic variation
+                sa = sdata[sdata["type"] == sw].query(category__[cat]).drop("type", axis=1).to_records()
+                t = array2tree(sa)
+
+                # Make argset
+                aset_unc = make_argset(ws, systematicsVars)
+                dname_unc = "set_%d_%s_%s" %(mass, cat, sw)
+                dset_unc = ROOT.RooDataSet(dname_unc, dname_unc, t, aset_unc, "", "weight")
+
+                # Add to workspace
+                getattr(ws, "import")(dset_unc)
+
+                # Delete trees and RooDataHist
+                t.Delete()
+                dset_unc.Delete()
+                del sa
+
     # Write WS to file
     ws.Write()
     fout.Close()
@@ -167,6 +193,7 @@ if __name__ == "__main__" :
     inputTreeName    = cfg["inputTreeName"]
     outputWSFile     = cfg["outputWSFiles"][productionMode]
     TreeVars         = cfg["TreeVars"]
+    systWeis         = cfg["systWeis"]
     systematicsVars  = cfg["systematicsVars"]
     systematics      = cfg["systematics"]
 

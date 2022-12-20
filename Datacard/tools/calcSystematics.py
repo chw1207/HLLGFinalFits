@@ -92,7 +92,7 @@ def addFactorySyst(sd, _syst):
                 for mass in sd["mass"].unique():
                     if (mass == "-"):
                         continue
-                    col_name = "{}_{}_{}_{}".format(_syst["name"], proc, mass, cat)
+                    col_name = "{}_{}_{}_{}_{}".format(_syst["name"], proc, mass, cat, year)
                     mask = (sd["type"] == "sig") & (sd["year"] == year) & (sd["cat"] == cat) & (sd["procOriginal"] == proc) & (sd["mass"] == mass)
                     try:
                         idx = df.index[(df["factory"] == col_name) & (df["year"] == year)]
@@ -100,4 +100,49 @@ def addFactorySyst(sd, _syst):
                     except:
                         print("Error: unknown col_name = {} or year = {} in shape uncertainties pkl".format(col_name, year))
                         sys.exit(1)
+    return sd
+
+
+def addRateSyst(sd, _syst, _rate_df):
+    # fill rate uncertainties into systematics dataframe
+    # sd[_syst["name"]] = "-"
+    if _syst["correlateAcrossYears"] == 0:
+        for year in sd["year"].unique():
+            if year == "merged":
+                continue
+
+            col_name = "{}_{}".format(_syst["name"], year)
+            sd[col_name] = "-"
+
+            for cat in sd["cat"].unique():
+                for proc in sd["procOriginal"].unique():
+                    if ((proc == "data_obs") or (proc == "bkg_mass")):
+                        continue
+                    for mass in sd["mass"].unique():
+                        if (mass == "-"):
+                            continue
+                        mask1 = (_rate_df["year"] == year) & (_rate_df["cat"] == cat) & (_rate_df["proc"] == proc) & (_rate_df["mass"] == mass)
+                        idx = _rate_df.index[mask1]
+
+                        mask2 = (sd["year"] == year) & (sd["cat"] == cat) & (sd["procOriginal"] == proc) & (sd["mass"] == mass)
+                        sd.loc[mask2, col_name] = 1+_rate_df.iloc[idx][_syst["title"]].item() # 1 means central value
+
+    if _syst["correlateAcrossYears"] == 1:
+        sd[_syst["name"]] = "-"
+        for year in sd["year"].unique():
+            if year == "merged":
+                continue
+            for cat in sd["cat"].unique():
+                for proc in sd["procOriginal"].unique():
+                    if ((proc == "data_obs") or (proc == "bkg_mass")):
+                        continue
+                    for mass in sd["mass"].unique():
+                        if (mass == "-"):
+                            continue
+                        mask1 = (_rate_df["year"] == year) & (_rate_df["cat"] == cat) & (_rate_df["proc"] == proc) & (_rate_df["mass"] == mass)
+                        idx = _rate_df.index[mask1]
+
+                        mask2 = (sd["year"] == year) & (sd["cat"] == cat) & (sd["procOriginal"] == proc) & (sd["mass"] == mass)
+                        sd.loc[mask2, _syst["name"]] = 1+_rate_df.iloc[idx][_syst["title"]].item() # 1 means central value
+
     return sd

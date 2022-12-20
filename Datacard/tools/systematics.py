@@ -42,24 +42,26 @@ experimental_systematics = [
 
     # ! FIXEDME: use 3% to estimate the following experimental uncertainties
     # Todo: HLT eff & Merged ID eff
-    {"name":"CMS_HLTeff_13TeV",   "title":"CMS_HLTeff_13TeV",    "type":"constant",  "prior":"lnN",     "correlateAcrossYears":1,      "value":"2016:1.030,2017:1.030,2018:1.030"},
-    {"name":"CMS_IDeff_e_13TeV",  "title":"CMS_IDeff_e_13TeV",   "type":"constant",  "prior":"lnN",     "correlateAcrossYears":1,      "value":"2016:1.030,2017:1.030,2018:1.030"},
-    {"name":"CMS_UE_13TeV",       "title":"CMS_UE_13TeV",        "type":"constant",  "prior":"lnN",     "correlateAcrossYears":1,      "value":"2016:1.030,2017:1.030,2018:1.030"},
-    {"name":"CMS_PS_13TeV",       "title":"CMS_PS_13TeV",        "type":"constant",  "prior":"lnN",     "correlateAcrossYears":1,      "value":"2016:1.030,2017:1.030,2018:1.030"},
+    {"name":"CMS_HLTeff_13TeV",   "title":"hlt",                "type":"rate",      "prior":"lnN",       "correlateAcrossYears":0,      "value":""},
+    {"name":"CMS_Reco_e_13TeV",   "title":"recoE",              "type":"rate",      "prior":"lnN",       "correlateAcrossYears":1,      "value":""},
+    {"name":"CMS_IDeff_e_13TeV",  "title":"eleID",              "type":"rate",      "prior":"lnN",       "correlateAcrossYears":1,      "value":""},
+    {"name":"CMS_IDeff_g_13TeV",  "title":"phoID",              "type":"rate",      "prior":"lnN",       "correlateAcrossYears":1,      "value":""},
+    {"name":"CMS_Vetoeff_13TeV",  "title":"csev",               "type":"rate",      "prior":"lnN",       "correlateAcrossYears":0,      "value":""},
 
-    # L1 prefiring weights, underlying event, parton showering, pileup reweighting, ID, HLT
-    {"name":"CMS_L1_13TeV",       "title":"CMS_L1_13TeV",        "type":"constant",  "prior":"lnN",     "correlateAcrossYears":1,     "value":"2016:1.030,2017:1.030,2018:1.030"},
-    {"name":"CMS_PU_13TeV",       "title":"CMS_PU_13TeV",        "type":"constant",  "prior":"lnN",     "correlateAcrossYears":1,     "value":"2016:1.030,2017:1.030,2018:1.030"},
-    {"name":"CMS_IDeff_g_13TeV",  "title":"CMS_IDeff_g_13TeV",   "type":"constant",  "prior":"lnN",     "correlateAcrossYears":1,     "value":"2016:1.030,2017:1.030,2018:1.030"},
+    # L1 prefiring weights, underlying event, parton showering, pileup reweighting
+    {"name":"CMS_L1_13TeV",       "title":"l1pf",               "type":"rate",      "prior":"lnN",       "correlateAcrossYears":1,       "value":""},
+    {"name":"CMS_PU_13TeV",       "title":"puwei",              "type":"rate",      "prior":"lnN",       "correlateAcrossYears":1,       "value":""},
+    {"name":"CMS_UE_13TeV",       "title":"CMS_UE_13TeV",       "type":"constant",  "prior":"lnN",       "correlateAcrossYears":1,       "value":"2016:1.030,2017:1.030,2018:1.030"},
+    {"name":"CMS_PS_13TeV",       "title":"CMS_PS_13TeV",       "type":"constant",  "prior":"lnN",       "correlateAcrossYears":1,       "value":"2016:1.030,2017:1.030,2018:1.030"},
+    
+    # # R9 reweighting: only for EBHR9, LR9 categories
+    # {"name":"CMS_R9_13TeV",       "title":"CMS_R9_13TeV",        "type":"constant",  "prior":"lnN",     "correlateAcrossYears":1,     "value":"2016:1.030,2017:1.030,2018:1.030"},
 
-    # R9 reweighting: only for EBHR9, LR9 categories
-    {"name":"CMS_R9_13TeV",       "title":"CMS_R9_13TeV",        "type":"constant",  "prior":"lnN",     "correlateAcrossYears":1,     "value":"2016:1.030,2017:1.030,2018:1.030"},
-
-    # Jet energy scale/resolution: only for VBF categories
-    {"name":"CMS_JER_13TeV",      "title":"CMS_JER_13TeV",       "type":"constant",  "prior":"lnN",     "correlateAcrossYears":1,     "value":"2016:1.030,2017:1.030,2018:1.030"},
-    {"name":"CMS_JEC_13TeV",      "title":"CMS_JEC_13TeV",       "type":"constant",  "prior":"lnN",     "correlateAcrossYears":1,     "value":"2016:1.030,2017:1.030,2018:1.030"},
+    # # Jet energy scale/resolution: only for VBF categories
+    {"name":"CMS_JER_13TeV",      "title":"JER",                "type":"rate",      "prior":"lnN",      "correlateAcrossYears":1,       "value":""},
+    {"name":"CMS_JEC_13TeV",      "title":"JEC",                "type":"rate",      "prior":"lnN",      "correlateAcrossYears":1,       "value":""},
 
     # shape uncertainties
-    {"name":"CMS_heeg_scale",      "title":"CMS_heeg_scale",     "type":"factory",   "prior":"param",   "correlateAcrossYears":1,     "value":""},
-    {"name":"CMS_heeg_resol",      "title":"CMS_heeg_resol",     "type":"factory",   "prior":"param",   "correlateAcrossYears":1,     "value":""},
+    {"name":"CMS_heeg_scale",      "title":"CMS_heeg_scale",     "type":"factory",   "prior":"param",   "correlateAcrossYears":1,       "value":""},
+    {"name":"CMS_heeg_resol",      "title":"CMS_heeg_resol",     "type":"factory",   "prior":"param",   "correlateAcrossYears":1,       "value":""},
 ]

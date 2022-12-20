@@ -7,7 +7,7 @@ from commonTools import rooiter
 from collections import OrderedDict as od
 
 class Interpolator:
-    def __init__(self, _yields, _fitres, _MHLow, _MHHigh, _year, _proc, _cat):
+    def __init__(self, _yields, _fitres, _MHLow, _MHHigh, _year, _proc, _cat, _useDCB=True):
         self.MHLow      = _MHLow    # lower bound of mass point
         self.MHHigh     = _MHHigh   # upper bound of mass point
         self.yields     = _yields   # dict contains yields @ 120, 125 and 130 GeV
@@ -19,6 +19,7 @@ class Interpolator:
         self.year       = _year     # year
         self.proc       = _proc     # production modes
         self.cat        = _cat      # category
+        self.useDCB     = _useDCB
 
         # intermediate mass points
         # set num = 11 to have 1 GeV a step: 120, 121, 122 ... 130
@@ -76,10 +77,13 @@ class Interpolator:
             for p in self.Pars.keys():
                 Vars[p] = ROOT.RooRealVar(p, p, self.Pars[p][imass])
                 Vars[p].setError(self.ParsErr[p][imass])
-
-            dcbPdf = ROOT.RooDoubleCB("DCB", "DCB", self.xvar, Vars["mean_dcb"], Vars["sigma_dcb"], Vars["a1_dcb"], Vars["n1_dcb"], Vars["a2_dcb"], Vars["n2_dcb"])
-            gauPdf = ROOT.RooGaussian("Gaus", "Gaus", self.xvar, Vars["mean_dcb"], Vars["sigma_gaus"])
-            self.FinalPdfs[mass] = ROOT.RooAddPdf("SigPdf", "SigPdf", dcbPdf, gauPdf, Vars["frac_dcb"])
+            if self.useDCB:
+                dcbPdf = ROOT.RooDoubleCB("SigPdf", "SigPdf", self.xvar, Vars["mean_dcb"], Vars["sigma_dcb"], Vars["a1_dcb"], Vars["n1_dcb"], Vars["a2_dcb"], Vars["n2_dcb"])
+                self.FinalPdfs[mass] = dcbPdf
+            else:
+                dcbPdf = ROOT.RooDoubleCB("DCB", "DCB", self.xvar, Vars["mean_dcb"], Vars["sigma_dcb"], Vars["a1_dcb"], Vars["n1_dcb"], Vars["a2_dcb"], Vars["n2_dcb"])
+                gauPdf = ROOT.RooGaussian("Gaus", "Gaus", self.xvar, Vars["mean_dcb"], Vars["sigma_gaus"])
+                self.FinalPdfs[mass] = ROOT.RooAddPdf("SigPdf", "SigPdf", dcbPdf, gauPdf, Vars["frac_dcb"])
 
             if (mass != 120) and (mass != 125) and (mass != 130):
                 self.FinalPdfs[mass].plotOn(
@@ -140,8 +144,8 @@ class Interpolator:
                 # create the factory for the shape uncertainties
                 if doSystematics:
                     # set the initial value to be 1 (inside the square brackets are the initial values)
-                    scale_var = "CMS_{}_scale_{}_{}_{}[1]".format(decayMode, self.proc, mass, self.cat)
-                    resol_var = "CMS_{}_resol_{}_{}_{}[1]".format(decayMode, self.proc, mass, self.cat)
+                    scale_var = "CMS_{}_scale_{}_{}_{}_{}[1]".format(decayMode, self.proc, mass, self.cat, self.year)
+                    resol_var = "CMS_{}_resol_{}_{}_{}_{}[1]".format(decayMode, self.proc, mass, self.cat, self.year)
                     ws.factory(scale_var)
                     ws.factory(resol_var)
 

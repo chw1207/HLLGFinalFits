@@ -1,4 +1,5 @@
-import os, sys
+import os
+from ROOT import gSystem
 from tqdm import tqdm
 from pprint import pprint
 from multiprocessing import Pool
@@ -10,22 +11,21 @@ from commonObjects import massBaseList, years, category__, twd__, productionMode
 
 def get_parser():
     parser = ArgumentParser(description="Script for submitting signal fitting jobs for finalfitslite")
-    parser.add_argument("-s",  "--script",          help="Which script to run. Options: [signalFit, makeModelPlot, calcShapeSyst]",     default="",     type=str)
-    parser.add_argument("-y",  "--year",            help="specify the year [2016, 2017, 2018, all], default = all",                     default="all",  type=str)
-    parser.add_argument("-n",  "--nCPUs",           help="Number of CPUs used to submit signal jobs(default: 10)",                      default=10,     type=int)
-    parser.add_argument("-ds", "--doSystematics",   help="Estimate the shape uncertainties",                                            default=False,  action="store_true")
+    parser.add_argument("-s",  "--script",          help="Which script to run. Options: [signalFit, makeModelPlot, calcShapeSyst, calcYieldSyst]",      default="",     type=str)
+    parser.add_argument("-y",  "--year",            help="specify the year [2016, 2017, 2018, all], default = all",                                     default="all",  type=str)
+    parser.add_argument("-n",  "--nCPUs",           help="Number of CPUs used to submit signal jobs(default: 10)",                                      default=10,     type=int)
+    parser.add_argument("-ds", "--doSystematics",   help="Estimate the shape uncertainties (only for signalFit)",                                       default=False,  action="store_true")
 
     return parser
 
 
 def execute(cmd):
-    os.system(cmd)
+    gSystem.Exec(cmd)
 
 
 def main():
     # create the dir to put log file
-    if not os.path.exists("./logger"):
-        os.system("mkdir ./logger")
+    execute("mkdir -p ./logger")
 
     # input workspace path
     if year != "all":
@@ -42,6 +42,14 @@ def main():
                     queue.append("python calcShapeSyst.py --category {} --inputWSDir {} --year {} &> ./logger/calcSyst_{}_{}.txt".format(cat, inWS[i], years[i], cat, years[i]))
             else:
                 queue.append("python calcShapeSyst.py --category {} --inputWSDir {} --year {} &> ./logger/calcSyst_{}_{}.txt".format(cat, inWS[i], years[i], cat, years[i]))
+
+    if script == "calcYieldSyst":
+        for cat in category__.keys():
+            if year == "all":
+                for i in range(len(years)):
+                    queue.append("python calcYieldSyst.py --category {} --inputWSDir {} --year {} &> ./logger/calcYieldSyst_{}_{}.txt".format(cat, inWS[i], years[i], cat, years[i]))
+            else:
+                queue.append("python calcYieldSyst.py --category {} --inputWSDir {} --year {} &> ./logger/calcYieldSyst_{}_{}.txt".format(cat, inWS[i], years[i], cat, years[i]))
 
     if script == "signalFit":
         for cat in category__.keys():
@@ -73,6 +81,7 @@ def main():
     pool.join()
 
 
+
 if __name__ == "__main__" :
     parser = get_parser()
     args = parser.parse_args()
@@ -82,8 +91,8 @@ if __name__ == "__main__" :
     doSystematics   = args.doSystematics
     n               = args.nCPUs
 
-    if script not in ["signalFit", "makeModelPlot", "calcShapeSyst"]:
+    if script not in ["signalFit", "makeModelPlot", "calcShapeSyst", "calcYieldSyst"]:
         parser.print_help()
-        sys.exit(1)
+        gSystem.Exit(1)
 
     main()

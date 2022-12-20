@@ -46,7 +46,28 @@ for mass in massBaseList:
             "MassPoint": mass,
 
             # Vars in the minitree and to be added to workspace
-            "TreeVars": ["CMS_higgs_mass", "weight"],
+            "TreeVars": [
+                "CMS_higgs_mass",
+                "weight",
+                "category"
+            ],
+
+            "systWeis": [
+                "weight_puweiUp",
+                "weight_puweiDo",
+                "weight_l1pfUp",
+                "weight_l1pfDo",
+                "weight_hltUp",
+                "weight_hltDo",
+                "weight_recoEUp",
+                "weight_recoEDo",
+                "weight_eleIDUp",
+                "weight_eleIDDo",
+                "weight_phoIDUp",
+                "weight_phoIDDo",
+                "weight_csevUp",
+                "weight_csevDo"
+            ],
 
             # Variables to add to sytematic
             "systematicsVars": ["CMS_higgs_mass", "weight"],
