@@ -113,13 +113,13 @@ def LimitSummary():
     cat_tag["Merged2Gsf_EE"]    = "Merged2Gsf EE"
     cat_tag["Merged2Gsf_EBLR9"] = "Merged2Gsf EB LR9"
     cat_tag["Merged2Gsf_EBHR9"] = "Merged2Gsf EB HR9"
-    cat_tag["tagm2"]            = "Merged2Gsf VBF Combined"
+    cat_tag["tagm2"]            = "Merged2Gsf Tagged Combined"
     cat_tag["Merged2Gsf_LVBF"]  = "Merged2Gsf LVBF"
     cat_tag["Merged2Gsf_HVBF"]  = "Merged2Gsf HVBF"
     cat_tag["Merged2Gsf_BST"]   = "Merged2Gsf Boost"
     cat_tag["re"]               = "Resolved"
     
-    yhigh = [0, 2, 2.8, 3.6, 4.5, 6.5, 7.4, 8.3, 10.3, 12.3]
+    yhigh = [0, 2, 2.8, 3.6, 4.5, 6.5, 7.4, 8.3, 9.2, 11.2]
     Limit = od([("2sigma_do", array("f", [])), ("1sigma_do", array("f", [])), ("mean", array("f", [])), ("1sigma_up", array("f", [])), ("2sigma_up", array("f", [])), ("yaxis", array("f", yhigh))])
     for key, value in cat_tag.iteritems():
         input_file = "{}/tree/higgsCombine_{}_125.AsymptoticLimits.mH125.root".format(dwd__, key)
@@ -186,7 +186,7 @@ def LimitSummary():
     mg.GetXaxis().SetLabelSize(0.04)
     mg.GetXaxis().SetTitleSize(0.04)
     mg.GetXaxis().SetTitleOffset(1.3)
-    mg.GetXaxis().SetLimits(xmin, xmax+50)
+    mg.GetXaxis().SetLimits(xmin, xmax+70)
     mg.GetXaxis().SetTitle("95% CL upper limit on #sigma/#sigma_{SM}")
     mg.GetXaxis().SetTitleOffset(1.5)
 
@@ -196,8 +196,8 @@ def LimitSummary():
     leg.SetFillStyle(0)
     leg.SetBorderSize(0)
     leg.AddEntry(expErr, "Expected", "p")
-    leg.AddEntry(sigma1, "#pm 1#sigma", "f")
-    leg.AddEntry(sigma2, "#pm 2#sigma", "f")
+    leg.AddEntry(sigma1, "68% expected", "f")
+    leg.AddEntry(sigma2, "95% expected", "f")
     leg.Draw()
 
     latex = ROOT.TLatex()

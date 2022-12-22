@@ -44,31 +44,30 @@ def main():
 
     # combine the datacrads
     mass_interp = np.linspace(massBaseList[0], massBaseList[-1], 11, endpoint=True).astype(int)
+    
     if combineCards:
         print(color.GREEN + "[INFO] Combine cards for {} categories".format(opt) + color.END)
-        for mass in mass_interp:
-            cards = ""
-            for cat in category__.keys():
-                if opt == "nom1" and "1Gsf" in cat:
-                    continue
-                if opt == "untagm2" and cat not in categoryTag["M2Untag"]:
-                    continue
-                if opt == "untagm1" and cat not in categoryTag["M1Untag"]:
-                    continue
-                if opt == "tagm2" and cat not in categoryTag["M2tag"]:
-                    continue
-                if opt == "tagm1" and cat not in categoryTag["M1tag"]:
-                    continue
-                if opt == "re":
-                    print("Warning: Resolved category do not need to combine cards. ignore...")
-                    break
-
-                cards += "./cards/datacard_{}_runII_{}_{}.txt ".format(decayMode, cat, mass)
-            if opt == "re":
-                break
-            card_comb = "./cards/datacard_{}_runII_{}_{}.txt".format(decayMode, opt, mass)
-            print("---> merged card: {}".format(card_comb))
-            execute("combineCards.py {} > {} ".format(cards, card_comb))
+        comb_opt = ["comb", "nom1", "untagm2", "untagm1", "tagm2", "tagm1"]    
+        if opt in comb_opt:
+            for mass in mass_interp:
+                cards = ""
+                for cat in category__.keys():
+                    if opt == "nom1" and "1Gsf" in cat:
+                        continue
+                    if opt == "untagm2" and cat not in categoryTag["M2Untag"]:
+                        continue
+                    if opt == "untagm1" and cat not in categoryTag["M1Untag"]:
+                        continue
+                    if opt == "tagm2" and cat not in categoryTag["M2tag"]:
+                        continue
+                    if opt == "tagm1" and cat not in categoryTag["M1tag"]:
+                        continue
+                    cards += "./cards/datacard_{}_runII_{}_{}.txt ".format(decayMode, cat, mass)
+                card_comb = "./cards/datacard_{}_runII_{}_{}.txt".format(decayMode, opt, mass)
+                print("---> merged card: {}".format(card_comb))
+                execute("combineCards.py {} > {} ".format(cards, card_comb))
+        else:
+            print("Warning: {} category do not need to combine cards. ignore...".format(opt))
 
     # calculate the limit
     exp_opt_str = "" if args.doObserved else "--expectSignal 1 -t -1"
