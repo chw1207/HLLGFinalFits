@@ -1,11 +1,12 @@
-import os, sys
+import ROOT
+import os
 import subprocess
+import json
 from tqdm import tqdm
-from pprint import pprint
 from multiprocessing import Pool
 from argparse import ArgumentParser
 from commonObjects import massBaseList, years, productionModes
-from commonTools import color
+from commonTools import cprint
 
 
 def get_parser():
@@ -19,39 +20,48 @@ def get_parser():
     parser.add_argument("-n",  "--nCPUs",           help="Number of CPUs used to convert tree to ws(default: 10)",      default=10,    type=int)
     return parser
 
-
 def convert(cmd):
-    os.system(cmd)
-
+    log = ROOT.gSystem.GetFromPipe(cmd)
+    with open(QUEUE[cmd], "w") as log_file:
+        log_file.write(str(log))
 
 def main():
     # create the dir to put log file
-    if not os.path.exists("./logger"):
-        os.system("mkdir ./logger")
+    os.makedirs("./logger", exist_ok=True)
 
     # create the queue to be submitted
-    queue = []
+    queues = []
+    logfiles = []
     if script == "tree2ws":
         for y in year:
             for p in productionMode:
                 for m in mass:
-                    if (doSystematics):
-                        queue.append("python tree2ws.py --config {} --year {} --productionMode {} --mass {} --doSystematics &> ./logger/tree2ws_{}_{}_{}.txt".format(config, y, p, m, y, p, m))
-                    else:
-                        queue.append("python tree2ws.py --config {} --year {} --productionMode {} --mass {} &> ./logger/tree2ws_{}_{}_{}.txt".format(config, y, p, m, y, p, m))
+                    command_ = f"python3 tree2ws.py --config {config} --year {y} --mass {m} --productionMode {p}"
+                    if doSystematics:
+                        command_ += " --doSystematics"
+                    logfile_ = f"./logger/tree2ws_{y}_{m}_{p}.txt"
+                    
+                    queues.append(command_)
+                    logfiles.append(logfile_)
+                    
     if script == "tree2ws_data":
-        queue.append("python tree2ws_data.py --config {} &> ./logger/tree2ws_data.txt".format(config))
-
-    print(color.GREEN + "Executing the following commands" + color.END)
-    pprint(queue)
-
+        queues.append(f"python3 tree2ws_data.py --config {config}")
+        logfile_ = "./logger/tree2ws_data.txt"
+        logfiles.append(logfile_)
+                    
+    global QUEUE
+    QUEUE = dict(zip(queues, logfiles))                
+    
+    cprint("Executing the following commands", colorStr="green")
+    cprint(json.dumps(queues, indent=4))
+    
     # submit the process
     pool = Pool(n)
-    for i in tqdm(pool.imap_unordered(convert, queue), total=len(queue)):
+    for i in tqdm(pool.imap_unordered(convert, queues), total=len(queues)):
         pass
     pool.close()
     pool.join()
-
+    
 
 if __name__ == "__main__" :
     # Extract information from config file:

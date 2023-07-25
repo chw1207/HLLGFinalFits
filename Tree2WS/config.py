@@ -1,83 +1,58 @@
 from commonObjects import massBaseList, years, twd__
+from glob import glob
 
-inDir = "/data4/chenghan/electron/miniTree"
+inDir = "/data4/chenghan/electron/miniTree_merged"
+
+# config dict 
 trees2ws_cfg = {}
 for mass in massBaseList:
     trees2ws_cfg[mass] = {}
     for year in years:
-        fdict = {}
-        if (year == 2016):
-            fdict = {
-                "ggH": ["{}/UL{}preVFP/miniTree_HDalitz_ggF_eeg_{}_UL{}preVFP.root".format(inDir, year, mass, year), "{}/UL{}postVFP/miniTree_HDalitz_ggF_eeg_{}_UL{}postVFP.root".format(inDir, year, mass, year)],
-                "VBF": ["{}/UL{}preVFP/miniTree_HDalitz_VBF_eeg_{}_UL{}preVFP.root".format(inDir, year, mass, year), "{}/UL{}postVFP/miniTree_HDalitz_VBF_eeg_{}_UL{}postVFP.root".format(inDir, year, mass, year)],
-                "WH":  ["{}/UL{}preVFP/miniTree_HDalitz_WH_eeg_{}_UL{}preVFP.root".format(inDir, year, mass, year), "{}/UL{}postVFP/miniTree_HDalitz_WH_eeg_{}_UL{}postVFP.root".format(inDir, year, mass, year)],
-                "ZH":  ["{}/UL{}preVFP/miniTree_HDalitz_ZH_eeg_{}_UL{}preVFP.root".format(inDir, year, mass, year), "{}/UL{}postVFP/miniTree_HDalitz_ZH_eeg_{}_UL{}postVFP.root".format(inDir, year, mass, year)],
-                "ttH": ["{}/UL{}preVFP/miniTree_HDalitz_ttH_eeg_{}_UL{}preVFP.root".format(inDir, year, mass, year), "{}/UL{}postVFP/miniTree_HDalitz_ttH_eeg_{}_UL{}postVFP.root".format(inDir, year, mass, year)],
-                "bbH": ["{}/UL{}preVFP/miniTree_HDalitz_bbH_eeg_{}_UL{}preVFP.root".format(inDir, year, mass, year), "{}/UL{}postVFP/miniTree_HDalitz_bbH_eeg_{}_UL{}postVFP.root".format(inDir, year, mass, year)]
-            }
-        else:
-            fdict = {
-                "ggH": ["{}/UL{}/miniTree_HDalitz_ggF_eeg_{}_UL{}.root".format(inDir, year, mass, year)],
-                "VBF": ["{}/UL{}/miniTree_HDalitz_VBF_eeg_{}_UL{}.root".format(inDir, year, mass, year)],
-                "WH":  ["{}/UL{}/miniTree_HDalitz_WH_eeg_{}_UL{}.root".format(inDir, year, mass, year)],
-                "ZH":  ["{}/UL{}/miniTree_HDalitz_ZH_eeg_{}_UL{}.root".format(inDir, year, mass, year)],
-                "ttH": ["{}/UL{}/miniTree_HDalitz_ttH_eeg_{}_UL{}.root".format(inDir, year, mass, year)],
-                "bbH": ["{}/UL{}/miniTree_HDalitz_bbH_eeg_{}_UL{}.root".format(inDir, year, mass, year)]
-            }
-
         trees2ws_cfg[mass][year] = {
-            # Input root files which contain TTree
-            "inputTreeFiles": fdict,
+            # Input root files which contain TTree and TH1D 
+            "inputTreeFiles": {
+                "ggH": glob(f"{inDir}/UL{year}*/miniTree_HDalitz_ggF_eeg_{mass}_UL{year}*.root"),
+                "VBF": glob(f"{inDir}/UL{year}*/miniTree_HDalitz_VBF_eeg_{mass}_UL{year}*.root"),
+                "WH":  glob(f"{inDir}/UL{year}*/miniTree_HDalitz_WH_eeg_{mass}_UL{year}*.root"),
+                "ZH":  glob(f"{inDir}/UL{year}*/miniTree_HDalitz_ZH_eeg_{mass}_UL{year}*.root"),
+                "ttH": glob(f"{inDir}/UL{year}*/miniTree_HDalitz_ttH_eeg_{mass}_UL{year}*.root"),
+                "bbH": glob(f"{inDir}/UL{year}*/miniTree_HDalitz_bbH_eeg_{mass}_UL{year}*.root")
+            },
 
             # Name of the input tree
             "inputTreeName":  "miniTree",
-
+            
             # Output root files which contain WS
             "outputWSFiles": {
-                "ggH": "{}/WS/{}/signal_ggH_{}.root".format(twd__, year, mass, year),
-                "VBF": "{}/WS/{}/signal_VBF_{}.root".format(twd__, year, mass, year),
-                "WH":  "{}/WS/{}/signal_WH_{}.root".format(twd__, year, mass, year),
-                "ZH":  "{}/WS/{}/signal_ZH_{}.root".format(twd__, year, mass, year),
-                "ttH": "{}/WS/{}/signal_ttH_{}.root".format(twd__, year, mass, year),
-                "bbH": "{}/WS/{}/signal_bbH_{}.root".format(twd__, year, mass, year)
+                "ggH": f"{twd__}/WS/{year}/signal_ggH_{mass}.root",
+                "VBF": f"{twd__}/WS/{year}/signal_VBF_{mass}.root",
+                "WH":  f"{twd__}/WS/{year}/signal_WH_{mass}.root",
+                "ZH":  f"{twd__}/WS/{year}/signal_ZH_{mass}.root",
+                "ttH": f"{twd__}/WS/{year}/signal_ttH_{mass}.root",
+                "bbH": f"{twd__}/WS/{year}/signal_bbH_{mass}.root"
             },
-
-            # mass point
-            "MassPoint": mass,
-
-            # Vars in the minitree and to be added to workspace
-            "TreeVars": [
-                "CMS_higgs_mass",
-                "weight",
-                "category"
-            ],
-
-            "systWeis": [
-                "weight_puweiUp",
+            
+            # weights for systematics
+            "sysWeis": [
+                "weight_EleIDDo",
+                "weight_EleIDUp",
+                "weight_HLTDo",
+                "weight_HLTUp",
+                "weight_L1PreDo",
+                "weight_L1PreUp",
+                "weight_PhoIDDo",
+                "weight_PhoIDUp",
                 "weight_puweiDo",
-                "weight_l1pfUp",
-                "weight_l1pfDo",
-                "weight_hltUp",
-                "weight_hltDo",
-                "weight_recoEUp",
-                "weight_recoEDo",
-                "weight_eleIDUp",
-                "weight_eleIDDo",
-                "weight_phoIDUp",
-                "weight_phoIDDo",
-                "weight_csevUp",
-                "weight_csevDo"
+                "weight_puweiUp"
             ],
-
-            # Variables to add to sytematic
-            "systematicsVars": ["CMS_higgs_mass", "weight"],
-
-            # List of systematics:
-            'systematics': [
+            
+            # hists of systematics: 
+            "sysHists":[
                 "JERUp",
                 "JERDo",
                 "JECUp",
                 "JECDo",
+                "PhoNoR9Corr",
                 "PhoScaleStatUp",
                 "PhoScaleSystUp",
                 "PhoScaleGainUp",
@@ -87,15 +62,6 @@ for mass in massBaseList:
                 "PhoSigmaPhiUp",
                 "PhoSigmaRhoUp",
                 "PhoSigmaRhoDo",
-                "EleScaleStatUp",
-                "EleScaleSystUp",
-                "EleScaleGainUp",
-                "EleScaleStatDo",
-                "EleScaleSystDo",
-                "EleScaleGainDo",
-                "EleSigmaPhiUp",
-                "EleSigmaRhoUp",
-                "EleSigmaRhoDo",
                 "EleHDALScaleUp",
                 "EleHDALScaleDo",
                 "EleHDALSmearUp",

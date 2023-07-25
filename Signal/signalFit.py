@@ -10,7 +10,7 @@ from Interpolation import Interpolator
 from argparse import ArgumentParser
 from collections import OrderedDict as od
 from commonObjects import inputWSName__, productionModes, swd__, massBaseList, outputWSName__
-from commonTools import color
+from commonTools import cprint
 
 
 def get_parser():
@@ -28,15 +28,15 @@ def main():
     for proc in productionModes:
         yields, fitres = od(), od()
         for mass in massBaseList:
-            print(color.GREEN + "--> Performing the nominal signal fitting of {} @ {}GeV".format(proc, mass) + color.END)
+            cprint("--> Performing the nominal signal fitting of {} @ {}GeV".format(proc, mass), colorStr="green")
             # Open ROOT file and extract workspace
-            WSFileName = "%s/signal_%s_%d.root" %(args.inputWSDir, proc, mass)
+            WSFileName = "{}/signal_{}_{}.root".format(args.inputWSDir, proc, mass)
             f = ROOT.TFile(WSFileName)
             if f.IsZombie():
                 sys.exit(1)
             inputWS = f.Get(inputWSName__)
             if not inputWS:
-                print("Fail to get workspace %s" %(inputWSName__))
+                cprint("Fail to get workspace {}".format(inputWSName__))
                 sys.exit(1)
 
             # Get dataset and var from workspace
@@ -46,8 +46,8 @@ def main():
 
             # FIT: unbinned ML fit
             fit = simpleFit(data, xvar, mass, 110, 170)
-            # fit.buildDCBplusGaussian()
-            fit.buildDCB()
+            fit.buildDCBplusGaussian()
+            # fit.buildDCB()
             fitres[mass] = fit.runFit()
             fitres[mass].Print()
             yields[mass] = data.sumEntries()
@@ -58,13 +58,13 @@ def main():
 
             # Close the input workspace file
             f.Close()
-            print("")
-
+            cprint("")
+        print(yields)
         if args.doInterpolation:
             # INTERPOLATRION: The signal models are gotten from the interpolation of the fittings pdfs @ 120, 125 and 130 GeV
             # specify save=True to save the final signal models
             outWSDir = "{}/WS/Interpolation/{}".format(swd__, args.year)
-            interp = Interpolator(yields, fitres, 110, 170, args.year, proc, args.category)
+            interp = Interpolator(yields, fitres, 110, 170, args.year, proc, args.category, False) #_useDCB=False if buildDCBplusGaussian, false, else true
             interp.calcPolation()
             interp.buildFinalPdfs(
                 save=True,
@@ -82,4 +82,8 @@ if __name__ == "__main__" :
     parser = get_parser()
     args = parser.parse_args()
 
+    # PyROOT does not display any graphics(root "-b" option)
+    ROOT.gROOT.SetBatch()
+    ROOT.gErrorIgnoreLevel = ROOT.kWarning
+    
     main()

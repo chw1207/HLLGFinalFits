@@ -1,11 +1,11 @@
 import os
-from ROOT import gSystem
+import ROOT
 from tqdm import tqdm
-from pprint import pprint
+import json
 from multiprocessing import Pool
 from argparse import ArgumentParser
 from collections import OrderedDict as od
-from commonTools import color
+from commonTools import cprint
 from commonObjects import massBaseList, years, category__, twd__, productionModes
 
 
@@ -20,12 +20,14 @@ def get_parser():
 
 
 def execute(cmd):
-    gSystem.Exec(cmd)
+    log = ROOT.gSystem.GetFromPipe(cmd)
+    with open(QUEUE[cmd], "w") as log_file:
+        log_file.write(str(log))
 
 
 def main():
     # create the dir to put log file
-    execute("mkdir -p ./logger")
+    os.makedirs("./logger", exist_ok=True)
 
     # input workspace path
     if year != "all":
@@ -34,51 +36,136 @@ def main():
         inWS = ["%s/WS/%s"%(twd__, _y) for _y in years]
 
     # create the queue to be submitted
-    queue = []
+    queues = []
+    logfiles = []
+
     if script == "calcShapeSyst":
         for cat in category__.keys():
             if year == "all":
                 for i in range(len(years)):
-                    queue.append("python calcShapeSyst.py --category {} --inputWSDir {} --year {} &> ./logger/calcSyst_{}_{}.txt".format(cat, inWS[i], years[i], cat, years[i]))
+                    command_ = "python3 calcShapeSyst.py --category {} --inputWSDir {} --year {}".format(cat, inWS[i], years[i])
+                    logfile_ = "./logger/calcSyst_{}_{}.txt".format(cat, years[i])
+                    queues.append(command_)
+                    logfiles.append(logfile_)
             else:
-                queue.append("python calcShapeSyst.py --category {} --inputWSDir {} --year {} &> ./logger/calcSyst_{}_{}.txt".format(cat, inWS[i], years[i], cat, years[i]))
+                command_ = "python3 calcShapeSyst.py --category {} --inputWSDir {} --year {}".format(cat, inWS, year)
+                logfile_ = "./logger/calcSyst_{}_{}.txt".format(cat, year)
+                queues.append(command_)
+                logfiles.append(logfile_)
 
     if script == "calcYieldSyst":
         for cat in category__.keys():
             if year == "all":
                 for i in range(len(years)):
-                    queue.append("python calcYieldSyst.py --category {} --inputWSDir {} --year {} &> ./logger/calcYieldSyst_{}_{}.txt".format(cat, inWS[i], years[i], cat, years[i]))
+                    command_ = "python3 calcYieldSyst.py --category {} --inputWSDir {} --year {} ".format(cat, inWS[i], years[i])
+                    logfile_ = "./logger/calcYieldSyst_{}_{}.txt".format( cat, years[i])
+                    queues.append(command_)
+                    logfiles.append(logfile_)
             else:
-                queue.append("python calcYieldSyst.py --category {} --inputWSDir {} --year {} &> ./logger/calcYieldSyst_{}_{}.txt".format(cat, inWS[i], years[i], cat, years[i]))
+                command_ = "python3 calcYieldSyst.py --category {} --inputWSDir {} --year {} ".format(cat, inWS, year)
+                logfile_ = "./logger/calcYieldSyst_{}_{}.txt".format(cat, year)
+                queues.append(command_)
+                logfiles.append(logfile_)
 
     if script == "signalFit":
         for cat in category__.keys():
             if year == "all":
                 for i in range(len(years)):
+                    command_ = "python3 signalFit.py --category {} --year {} --inputWSDir {} --doInterpolation".format(cat, years[i], inWS[i])
                     if doSystematics:
-                        queue.append("python signalFit.py --category {} --year {} --inputWSDir {} --doInterpolation --doSystematics &> ./logger/signalFit_{}_{}.txt".format(cat, years[i], inWS[i], cat, years[i]))
-                    else:
-                        queue.append("python signalFit.py --category {} --year {} --inputWSDir {} --doInterpolation &> ./logger/signalFit_{}_{}.txt".format(cat, years[i], inWS[i], cat, years[i]))
+                        command_ += " --doSystematics"
+                    logfile_ = "./logger/signalFit_{}_{}.txt".format(cat, years[i])
+                    queues.append(command_)
+                    logfiles.append(logfile_)
             else:
+                command_ = "python3 signalFit.py --category {} --year {} --inputWSDir {} --doInterpolation".format(cat, year, inWS)
                 if doSystematics:
-                    queue.append("python signalFit.py --category {} --year {} --inputWSDir {} --doInterpolation --doSystematics &> ./logger/signalFit_{}_{}.txt".format(cat, year, inWS, cat, year))
-                else:
-                    queue.append("python signalFit.py --category {} --year {} --inputWSDir {} --doInterpolation &> ./logger/signalFit_{}_{}.txt".format(cat, year, inWS, cat, year))
-
+                    command_ += " --doSystematics"
+                logfile_ = "./logger/signalFit_{}_{}.txt".format(cat, year)
+                queues.append(command_)
+                logfiles.append(logfile_)
+    
     if script == "makeModelPlot":
         for cat in category__.keys():
             for proc in productionModes:
-                queue.append("python makeModelPlot.py --category {} --process {} &> ./logger/makeModelPlot_{}_{}.txt".format(cat, proc, cat, proc))
-
-    print(color.GREEN + "Executing the following commands using {} cores".format(n) + color.END)
-    pprint(queue)
+                command_ = "python3 makeModelPlot.py --category {} --process {} ".format(cat, proc)
+                logfile_ = "./logger/makeModelPlot_{}_{}.txt".format(cat, proc)
+                queues.append(command_)
+                logfiles.append(logfile_)
+    
+    global QUEUE
+    QUEUE = dict(zip(queues, logfiles))  
+         
+    cprint("Executing the following commands using {} cores".format(n), colorStr="green")
+    cprint(json.dumps(queues, indent=4))
 
     # submit the process
     pool = Pool(n)
-    for i in tqdm(pool.imap_unordered(execute, queue), total=len(queue)):
+    for i in tqdm(pool.imap_unordered(execute, queues), total=len(queues)):
         pass
     pool.close()
     pool.join()
+
+# def execute(cmd):
+#     gSystem.Exec(cmd)
+
+
+# def main():
+#     # create the dir to put log file
+#     execute("mkdir -p ./logger")
+
+#     # input workspace path
+#     if year != "all":
+#         inWS = "%s/WS/%s"%(twd__, year)
+#     else:
+#         inWS = ["%s/WS/%s"%(twd__, _y) for _y in years]
+
+#     # create the queue to be submitted
+#     queue = []
+#     if script == "calcShapeSyst":
+#         for cat in category__.keys():
+#             if year == "all":
+#                 for i in range(len(years)):
+#                     queue.append("python calcShapeSyst.py --category {} --inputWSDir {} --year {} &> ./logger/calcSyst_{}_{}.txt".format(cat, inWS[i], years[i], cat, years[i]))
+#             else:
+#                 queue.append("python calcShapeSyst.py --category {} --inputWSDir {} --year {} &> ./logger/calcSyst_{}_{}.txt".format(cat, inWS[i], years[i], cat, years[i]))
+
+#     if script == "calcYieldSyst":
+#         for cat in category__.keys():
+#             if year == "all":
+#                 for i in range(len(years)):
+#                     queue.append("python calcYieldSyst.py --category {} --inputWSDir {} --year {} &> ./logger/calcYieldSyst_{}_{}.txt".format(cat, inWS[i], years[i], cat, years[i]))
+#             else:
+#                 queue.append("python calcYieldSyst.py --category {} --inputWSDir {} --year {} &> ./logger/calcYieldSyst_{}_{}.txt".format(cat, inWS[i], years[i], cat, years[i]))
+
+#     if script == "signalFit":
+#         for cat in category__.keys():
+#             if year == "all":
+#                 for i in range(len(years)):
+#                     if doSystematics:
+#                         queue.append("python signalFit.py --category {} --year {} --inputWSDir {} --doInterpolation --doSystematics &> ./logger/signalFit_{}_{}.txt".format(cat, years[i], inWS[i], cat, years[i]))
+#                     else:
+#                         queue.append("python signalFit.py --category {} --year {} --inputWSDir {} --doInterpolation &> ./logger/signalFit_{}_{}.txt".format(cat, years[i], inWS[i], cat, years[i]))
+#             else:
+#                 if doSystematics:
+#                     queue.append("python signalFit.py --category {} --year {} --inputWSDir {} --doInterpolation --doSystematics &> ./logger/signalFit_{}_{}.txt".format(cat, year, inWS, cat, year))
+#                 else:
+#                     queue.append("python signalFit.py --category {} --year {} --inputWSDir {} --doInterpolation &> ./logger/signalFit_{}_{}.txt".format(cat, year, inWS, cat, year))
+
+#     if script == "makeModelPlot":
+#         for cat in category__.keys():
+#             for proc in productionModes:
+#                 queue.append("python makeModelPlot.py --category {} --process {} &> ./logger/makeModelPlot_{}_{}.txt".format(cat, proc, cat, proc))
+
+#     print(color.GREEN + "Executing the following commands using {} cores".format(n) + color.END)
+#     pprint(queue)
+
+#     # submit the process
+#     pool = Pool(n)
+#     for i in tqdm(pool.imap_unordered(execute, queue), total=len(queue)):
+#         pass
+#     pool.close()
+#     pool.join()
 
 
 

@@ -16,7 +16,24 @@ class color:
    BOLD = "\033[1m"
    UNDERLINE = "\033[4m"
    END = "\033[0m"
-
+   
+colorDict = {
+    "PURPLE": "\033[95m",
+    "CYAN": "\033[96m",
+    "DARKCYAN": "\033[36m",
+    "BLUE": "\033[94m",
+    "GREEN": "\033[92m",
+    "YELLOW": "\033[93m",
+    "RED": "\033[91m",
+    "BOLD": "\033[1m",
+    "UNDERLINE": "\033[4m",
+    "END": "\033[0m"
+}
+def cprint(text, colorStr=""):
+    if len(colorStr) == 0:
+        print(text, flush=True)
+    else:
+        print(colorDict[colorStr.upper()] + text + colorDict["END"], flush=True) 
 
 # Function for iterating over ROOT argsets in workspace
 # https://root-forum.cern.ch/t/iterating-over-rooargset/16331/2

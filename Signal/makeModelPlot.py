@@ -10,6 +10,7 @@ from collections import OrderedDict as od
 from CMS_lumi import CMS_lumi
 from sigmaEff import sigmaEff
 from commonObjects import inputWSName__, twd__, swd__, outputWSName__, yearsStr
+ROOT.gInterpreter.ProcessLine(" #include \"./tools/effSigma.h\" ")
 
 
 def get_parser():
@@ -26,8 +27,7 @@ def get_ws(fwname, wname):
     fw = ROOT.TFile(fwname, "READ")
     if fw.IsZombie():
         sys.exit(1)
-    inWS = ROOT.RooWorkspace()
-    fw.GetObject(wname, inWS)
+    inWS = fw.Get(wname)
     fw.Close()
     return inWS
 
@@ -196,6 +196,12 @@ def main():
             vall.append(ods_value)
         xmin["{}".format(year)], xmax["{}".format(year)], eff_sigma["{}".format(year)] = sigmaEff(np.array(v))
 
+        # hist_year = ROOT.TH1F("hyear", "", 60, 110, 170)
+        # data[year].fillHistogram(hist_year, ROOT.RooArgList(CMS_higgs_mass)) # fill the histogram for dataset
+        # v_sigma = ROOT.effSigma(hist_year)
+        # xmin["{}".format(year)], xmax["{}".format(year)], eff_sigma["{}".format(year)] = v_sigma[0], v_sigma[1], v_sigma[2]
+        # hist_year.Delete()
+        
         # extract the final models per year
         fpdfname = "{}/WS/Interpolation/{}/CMS_HLLG_Interp_{}_{}_{}_{}.root".format(swd__, year, args.mass, args.process, year, args.category)
         inputWSPdf = get_ws(fpdfname, outputWSName__)
@@ -204,9 +210,11 @@ def main():
 
     # calculate the effective sigma for 3 years
     xmin["all"], xmax["all"], eff_sigma["all"] = sigmaEff(np.array(vall))
+    # v_sigma_all = ROOT.effSigma(hists["data"])
+    # xmin["all"], xmax["all"], eff_sigma["all"] = v_sigma_all[0], v_sigma_all[1], v_sigma_all[2]
 
     # Sum pdf histograms
-    for k, p in hpdfs.iteritems():
+    for k, p in hpdfs.items():
         if "pdf" not in hists:
             hists["pdf"] = p.Clone("h_pdf")
             hists["pdf"].Reset()
@@ -218,7 +226,7 @@ def main():
         if "pdf_{}".format(year) not in hists:
             hists["pdf_{}".format(year)] = hists["pdf"].Clone()
             hists["pdf_{}".format(year)].Reset()
-        for i, p in hpdfs.iteritems():
+        for i, p in hpdfs.items():
             if year == i:
                 hists["pdf_{}".format(year)] += p
         hists["pdf_{}".format(year)].Scale(data[year].sumEntries() * ScaleNumber / hists["pdf_{}".format(year)].Integral())
@@ -236,4 +244,8 @@ if __name__ == "__main__" :
     parser = get_parser()
     args = parser.parse_args()
 
+    # PyROOT does not display any graphics(root "-b" option)
+    ROOT.gROOT.SetBatch()
+    ROOT.gErrorIgnoreLevel = ROOT.kWarning
+    
     main()

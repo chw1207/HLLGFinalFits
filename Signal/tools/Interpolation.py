@@ -12,9 +12,6 @@ class Interpolator:
         self.MHHigh     = _MHHigh   # upper bound of mass point
         self.yields     = _yields   # dict contains yields @ 120, 125 and 130 GeV
         self.fitres     = _fitres   # dict contains fit results @ 120, 125 and 130 GeV
-        if self.yields.keys().sort() != self.fitres.keys().sort():
-            print("Error: yields and fit results do not have the same mass points as keys!")
-            sys.exit(1)
 
         self.year       = _year     # year
         self.proc       = _proc     # production modes
@@ -23,7 +20,7 @@ class Interpolator:
 
         # intermediate mass points
         # set num = 11 to have 1 GeV a step: 120, 121, 122 ... 130
-        self.xmass      = self.fitres.keys() # 3 mass points (should be 120, 125, 130)
+        self.xmass      = list(self.fitres.keys()) # 3 mass points (should be 120, 125, 130)
         self.xmass_intp = np.linspace(self.xmass[0], self.xmass[-1], 11, endpoint=True).astype(int)
 
         # Dicts to store all fit parameters, pdfs
@@ -45,7 +42,7 @@ class Interpolator:
     def calcPolation(self):
         # extract the parameter from the first fit result
         pars = [i.GetName() for i in rooiter(self.fitres[self.xmass[0]].floatParsFinal())]
-
+        
         # fill the par values in the fit results into dict
         par_dict = od([(p, [1.]*len(self.xmass)) for p in pars])
         parErr_dict = od([(p, [0.]*len(self.xmass)) for p in pars])
@@ -58,7 +55,7 @@ class Interpolator:
         parErr_dict_intp = od([(p, [0.]*len(self.xmass_intp)) for p in pars])
 
         # interpolation: https://numpy.org/doc/stable/reference/generated/numpy.interp.html
-        self.norms = np.interp(self.xmass_intp, self.xmass, self.yields.values())
+        self.norms = np.interp(self.xmass_intp, self.xmass, list(self.yields.values()))
         for p in pars:
             par_dict_intp[p] = np.interp(self.xmass_intp, self.xmass, par_dict[p])
             parErr_dict_intp[p] = np.interp(self.xmass_intp, self.xmass, parErr_dict[p])
@@ -129,14 +126,14 @@ class Interpolator:
 
                 # create the workspace to save
                 ws = ROOT.RooWorkspace(outWS)
-                ws.imp = getattr(ws, "import")
-                ws.imp(self.FinalPdfs[mass])
-                ws.imp(ExpYield)
+                ws.Import(self.FinalPdfs[mass])
+                ws.Import(ExpYield)
 
                 # define params set
                 aset = ROOT.RooArgSet()
                 for p in self.Pars.keys():
-                    aset.add(ws.var(p))
+                    aset.add(ws.var(Vars[p].GetName()))
+
                 ws.defineSet("SigPdfParams", aset)
                 for _var in rooiter(ws.set("SigPdfParams")):
                     _var.setConstant(True)
@@ -156,7 +153,7 @@ class Interpolator:
                     ws.factory("prod::new_sigma_dcb(sigma_dcb, {})".format(resol_var))
 
                     # modify the final models
-                    ws.factory("EDIT:NewSigPdf(SigPdf, mean_dcb = new_mean_dcb, sigma_dcb = new_sigma_dcb)")
+                    ws.factory("EDIT:NewSigPdf(SigPdf, mean_dcb=new_mean_dcb, sigma_dcb=new_sigma_dcb)")
 
                 ws.Write()
                 fws.Close()
@@ -211,7 +208,7 @@ class Interpolator:
         leg1.AddEntry(self.xframe.findObject("130"), "PDF-130 GeV ", "l")
         leg1.Draw()
 
-        CMS_lumi(c, 4, 11, "", self.year, True, "Simulation", "H #rightarrow #gamma*#gamma #rightarrow ee#gamma", "")
+        CMS_lumi(c, 5, 10, "", self.year, True, "Simulation", "H #rightarrow #gamma*#gamma #rightarrow ee#gamma", "")
 
         # create the output dir
         outDir = os.path.dirname(outName)

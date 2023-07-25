@@ -1,8 +1,9 @@
 import os, sys
 from tqdm import tqdm
 from pprint import pprint
+import json
 from multiprocessing import Pool
-from commonTools import color
+from commonTools import cprint
 from commonObjects import category__, twd__
 
 
@@ -22,11 +23,12 @@ def main():
     # create the queue to be submitted
     queue = []
     for c in range(len(category__.keys())):
-        queue.append("./bin/fTest_v2 --infile {} --runFtestCheckWithToys --singleCat {} --HLLGCats {} &> ./logger/fTest_v2_{}.txt".format(infile, c, HLLGCatsStr, category__.keys()[c]))
+        queue.append("./bin/fTest_v2 --infile {} --runFtestCheckWithToys --singleCat {} --HLLGCats {} &> ./logger/fTest_v2_{}.txt".format(infile, c, HLLGCatsStr, list(category__.keys())[c]))
 
     n = len(category__.keys())
-    print(color.GREEN + "Executing the following commands using {} cores".format(n) + color.END)
-    pprint(queue)
+    cprint("Executing the following commands using {} cores".format(n), colorStr="green")
+    
+    cprint(json.dumps(queue, indent=4))
 
     # submit the process
     pool = Pool(n)

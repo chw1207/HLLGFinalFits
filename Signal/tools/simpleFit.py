@@ -15,13 +15,13 @@ class simpleFit:
         # gauss shares the same mean as DCB
         _pars = od()
         _pars["DCB"] = od()
-        _pars["DCB"]["mean"] = [self.MH, self.MH - 3, self.MHHigh + 3] # nominal, lower, upper (fitting range)
-        _pars["DCB"]["sigma"] = [1.5, 0.1, 5]
-        _pars["DCB"]["n1"] = [2, 0, 15]
-        _pars["DCB"]["n2"] = [1, 0, 15]
-        _pars["DCB"]["a1"] = [1, 0, 10]
-        _pars["DCB"]["a2"] = [5, 0, 10]
-        _pars["DCB"]["frac"] = [0.9, 0.6, 0.9999999999] # fraction of DCB
+        _pars["DCB"]["mean"] = [self.MH, self.MH - 2, self.MHHigh + 2] # nominal, lower, upper (fitting range)
+        _pars["DCB"]["sigma"] = [2, 0.1, 5]
+        _pars["DCB"]["n1"] = [5, 0.1, 10] # n: normalization
+        _pars["DCB"]["n2"] = [3, 0.1, 10]
+        _pars["DCB"]["a1"] = [1, 0.1, 15] # a: Gaussian tail
+        _pars["DCB"]["a2"] = [2, 0.1, 15]
+        _pars["DCB"]["frac"] = [0.9, 0.6, 0.99] # fraction of DCB
         _pars["Gaus"] = od()
         _pars["Gaus"]["sigma"] = [25., 16, 100]
 
@@ -166,7 +166,7 @@ class simpleFit:
         c.SetLogy()
         xframe.Draw()
 
-        CMS_lumi(c, 4, 11, "", year, True, "Simulation", "H #rightarrow #gamma* #gamma #rightarrow ee#gamma", "")
+        CMS_lumi(c, 5, 10, "", year, True, "Simulation", "H #rightarrow #gamma* #gamma #rightarrow ee#gamma", "")
         c.Update()
         c.RedrawAxis()
 

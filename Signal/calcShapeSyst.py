@@ -13,10 +13,10 @@ import ROOT
 import pickle
 import numpy as np
 import pandas as pd
-from sigmaEff import sigmaEff
 from argparse import ArgumentParser
 from commonObjects import productionModes, inputWSName__, swd__, massBaseList, decayMode
 from commonTools import color
+ROOT.gInterpreter.ProcessLine(" #include \"./tools/effSigma.h\" ")
 
 def get_parser():
     parser = ArgumentParser(description="Script to calculate effect of the shape systematic uncertainties")
@@ -29,66 +29,67 @@ def get_parser():
     return parser
 
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Function to extact sets from WS
-def getDataSets(_ws, _nominalDataName, _sname):
-    # Define datasets
-    rds_nominal = _ws.data(_nominalDataName)
-    if (not rds_nominal):
-        print("Fail to get RooDataSet %s" %(_nominalDataName))
-        sys.exit(1)
-    rds_up = _ws.data("%s_%sUp" %(_nominalDataName, _sname))
-    if (not rds_up):
-        print("Fail to get RooDataSet %s_%sUp" %(_nominalDataName, _sname))
-        sys.exit(1)
 
-    # For Smearing "PhiUp" and "PhiDown" are currently identical so you would have three templates, "RhoUp","RhoDown","PhiUp".
+# Function to extact hists of systematics from WS
+def getDataHists(_ws, _nominalDataName, _sname, _var):
+    hname_nominal = _nominalDataName.replace("set", "hist_nominal_{}".format(_sname))
+    hname_up = hname_nominal.replace("nominal", "up")
+    hname_do = hname_nominal.replace("nominal", "do")
+    
+    _hists = {
+        "nominal": ROOT.TH1F(hname_nominal, "", 60, 110, 170),
+        "up"     : ROOT.TH1F(hname_up, "", 60, 110, 170),
+        "do"     : ROOT.TH1F(hname_do, "", 60, 110, 170)
+    }
+    
+    # get data
+    ds_nominal = _ws.data(_nominalDataName)
+    dh_name = _nominalDataName.replace("set", "dh")
+    dh_up = _ws.data("%s_%sUp" %(dh_name, _sname))
     if "SigmaPhi" in _sname:
-        rds_do = _ws.data("%s_%sUp" %(_nominalDataName, _sname))
+        dh_do = dh_up
     else:
-        rds_do = _ws.data("%s_%sDo" %(_nominalDataName, _sname))
-    if (not rds_do):
-        print("Fail to get RooDataSet %s_%sDo" %(_nominalDataName, _sname))
-        sys.exit(1)
+        dh_do = _ws.data("%s_%sDo" %(dh_name, _sname))
+    
+    # convert to TH1
+    ds_nominal.fillHistogram(_hists["nominal"], ROOT.RooArgList(_var))
+    dh_up.fillHistogram(_hists["up"], ROOT.RooArgList(_var))
+    dh_do.fillHistogram(_hists["do"], ROOT.RooArgList(_var))
 
-    _sets = {}
-    _sets["nominal"] = rds_nominal
-    _sets["Up"] = rds_up
-    _sets["Do"] = rds_do
-    return _sets
+    return _hists
 
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Functions to extract mean and sigma variations
-def getMeanVar(_sets, _var):
+def getMeanVar(_hists):
     mu, muVar = {}, {}
-    for stype, s in _sets.iteritems():
-        mu[stype] = s.mean(_var)
-    for stype in ["Up", "Do"]:
-        muVar[stype] = (mu[stype] - mu["nominal"]) / mu["nominal"]
-    x = np.float64((abs(muVar["Up"]) + abs(muVar["Do"])) / 2)
+    for htype, h in _hists.items():
+        mu[htype] = h.GetMean()
+    
+    for htype in ["up", "do"]:
+        muVar[htype] = (mu[htype] - mu["nominal"]) / mu["nominal"]
+    
+    x = np.float64((abs(muVar["up"]) + abs(muVar["do"])) / 2)
     if (np.isnan(x)):
         print("Get NaN mean variation")
         sys.exit(1)
     return min(x, args.thresholdMean)
 
 
-def getSigmaVar(_sets):
+def getSigmaVar(_hists):
     sigma, sigmaVar = {}, {}
-    for stype, s in _sets.iteritems():
-        arr = np.array([s.get(i).find("CMS_higgs_mass").getVal() for i in range(s.numEntries())])
-        xmin, xmax, sigma_eff = sigmaEff(arr)
-        sigma[stype] = sigma_eff
-    for stype in ["Up", "Do"]:
-        sigmaVar[stype] = (sigma[stype] - sigma["nominal"]) / sigma["nominal"]
-    x = np.float64((abs(sigmaVar["Up"]) + abs(sigmaVar["Do"])) / 2) # average
+    for htype, h in _hists.items():
+        sigma[htype] = ROOT.effSigma(h)[2] # min, max, width
+
+    for htype in ["up", "do"]:
+        sigmaVar[htype] = (sigma[htype] - sigma["nominal"]) / sigma["nominal"]
+    
+    x = np.float64((abs(sigmaVar["up"]) + abs(sigmaVar["do"])) / 2) # average
     if (np.isnan(x)):
         print("Get NaN sigma variation")
         sys.exit(1)
     return min(x, args.thresholdSigma)
 
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def main(mass):
     shape_variations = [
         "PhoScaleStat",
@@ -129,8 +130,12 @@ def main(mass):
     for _proc in productionModes:
         _WSFileName = "%s/signal_%s_%s.root" %(args.inputWSDir, _proc, mass)
         _nominalDataName = "set_%s_%s" %(mass, args.category)
-        data_scale = data_scale.append({"proc":_proc, "cat":args.category, "mass":mass, "year":args.year, "inputWSFile":_WSFileName, "nominalDataName":_nominalDataName}, ignore_index=True, sort=False)
-        data_resol = data_resol.append({"proc":_proc, "cat":args.category, "mass":mass, "year":args.year, "inputWSFile":_WSFileName, "nominalDataName":_nominalDataName}, ignore_index=True, sort=False)
+        
+        data_scale_proc = pd.DataFrame({"proc":_proc, "cat":args.category, "mass":mass, "year":args.year, "inputWSFile":_WSFileName, "nominalDataName":_nominalDataName}, index=[0])
+        data_scale = pd.concat([data_scale, data_scale_proc], ignore_index=True, sort=False)
+        
+        data_resol_proc = pd.DataFrame({"proc":_proc, "cat":args.category, "mass":mass, "year":args.year, "inputWSFile":_WSFileName, "nominalDataName":_nominalDataName}, index=[0])
+        data_resol = pd.concat([data_resol, data_resol_proc], ignore_index=True, sort=False)
 
     # add the scale unc to dataframe
     for ir, r in data_scale.iterrows():
@@ -145,11 +150,15 @@ def main(mass):
             sys.exit(1)
         # Add values to dataFrame
         for s in shape_scale:
-            sets = getDataSets(inputWS, r["nominalDataName"], s)
-            _meanVar = getMeanVar(sets, inputWS.var("CMS_higgs_mass"))
+            hists = getDataHists(inputWS, r["nominalDataName"], s, inputWS.var("CMS_higgs_mass"))
+            _meanVar = getMeanVar(hists)
             data_scale.at[ir, s] = _meanVar
+            for var, h in hists.items():
+                h.Delete()
         # close file
         f.Close()
+    
+      
     shape_scale_ele = [s for s in shape_scale if "Ele" in s]
     shape_scale_pho = [s for s in shape_scale if "Pho" in s]
     if (len(shape_scale_ele) != 1):
@@ -176,11 +185,12 @@ def main(mass):
             sys.exit(1)
         # Add values to dataFrame
         for s in shape_resol:
-            sets = getDataSets(inputWS, r["nominalDataName"], s)
-            _sigmaVar = getSigmaVar(sets)
+            hists = getDataHists(inputWS, r["nominalDataName"], s, inputWS.var("CMS_higgs_mass"))
+            _sigmaVar = getSigmaVar(hists)
             data_resol.at[ir, s] = _sigmaVar
         # close file
         f.Close()
+    
     shape_resol_ele = [s for s in shape_resol if "Ele" in s]
     shape_resol_pho = [s for s in shape_resol if "Pho" in s]
     if (len(shape_resol_ele) != 1):
@@ -197,7 +207,6 @@ def main(mass):
     return data_scale, data_resol
 
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def calcFactory(df, shape=""):
     if shape not in ["scale", "resol"]:
         print("Error: unknown shape type: {}, available type [scale, resol]".format(shape))
@@ -233,6 +242,10 @@ def calcFactory(df, shape=""):
 if __name__ == "__main__" :
     parser = get_parser()
     args = parser.parse_args()
+    
+    # PyROOT does not display any graphics(root "-b" option)
+    ROOT.gROOT.SetBatch()
+    ROOT.gErrorIgnoreLevel = ROOT.kWarning
 
     df_scale_list, df_resol_list = [], []
     for _m in massBaseList:
