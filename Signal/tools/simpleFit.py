@@ -2,6 +2,7 @@ import os
 import ROOT
 from collections import OrderedDict as od
 from CMS_lumi import CMS_lumi
+from commonObjects import decayText, massText
 
 class simpleFit:
     def __init__(self, _data, _xvar, _MH, _MHLow, _MHHigh):
@@ -92,20 +93,19 @@ class simpleFit:
     def setNBins(self, bins):
         self.nBins = bins
 
-    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    def getChi2(self):
-        print("INFO: Binned dataset with {} bins to calculate chi2.".format(self.nBins))
-        self.xvar.setBins(self.nBins)
-        dh = self.data.binnedClone()
-        chi2 =  ROOT.RooChi2Var("chi2", "chi2", self.Pdfs["SigPdf"], dh, ROOT.RooFit.DataError(ROOT.RooAbsData.Expected))
-        return chi2.getVal()
+    # # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # def getChi2(self):
+    #     print("INFO: Binned dataset with {} bins to calculate chi2.".format(self.nBins))
+    #     self.xvar.setBins(self.nBins)
+    #     dh = self.data.binnedClone()
+    #     chi2 =  ROOT.RooChi2Var("chi2", "chi2", self.Pdfs["SigPdf"], dh, ROOT.RooFit.DataError(ROOT.RooAbsData.Expected))
+    #     return chi2.getVal()
 
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    # xName: x-axis label
     # catName: name of category put on the plot
     # procName: name of process put on the plot
     # outName: path to save the plot
-    def visualize(self, year, xName, catName, procName, outName):
+    def visualize(self, year, catName, procName, outName):
         ROOT.gStyle.SetPadTickX(1)
         ROOT.gStyle.SetPadTickY(1)
         ROOT.gStyle.SetOptStat(0)
@@ -113,7 +113,7 @@ class simpleFit:
         xframe = self.xvar.frame(self.MHLow, self.MHHigh)
         self.data.plotOn(
             xframe, ROOT.RooFit.Name("set"),
-            ROOT.RooFit.Binning(self.nBins),
+            # ROOT.RooFit.Binning(self.nBins),
             ROOT.RooFit.MarkerStyle(ROOT.kFullCircle), ROOT.RooFit.MarkerSize(1.5), ROOT.RooFit.XErrorSize(10e-5),
             ROOT.RooFit.DataError(ROOT.RooDataSet.SumW2)
         )
@@ -136,7 +136,7 @@ class simpleFit:
 
         self.data.plotOn(
             xframe, ROOT.RooFit.Name("set"),
-            ROOT.RooFit.Binning(self.nBins),
+            # ROOT.RooFit.Binning(self.nBins),
             ROOT.RooFit.MarkerStyle(ROOT.kFullCircle), ROOT.RooFit.MarkerSize(1.5), ROOT.RooFit.XErrorSize(10e-5),
             ROOT.RooFit.DataError(ROOT.RooDataSet.SumW2)
         )
@@ -147,7 +147,7 @@ class simpleFit:
         xframe.GetXaxis().SetLabelSize(0.04)
         xframe.GetXaxis().SetLabelOffset(0.02)
         xframe.GetXaxis().SetTitleOffset(1.4)
-        xframe.GetXaxis().SetTitle(xName)
+        xframe.GetXaxis().SetTitle(massText)
         xframe.GetYaxis().SetTitle("Signal shape / ({} GeV)".format((self.MHHigh - self.MHLow)/self.nBins))
         xframe.GetYaxis().SetNdivisions(510)
         xframe.GetYaxis().SetTickSize(0.03)
@@ -166,7 +166,7 @@ class simpleFit:
         c.SetLogy()
         xframe.Draw()
 
-        CMS_lumi(c, 5, 10, "", year, True, "Simulation", "H #rightarrow #gamma* #gamma #rightarrow ee#gamma", "")
+        CMS_lumi(c, 5, 10, "", year, True, "Simulation", decayText, "")
         c.Update()
         c.RedrawAxis()
 

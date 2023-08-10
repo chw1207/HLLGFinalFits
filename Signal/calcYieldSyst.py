@@ -15,7 +15,7 @@ def get_parser():
     parser.add_argument("-c",   "--category",        help="RECO category",                                           default="",     type=str)
     parser.add_argument("-y",   "--year",            help="year",                                                    default="",     type=str)
     parser.add_argument("-i",   "--inputWSDir",      help="Input WS directory",                                      default="",     type=str)
-    parser.add_argument("-tr",  "--thresholdRate",   help="Reject mean variations if larger than thresholdRate",     default=0.5,      type=float)
+    parser.add_argument("-tr",  "--thresholdRate",   help="Reject mean variations if larger than thresholdRate",     default=0.5,    type=float)
 
     return parser
 
@@ -46,6 +46,17 @@ def getDataHists(_ws, _nominalDataName, _sname, _var):
     ds_nominal.fillHistogram(_hists["nominal"], ROOT.RooArgList(_var))
     dh_up.fillHistogram(_hists["up"], ROOT.RooArgList(_var))
     dh_do.fillHistogram(_hists["do"], ROOT.RooArgList(_var))
+    
+    for b in range(_hists["nominal"].GetNbinsX()+1): # prevent negative events 
+        if _hists["nominal"].GetBinContent(b+1) < 0:
+            _hists["nominal"].SetBinContent(b+1, 0)
+
+        if _hists["up"].GetBinContent(b+1) < 0:
+            _hists["up"].SetBinContent(b+1, 0)
+
+        if _hists["do"].GetBinContent(b+1) < 0:
+            _hists["do"].SetBinContent(b+1, 0)
+
 
     return _hists
 
@@ -54,7 +65,10 @@ def getDataHists(_ws, _nominalDataName, _sname, _var):
 def getRateVar(_hists):
     rate, rateVar = {}, {}   
     for htype, h in _hists.items():
-        rate[htype] = h.Integral()
+        sumw = 0
+        for b in range(h.GetNbinsX()+1):
+            sumw += h.GetBinContent(b+1)
+        rate[htype] = sumw
     
     for htype in ["up", "do"]:
         rateVar[htype] = (rate[htype] - rate["nominal"]) / rate["nominal"]
@@ -72,9 +86,10 @@ def main(mass):
         "JEC",
         "JER",
         "PhoNoR9Corr",
-        "weight_EleID",
+        "weight_MuID",
         "weight_HLT",
-        "weight_L1Pre",
+        "weight_L1PF",
+        "weight_MuPF",
         "weight_PhoID",
         "weight_puwei"
     ]

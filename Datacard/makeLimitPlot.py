@@ -21,7 +21,7 @@ def LimitVsM():
     Limit = od([("2sigma_do", array("f", [])), ("1sigma_do", array("f", [])), ("mean", array("f", [])), ("1sigma_up", array("f", [])), ("2sigma_up", array("f", [])), ("mass", array("f", []))])
     mass_interp = np.linspace(massBaseList[0], massBaseList[-1], 11, endpoint=True).astype(int)
     for m in mass_interp:
-        input_file = "{}/tree/higgsCombine_nom1_{}.AsymptoticLimits.mH{}.root".format(dwd__, m, m)
+        input_file = "{}/higgsCombine_combm2_{}.AsymptoticLimits.mH{}.root".format(dwd__, m, m)
         _limit = GetValuesFromFile(input_file)
         Limit["2sigma_do"].append(_limit[0])
         Limit["1sigma_do"].append(_limit[1])
@@ -108,21 +108,21 @@ def LimitVsM():
 
 def LimitSummary():
     cat_tag = od()
-    cat_tag["nom1"]             = "Combined"
+    cat_tag["combm2"]           = "Combined"
     cat_tag["untagm2"]          = "Merged2Gsf Untagged Combined"
     cat_tag["Merged2Gsf_EE"]    = "Merged2Gsf EE"
     cat_tag["Merged2Gsf_EBLR9"] = "Merged2Gsf EB LR9"
     cat_tag["Merged2Gsf_EBHR9"] = "Merged2Gsf EB HR9"
     cat_tag["tagm2"]            = "Merged2Gsf Tagged Combined"
-    cat_tag["Merged2Gsf_LVBF"]  = "Merged2Gsf LVBF"
-    cat_tag["Merged2Gsf_HVBF"]  = "Merged2Gsf HVBF"
+    cat_tag["Merged2Gsf_VBF"]   = "Merged2Gsf VBF"
     cat_tag["Merged2Gsf_BST"]   = "Merged2Gsf Boost"
-    cat_tag["re"]               = "Resolved"
     
-    yhigh = [0, 2, 2.8, 3.6, 4.5, 6.5, 7.4, 8.3, 9.2, 11.2]
+    # yhigh = [0, 2, 2.8, 3.6, 4.5, 6.5, 7.4, 8.3, 9.2, 11.2]
+    yhigh = [0, 2.4, 3.4, 4.4, 5.4, 7.4, 8.4, 9.4]
+    
     Limit = od([("2sigma_do", array("f", [])), ("1sigma_do", array("f", [])), ("mean", array("f", [])), ("1sigma_up", array("f", [])), ("2sigma_up", array("f", [])), ("yaxis", array("f", yhigh))])
-    for key, value in cat_tag.iteritems():
-        input_file = "{}/tree/higgsCombine_{}_125.AsymptoticLimits.mH125.root".format(dwd__, key)
+    for key, value in cat_tag.items():
+        input_file = "{}/higgsCombine_{}_125.AsymptoticLimits.mH125.root".format(dwd__, key)
         _limit = GetValuesFromFile(input_file)
         Limit["2sigma_do"].append(_limit[0])
         Limit["1sigma_do"].append(_limit[1])
@@ -205,7 +205,7 @@ def LimitSummary():
     latex.SetTextSize(0.025)
     latex.SetTextAlign(32)
     i = 0
-    for key, value in cat_tag.iteritems():
+    for key, value in cat_tag.items():
         latex.SetTextSize(0.025)
         latex.SetTextColor(ROOT.kBlack)
         latex.SetTextSize(0.030)
@@ -234,9 +234,113 @@ def LimitSummary():
     c1.Print("./plots/LimitSummary.pdf")
     c1.Print("./plots/LimitSummary.png")
     c1.Close()
+    
+def SigVsM():
+    mass_interp = np.linspace(massBaseList[0], massBaseList[-1], 11, endpoint=True).astype(int)
+    
+    pvalue = []
+    significance = []
+    pvalue_inj = []
+    significance_inj = []
+    for m in mass_interp:
+        input_file = "{}/higgsCombine_combm2_{}_expSignal1.Significance.mH{}.root".format(dwd__, m, m)
+        input_file_inj = "{}/higgsCombine_combm2_{}_expectSignalMass125.Significance.mH{}.root".format(dwd__, m, m)
+        
+        _p = GetValuesFromFile(input_file)[0]
+        _p_inj = GetValuesFromFile(input_file_inj)[0]
+        
+        pvalue.append(_p)
+        significance.append(ROOT.Math.normal_quantile_c(_p, 1))
+        pvalue_inj.append(_p_inj)
+        significance_inj.append(ROOT.Math.normal_quantile_c(_p_inj, 1))
+    
+    ROOT.gStyle.SetPadTickX(1)
+    ROOT.gStyle.SetPadTickY(1)
+    ROOT.gStyle.SetOptStat(0)
+    
+    c1 = ROOT.TCanvas("c1", "c1", 700, 700)
+    c1.SetRightMargin(0.05)
+    c1.SetTopMargin(0.07)
+    c1.SetBottomMargin(0.14)
+    c1.SetLeftMargin(0.145)
+    c1.cd()
+    c1.SetLogy()
+    gL = ROOT.TGraph(len(mass_interp), mass_interp.astype(np.float64), np.array(pvalue, dtype=np.float64))
+    gL_inj = ROOT.TGraph(len(mass_interp), mass_interp.astype(np.float64), np.array(pvalue_inj, dtype=np.float64))
+    # gL.Print("v")
+    
+    gL.GetYaxis().SetRangeUser(1e-2, 1)
+    gL.GetYaxis().SetTickSize(0.03)
+    gL.GetYaxis().SetTitleSize(0.04)
+    gL.GetYaxis().SetLabelSize(0.04)
+    # gL.GetYaxis().SetMoreLogLabels()
+    gL.GetYaxis().SetTitleOffset(1.5)
+    gL.GetYaxis().SetTitle("Local p-value")
+    # gL.GetXaxis().SetRangeUser(118, 135)
+    
+    gL.GetXaxis().SetLimits(119, 132.5)
+    gL.GetXaxis().SetTitle("M_{ee#gamma} [GeV]")
+    gL.GetXaxis().SetTickSize(0.03)
+    gL.GetXaxis().SetTitleSize(0.04)
+    gL.GetXaxis().SetLabelSize(0.04)
+    gL.GetXaxis().SetTitleOffset(1.5)
+    
+    gL.SetLineColor(ROOT.kBlue+2)
+    gL.SetLineWidth(3)
+    gL.Draw("AL")
+    
+    gL_inj.SetLineColor(ROOT.kRed)
+    gL_inj.SetLineWidth(3)
+    gL_inj.Draw("L same")
 
-
+    latex = ROOT.TLatex()
+    latex.SetTextColor(13)
+    latex.SetTextSize(0.04)
+    latex.SetTextAlign(32)
+    latex.DrawLatex(131.8, ROOT.Math.normal_cdf_c(1), "1 #sigma")
+    
+    line = ROOT.TLine(120, ROOT.Math.normal_cdf_c(1), 130, ROOT.Math.normal_cdf_c(1))
+    line.SetLineColor(13)
+    line.SetLineStyle(7)
+    line.SetLineWidth(3)
+    line.Draw("same")
+    
+    latex.DrawLatex(131.8, ROOT.Math.normal_cdf_c(0.5), "0.5 #sigma")
+    line2 = ROOT.TLine(120, ROOT.Math.normal_cdf_c(0.5), 130, ROOT.Math.normal_cdf_c(0.5))
+    line2.SetLineColor(13)
+    line2.SetLineStyle(7)
+    line2.SetLineWidth(3)
+    line2.Draw("same")
+    
+    latex.DrawLatex(131.8, ROOT.Math.normal_cdf_c(2), "2 #sigma")
+    line1 = ROOT.TLine(120, ROOT.Math.normal_cdf_c(2), 130, ROOT.Math.normal_cdf_c(2))
+    line1.SetLineColor(13)
+    line1.SetLineStyle(7)
+    line1.SetLineWidth(3)
+    line1.Draw("same")
+    
+    leg = ROOT.TLegend(0.3, 0.3, 0.77, 0.5)
+    leg.SetTextSize(0.04)
+    leg.SetFillStyle(0)
+    leg.SetBorderSize(0)
+    leg.SetFillColor(0)
+    leg.SetLineColor(0)
+    leg.AddEntry(gL, "Expected", "L")
+    leg.AddEntry(gL_inj, "Expected M_{H} = 125 GeV", "L")
+    leg.Draw()
+    
+    CMS_lumi(c1, 5, 0, "138 fb^{-1}", 2017, True, "Preliminary", "", "")
+    c1.RedrawAxis()
+    c1.Update()
+    
+    if not os.path.exists("./plots"):
+        os.system("mkdir ./plots")
+    c1.Print("./plots/pvalue.pdf")
+    c1.Print("./plots/pvalue.png")
+    c1.Close()
+    
 if __name__ == "__main__" :
     setTDRStyle()
-    LimitVsM()
-    LimitSummary()
+    # LimitVsM()
+    # LimitSummary()
+    SigVsM()

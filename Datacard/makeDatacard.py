@@ -5,7 +5,6 @@
 
 import os, sys
 sys.path.append("./tools")
-# sys.path.append("./config")
 
 import numpy as np
 import pandas as pd
@@ -38,6 +37,8 @@ def main():
     for year in years:
         for cat in category__.keys():
             try:
+                if ("IsoMu" in cat and year != 2017): 
+                    continue
                 rate_file = "{}/syst/rate_syst_{}_{}.pkl".format(swd__, cat, year)
                 rate_list.append(pd.read_pickle(rate_file))
             except:
@@ -54,7 +55,6 @@ def main():
             df_data = addFactorySyst(df_data, s)
         if (s["type"] == "rate"):
             df_data = addRateSyst(df_data, s, df_rate)
-    print(df_data)
     
     mass_interp = np.linspace(massBaseList[0], massBaseList[-1], 11, endpoint=True).astype(int)
     outDir = "{}/cards".format(dwd__)
@@ -68,7 +68,7 @@ def main():
             fdataName = "{}/datacard_{}_runII_{}_{}.txt".format(outDir, decayMode, cat, mass)
             print("[INFO] Creating the data card {}".format(fdataName))
 
-            dcw = DCWriter(fdataName, df_data, cat, mass, years)
+            dcw = DCWriter(fdataName, df_data, cat, mass, years, _auto_space=True)
             dcw.writePreamble()
             dcw.writeProcesses()
             for syst in theory_systematics:

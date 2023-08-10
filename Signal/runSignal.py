@@ -43,6 +43,8 @@ def main():
         for cat in category__.keys():
             if year == "all":
                 for i in range(len(years)):
+                    if ("IsoMu" in cat) and (years[i] != 2017):
+                        continue
                     command_ = "python3 calcShapeSyst.py --category {} --inputWSDir {} --year {}".format(cat, inWS[i], years[i])
                     logfile_ = "./logger/calcSyst_{}_{}.txt".format(cat, years[i])
                     queues.append(command_)
@@ -57,6 +59,8 @@ def main():
         for cat in category__.keys():
             if year == "all":
                 for i in range(len(years)):
+                    if ("IsoMu" in cat) and (years[i] != 2017):
+                        continue
                     command_ = "python3 calcYieldSyst.py --category {} --inputWSDir {} --year {} ".format(cat, inWS[i], years[i])
                     logfile_ = "./logger/calcYieldSyst_{}_{}.txt".format( cat, years[i])
                     queues.append(command_)
@@ -71,6 +75,8 @@ def main():
         for cat in category__.keys():
             if year == "all":
                 for i in range(len(years)):
+                    if ("IsoMu" in cat) and (years[i] != 2017):
+                        continue
                     command_ = "python3 signalFit.py --category {} --year {} --inputWSDir {} --doInterpolation".format(cat, years[i], inWS[i])
                     if doSystematics:
                         command_ += " --doSystematics"
@@ -87,6 +93,8 @@ def main():
     
     if script == "makeModelPlot":
         for cat in category__.keys():
+            if "IsoMu" in cat:
+                continue
             for proc in productionModes:
                 command_ = "python3 makeModelPlot.py --category {} --process {} ".format(cat, proc)
                 logfile_ = "./logger/makeModelPlot_{}_{}.txt".format(cat, proc)

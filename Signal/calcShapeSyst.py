@@ -4,6 +4,8 @@
 # * photon shape: uncertainties of standard EGM calibration
 # * merged electron shape: uncertainties of dedicated HDALITZ calibration
 # * resolved electron shape: uncertainties of standard EGM calibration
+# * rochester muon correction:
+#* https://gitlab.cern.ch/akhukhun/roccor
 # * Outputs are pandas dataframes for scale and resolutions respectively @ all mass points
 
 import os, sys
@@ -41,7 +43,7 @@ def getDataHists(_ws, _nominalDataName, _sname, _var):
         "up"     : ROOT.TH1F(hname_up, "", 60, 110, 170),
         "do"     : ROOT.TH1F(hname_do, "", 60, 110, 170)
     }
-    
+    # _hists =
     # get data
     ds_nominal = _ws.data(_nominalDataName)
     dh_name = _nominalDataName.replace("set", "dh")
@@ -50,12 +52,36 @@ def getDataHists(_ws, _nominalDataName, _sname, _var):
         dh_do = dh_up
     else:
         dh_do = _ws.data("%s_%sDo" %(dh_name, _sname))
-    
+
     # convert to TH1
     ds_nominal.fillHistogram(_hists["nominal"], ROOT.RooArgList(_var))
+    for b in range(_hists["nominal"].GetNbinsX()+1): # prevent negative events 
+        if _hists["nominal"].GetBinContent(b+1) < 0:
+            _hists["nominal"].SetBinContent(b+1, 0)
+            
     dh_up.fillHistogram(_hists["up"], ROOT.RooArgList(_var))
     dh_do.fillHistogram(_hists["do"], ROOT.RooArgList(_var))
 
+    return _hists
+
+
+def getMuDataHists(_ws, _nominalDataName, _sname, _var):
+    ds_nominal = _ws.data(_nominalDataName)
+    dh_name = _nominalDataName.replace("set", "dh")
+    dh_syst = _ws.data("%s_%s" %(dh_name, _sname))
+    
+    hist_nominal = ROOT.TH1F("%s_%s_nominal"%(dh_name, _sname), "", 60, 110, 170)
+    hist_syst = ROOT.TH1F("%s_%s_syst"%(dh_name, _sname), "", 60, 110, 170)
+    
+    ds_nominal.fillHistogram(hist_nominal, ROOT.RooArgList(_var))
+    dh_syst.fillHistogram(hist_syst, ROOT.RooArgList(_var))
+    for b in range(hist_nominal.GetNbinsX()+1): # prevent negative events 
+        if hist_nominal.GetBinContent(b+1) < 0:
+            hist_nominal.SetBinContent(b+1, 0)
+            
+    _hists = {}
+    _hists["nominal"] = hist_nominal
+    _hists["syst"] = hist_syst
     return _hists
 
 
@@ -75,6 +101,13 @@ def getMeanVar(_hists):
     return min(x, args.thresholdMean)
 
 
+def getMuMeanVar(_hists):
+    mu_nominal = _hists["nominal"].GetMean()
+    mu_syst = _hists["syst"].GetMean()
+    x = abs((mu_syst - mu_nominal) / mu_nominal)
+    return min(x, args.thresholdMean)
+
+
 def getSigmaVar(_hists):
     sigma, sigmaVar = {}, {}
     for htype, h in _hists.items():
@@ -90,6 +123,13 @@ def getSigmaVar(_hists):
     return min(x, args.thresholdSigma)
 
 
+def getMuSigmaVar(_hists):
+    sigma_nominal = ROOT.effSigma(_hists["nominal"])[2]
+    sigma_syst = ROOT.effSigma(_hists["syst"])[2]
+    x = abs(sigma_syst - sigma_nominal) / sigma_nominal
+    return min(x, args.thresholdSigma)
+
+
 def main(mass):
     shape_variations = [
         "PhoScaleStat",
@@ -97,13 +137,11 @@ def main(mass):
         "PhoScaleGain",
         "PhoSigmaPhi",
         "PhoSigmaRho",
-        "EleScaleStat",
-        "EleScaleSyst",
-        "EleScaleGain",
-        "EleSigmaPhi",
-        "EleSigmaRho",
-        "EleHDALScale",
-        "EleHDALSmear"
+        "MuCalibStat",
+        "MuCalibZpt",
+        "MuCalibEwk",
+        "MuCalibdeltaM",
+        "MuCalibEwk2",
     ]
 
     # Define dataFrame
@@ -117,11 +155,19 @@ def main(mass):
         if ("EleHDAL" in s) and "Resolved" in args.category:
             continue # reject dedicated calibration's variation
         for x in ["scale", "resol"]:
-            if (x == "scale" and "Scale" in s):
-                columns_data_scale.append(s)
-                shape_scale.append(s)
-            elif (x == "resol" and ("Sigma" in s or "Smear" in s)):
-                columns_data_resol.append(s)
+            if "Pho" in s:
+                if (x == "scale" and "Scale" in s):
+                    columns_data_scale.append(s)
+                    shape_scale.append(s)
+                elif (x == "resol" and "Sigma" in s):
+                    columns_data_resol.append(s)
+                    shape_resol.append(s)
+            else:
+                if (x == "scale"):
+                    columns_data_scale.append(s)
+                    shape_scale.append(s)
+                elif (x == "resol"):
+                    columns_data_resol.append(s)
                 shape_resol.append(s)
     data_scale = pd.DataFrame(columns=columns_data_scale)
     data_resol = pd.DataFrame(columns=columns_data_resol)
@@ -150,27 +196,40 @@ def main(mass):
             sys.exit(1)
         # Add values to dataFrame
         for s in shape_scale:
-            hists = getDataHists(inputWS, r["nominalDataName"], s, inputWS.var("CMS_higgs_mass"))
-            _meanVar = getMeanVar(hists)
-            data_scale.at[ir, s] = _meanVar
-            for var, h in hists.items():
-                h.Delete()
+            if "Pho" in s:
+                hists = getDataHists(inputWS, r["nominalDataName"], s, inputWS.var("CMS_higgs_mass"))
+                _meanVar = getMeanVar(hists)
+                data_scale.at[ir, s] = _meanVar
+                for var, h in hists.items():
+                    h.Delete()
+            else:
+                hists = getMuDataHists(inputWS, r["nominalDataName"], s, inputWS.var("CMS_higgs_mass"))
+                _meanVar = getMuMeanVar(hists)
+                data_scale.at[ir, s] = _meanVar
+                for var, h in hists.items():
+                    h.Delete()
+                
         # close file
         f.Close()
     
-      
-    shape_scale_ele = [s for s in shape_scale if "Ele" in s]
+    shape_scale_mu = [s for s in shape_scale if "Mu" in s]
+    # shape_scale_ele = [s for s in shape_scale if "Ele" in s]
     shape_scale_pho = [s for s in shape_scale if "Pho" in s]
-    if (len(shape_scale_ele) != 1):
-        data_scale["EleTotalScale"] = np.sqrt(np.power(data_scale[shape_scale_ele], 2).sum(axis=1))
+    # if (len(shape_scale_ele) != 1):
+    #     data_scale["EleTotalScale"] = np.sqrt(np.power(data_scale[shape_scale_ele], 2).sum(axis=1))
+    # else:
+    #     data_scale["EleTotalScale"] = data_scale[shape_scale_ele[0]]
+    if (len(shape_scale_mu) != 1):
+        data_scale["MuTotalScale"] = np.sqrt(np.power(data_scale[shape_scale_mu], 2).sum(axis=1))
     else:
-        data_scale["EleTotalScale"] = data_scale[shape_scale_ele[0]]
+        data_scale["MuTotalScale"] = data_scale[shape_scale_mu[0]]
     if (len(shape_scale_pho) != 1):
         data_scale["PhoTotalScale"] = np.sqrt(np.power(data_scale[shape_scale_pho], 2).sum(axis=1))
     else:
         data_scale["PhoTotalScale"] = data_scale[shape_scale_pho[0]]
     # root of quadrature sum electron and photon
-    data_scale["TotalScale"] = np.sqrt(np.power(data_scale[["EleTotalScale", "PhoTotalScale"]], 2).sum(axis=1))
+    # data_scale["TotalScale"] = np.sqrt(np.power(data_scale[["EleTotalScale", "PhoTotalScale"]], 2).sum(axis=1))
+    data_scale["TotalScale"] = np.sqrt(np.power(data_scale[["MuTotalScale", "PhoTotalScale"]], 2).sum(axis=1))
 
     # add the resolution unc to dataframe
     for ir, r in data_resol.iterrows():
@@ -185,25 +244,40 @@ def main(mass):
             sys.exit(1)
         # Add values to dataFrame
         for s in shape_resol:
-            hists = getDataHists(inputWS, r["nominalDataName"], s, inputWS.var("CMS_higgs_mass"))
-            _sigmaVar = getSigmaVar(hists)
-            data_resol.at[ir, s] = _sigmaVar
+            if "Pho" in s:
+                    hists = getDataHists(inputWS, r["nominalDataName"], s, inputWS.var("CMS_higgs_mass"))
+                    _sigmaVar = getSigmaVar(hists)
+                    data_resol.at[ir, s] = _sigmaVar
+                    for var, h in hists.items():
+                        h.Delete()
+            else:
+                hists = getMuDataHists(inputWS, r["nominalDataName"], s, inputWS.var("CMS_higgs_mass"))
+                _sigmaVar = getMuSigmaVar(hists)
+                data_resol.at[ir, s] = _sigmaVar
+                for var, h in hists.items():
+                    h.Delete()
+                    
         # close file
         f.Close()
     
-    shape_resol_ele = [s for s in shape_resol if "Ele" in s]
+    # shape_resol_ele = [s for s in shape_resol if "Ele" in s]
+    shape_resol_mu = [s for s in shape_resol if "Mu" in s]
     shape_resol_pho = [s for s in shape_resol if "Pho" in s]
-    if (len(shape_resol_ele) != 1):
-        data_resol["EleTotalResol"] = np.sqrt(np.power(data_resol[shape_resol_ele], 2).sum(axis=1))
+    # if (len(shape_resol_ele) != 1):
+    #     data_resol["EleTotalResol"] = np.sqrt(np.power(data_resol[shape_resol_ele], 2).sum(axis=1))
+    # else:
+    #     data_resol["EleTotalResol"] = data_resol[shape_resol_ele[0]]
+    if (len(shape_resol_mu) != 1):
+        data_resol["MuTotalResol"] = np.sqrt(np.power(data_resol[shape_resol_mu], 2).sum(axis=1))
     else:
-        data_resol["EleTotalResol"] = data_resol[shape_resol_ele[0]]
+        data_resol["MuTotalResol"] = data_resol[shape_resol_mu[0]]
     if (len(shape_resol_pho) != 1):
         data_resol["PhoTotalResol"] = np.sqrt(np.power(data_resol[shape_resol_pho], 2).sum(axis=1))
     else:
         data_resol["PhoTotalResol"] = data_resol[shape_resol_pho[0]]
     # root of quadrature sum electron and photon
-    data_resol["TotalResol"] = np.sqrt(np.power(data_resol[["EleTotalResol", "PhoTotalResol"]], 2).sum(axis=1))
-
+    # data_resol["TotalResol"] = np.sqrt(np.power(data_resol[["EleTotalResol", "PhoTotalResol"]], 2).sum(axis=1))
+    data_resol["TotalResol"] = np.sqrt(np.power(data_resol[["MuTotalResol", "PhoTotalResol"]], 2).sum(axis=1))
     return data_scale, data_resol
 
 

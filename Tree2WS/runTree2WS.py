@@ -1,5 +1,5 @@
 import ROOT
-import os
+import os, sys
 import subprocess
 import json
 from tqdm import tqdm
@@ -61,6 +61,9 @@ def main():
         pass
     pool.close()
     pool.join()
+    
+    # for q in queues:
+    #     os.system(q)
     
 
 if __name__ == "__main__" :

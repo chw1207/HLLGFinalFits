@@ -1,7 +1,7 @@
 from commonObjects import massBaseList, years, twd__
 from glob import glob
 
-inDir = "/data4/chenghan/electron/miniTree_merged"
+inDir = "/data4/chenghan/muon/miniTree/"
 
 # config dict 
 trees2ws_cfg = {}
@@ -9,14 +9,14 @@ for mass in massBaseList:
     trees2ws_cfg[mass] = {}
     for year in years:
         trees2ws_cfg[mass][year] = {
-            # Input root files which contain TTree and TH1D 
+            # Input root files which contain TTree and TH1D (MuPhoTrig+SingleMuTrig)
             "inputTreeFiles": {
-                "ggH": glob(f"{inDir}/UL{year}*/miniTree_HDalitz_ggF_eeg_{mass}_UL{year}*.root"),
-                "VBF": glob(f"{inDir}/UL{year}*/miniTree_HDalitz_VBF_eeg_{mass}_UL{year}*.root"),
-                "WH":  glob(f"{inDir}/UL{year}*/miniTree_HDalitz_WH_eeg_{mass}_UL{year}*.root"),
-                "ZH":  glob(f"{inDir}/UL{year}*/miniTree_HDalitz_ZH_eeg_{mass}_UL{year}*.root"),
-                "ttH": glob(f"{inDir}/UL{year}*/miniTree_HDalitz_ttH_eeg_{mass}_UL{year}*.root"),
-                "bbH": glob(f"{inDir}/UL{year}*/miniTree_HDalitz_bbH_eeg_{mass}_UL{year}*.root")
+                "ggH": glob(f"{inDir}/UL{year}*/miniTree_HDalitz_ggF_mmg_{mass}_UL{year}*_*.root"),
+                "VBF": glob(f"{inDir}/UL{year}*/miniTree_HDalitz_VBF_mmg_{mass}_UL{year}*_*.root"),
+                "WH":  glob(f"{inDir}/UL{year}*/miniTree_HDalitz_WH_mmg_{mass}_UL{year}*_*.root"),
+                "ZH":  glob(f"{inDir}/UL{year}*/miniTree_HDalitz_ZH_mmg_{mass}_UL{year}*_*.root"),
+                "ttH": glob(f"{inDir}/UL{year}*/miniTree_HDalitz_ttH_mmg_{mass}_UL{year}*_*.root"),
+                "bbH": glob(f"{inDir}/UL{year}*/miniTree_HDalitz_bbH_mmg_{mass}_UL{year}*_*.root")
             },
 
             # Name of the input tree
@@ -34,12 +34,14 @@ for mass in massBaseList:
             
             # weights for systematics
             "sysWeis": [
-                "weight_EleIDDo",
-                "weight_EleIDUp",
+                "weight_MuIDDo",
+                "weight_MuIDUp",
                 "weight_HLTDo",
                 "weight_HLTUp",
-                "weight_L1PreDo",
-                "weight_L1PreUp",
+                "weight_L1PFDo",
+                "weight_L1PFUp",
+                "weight_MuPFDo",
+                "weight_MuPFUp",
                 "weight_PhoIDDo",
                 "weight_PhoIDUp",
                 "weight_puweiDo",
@@ -52,6 +54,13 @@ for mass in massBaseList:
                 "JERDo",
                 "JECUp",
                 "JECDo",
+                
+                "MuCalibStat",
+                "MuCalibZpt",
+                "MuCalibEwk",
+                "MuCalibdeltaM",
+                "MuCalibEwk2",
+        
                 "PhoNoR9Corr",
                 "PhoScaleStatUp",
                 "PhoScaleSystUp",
@@ -61,10 +70,6 @@ for mass in massBaseList:
                 "PhoScaleGainDo",
                 "PhoSigmaPhiUp",
                 "PhoSigmaRhoUp",
-                "PhoSigmaRhoDo",
-                "EleHDALScaleUp",
-                "EleHDALScaleDo",
-                "EleHDALSmearUp",
-                "EleHDALSmearDo"
+                "PhoSigmaRhoDo"
             ]
         }

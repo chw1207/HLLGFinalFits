@@ -2,7 +2,7 @@ import sys, os
 import ROOT
 import numpy as np
 from CMS_lumi import CMS_lumi
-from commonObjects import decayMode
+from commonObjects import decayMode, massText, decayText
 from commonTools import rooiter
 from collections import OrderedDict as od
 
@@ -161,7 +161,7 @@ class Interpolator:
     # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # xName: x-axis label
     # outName: path to save the plot
-    def visualize(self, xName, outName):
+    def visualize(self, outName):
         # set up the canvas to draw
         # self.xframe.SetAxisRange(xRange[0], xRange[1], "X")
         self.xframe.SetTitle("")
@@ -171,7 +171,7 @@ class Interpolator:
         self.xframe.GetXaxis().SetLabelSize(0.04)
         self.xframe.GetXaxis().SetLabelOffset(0.02)
         self.xframe.GetXaxis().SetTitleOffset(1.4)
-        self.xframe.GetXaxis().SetTitle(xName)
+        self.xframe.GetXaxis().SetTitle(massText)
 
         self.xframe.GetYaxis().SetTitle("Signal shape")
         self.xframe.GetYaxis().SetNdivisions(510)
@@ -208,7 +208,7 @@ class Interpolator:
         leg1.AddEntry(self.xframe.findObject("130"), "PDF-130 GeV ", "l")
         leg1.Draw()
 
-        CMS_lumi(c, 5, 10, "", self.year, True, "Simulation", "H #rightarrow #gamma*#gamma #rightarrow ee#gamma", "")
+        CMS_lumi(c, 5, 10, "", self.year, True, "Simulation", decayText, "")
 
         # create the output dir
         outDir = os.path.dirname(outName)

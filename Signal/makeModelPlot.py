@@ -9,7 +9,7 @@ from argparse import ArgumentParser
 from collections import OrderedDict as od
 from CMS_lumi import CMS_lumi
 from sigmaEff import sigmaEff
-from commonObjects import inputWSName__, twd__, swd__, outputWSName__, yearsStr
+from commonObjects import inputWSName__, twd__, swd__, outputWSName__, yearsStr, massText, decayText
 ROOT.gInterpreter.ProcessLine(" #include \"./tools/effSigma.h\" ")
 
 
@@ -57,7 +57,7 @@ def plot_signal(hists, xmin, xmax, eff_sigma, outName, cat, process, offset=0.03
     h_axes.GetXaxis().SetLabelSize(0.04)
     h_axes.GetXaxis().SetLabelOffset(0.02)
     h_axes.GetXaxis().SetTitleOffset(1.4)
-    h_axes.GetXaxis().SetTitle("M_{ee#gamma} [GeV]")
+    h_axes.GetXaxis().SetTitle(massText)
     # h_axes.GetYaxis().SetTitle("Signal shape / ({} GeV)".format((170 - 105)/Nbins))
     h_axes.GetYaxis().SetNdivisions(510)
     h_axes.GetYaxis().SetTickSize(0.03)
@@ -149,7 +149,7 @@ def plot_signal(hists, xmin, xmax, eff_sigma, outName, cat, process, offset=0.03
     mode.SetTextFont(42)
     mode.SetNDC()
     mode.SetTextSize(0.04)
-    mode.DrawLatex(0.16+offset, 0.86, "H #rightarrow #gamma*#gamma #rightarrow ee#gamma")
+    mode.DrawLatex(0.16+offset, 0.86, decayText)
 
     catProc = ROOT.TLatex()
     catProc.SetTextFont(42)

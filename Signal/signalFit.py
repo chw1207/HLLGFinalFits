@@ -25,9 +25,11 @@ def get_parser():
 
 
 def main():
+    # for proc in ["bbH"]:
     for proc in productionModes:
         yields, fitres = od(), od()
         for mass in massBaseList:
+        # for mass in [130]:
             cprint("--> Performing the nominal signal fitting of {} @ {}GeV".format(proc, mass), colorStr="green")
             # Open ROOT file and extract workspace
             WSFileName = "{}/signal_{}_{}.root".format(args.inputWSDir, proc, mass)
@@ -43,28 +45,38 @@ def main():
             nominalDataName = "set_%d_%s"%(mass, args.category)
             xvar = inputWS.var("CMS_higgs_mass")
             data = inputWS.data(nominalDataName)
-
-            # FIT: unbinned ML fit
-            fit = simpleFit(data, xvar, mass, 110, 170)
+            
+            hist = ROOT.TH1F("h", "", 60, 110, 170)
+            data.fillHistogram(hist, ROOT.RooArgList(xvar))
+            sumw = 0
+            for b in range(hist.GetNbinsX()+1): # prevent negative bin
+                if hist.GetBinContent(b+1) < 0:
+                    hist.SetBinContent(b+1, 0)
+                sumw += hist.GetBinContent(b+1)
+            dh = ROOT.RooDataHist(nominalDataName, nominalDataName, xvar, ROOT.RooFit.Import(hist))
+            
+            # FIT: binned ML fit
+            fit = simpleFit(dh, xvar, mass, 110, 170)
             fit.buildDCBplusGaussian()
             # fit.buildDCB()
             fitres[mass] = fit.runFit()
             fitres[mass].Print()
-            yields[mass] = data.sumEntries()
+            yields[mass] = sumw
 
             # VISUALIZATION: draw the fitting
             outName = "{}/plots/signalFit/{}/CMS_HLLG_sigfit_{}_{}_{}_{}.pdf".format(swd__, args.year, mass, proc, args.year, args.category)
-            fit.visualize(args.year, "M_{ee#gamma} [GeV]", args.category, proc, outName)
+            fit.visualize(args.year, args.category, proc, outName)
 
             # Close the input workspace file
+            hist.Delete()
             f.Close()
             cprint("")
-        print(yields)
+            
         if args.doInterpolation:
             # INTERPOLATRION: The signal models are gotten from the interpolation of the fittings pdfs @ 120, 125 and 130 GeV
             # specify save=True to save the final signal models
             outWSDir = "{}/WS/Interpolation/{}".format(swd__, args.year)
-            interp = Interpolator(yields, fitres, 110, 170, args.year, proc, args.category, False) #_useDCB=False if buildDCBplusGaussian, false, else true
+            interp = Interpolator(yields, fitres, 110, 170, args.year, proc, args.category, False) #!_useDCB=False if buildDCBplusGaussian else true
             interp.calcPolation()
             interp.buildFinalPdfs(
                 save=True,
@@ -74,7 +86,7 @@ def main():
 
             # VISUALIZATION: draw the fitting
             outPlotName = "{}/plots/Interpolation/{}/CMS_HLLG_Interp_{}_{}_{}.pdf".format(swd__, args.year, proc, args.year, args.category)
-            interp.visualize("M_{ee#gamma} [GeV]", outPlotName)
+            interp.visualize(outPlotName)
 
 
 if __name__ == "__main__" :

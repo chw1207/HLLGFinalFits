@@ -69,10 +69,10 @@ int nBinsForMass = 60;
 int _ntoys = 2000;
 
 // plot setting
-string massName = "M_{ee#gamma} [GeV]"; // use to plot the x title
+string massName = "m_{#mu#mu#gamma} (GeV)"; // use to plot the x title
 TString extraText_ = "Preliminary";
 TString lumitext_ = "138 fb^{-1}";
-TString procText_ = "H #rightarrow #gamma*#gamma #rightarrow ee#gamma";
+TString procText_ = "H #rightarrow #gamma*#gamma #rightarrow #mu#mu#gamma";
 
 
 void transferMacros(TFile *inFile, TFile *outFile){
@@ -667,7 +667,7 @@ int main(int argc, char** argv){
     setTDRStyle();
 
     string fileName; // input file contains workspace
-    string WSname = "tagsDumper/cms_heeg_13TeV"; // input workspace name
+    string WSname = "tagsDumper/cms_hmmg_13TeV"; // input workspace name
     string outDir = "plots/fTest"; // out directory for plots
     bool verbose = false;
     string ext = "13TeV";

@@ -1,8 +1,10 @@
 # Script to convert HDalitz trees to RooWorkspace (compatible for finalFits)
 # Assumes tree names of the format:
 #  * miniTree
-# For systematics: requires hist of the format:
+# For systematics: requires hist of the format or trees of the format:
 #  * cat1_<syst> e.g. cat1_JERUp, cat1_PhoScaleStatDo
+#  * miniTree_<syst> e.g. miniTree_JERUp, miniTree_PhoScaleStatDo
+
 
 import ROOT
 import os
@@ -22,13 +24,14 @@ def get_parser():
     parser.add_argument("-m",  "--mass",            help="mass point",                                                  default=125,  type=int)
     parser.add_argument("-p",  "--productionMode",  help="Production mode [ggH, VBF, WH, ZH, ttH, bbH]",                default="ggH",type=str)
     parser.add_argument("-ds", "--doSystematics",   help="Add systematics datasets to output WS",                       default=False,action="store_true")
+    parser.add_argument("-uh", "--useSystHist",     help="load the systematic histograms else minitrees",               default=False,action="store_true")
     return parser
 
 def main():
     cprint("[INFO] Read file:", colorStr="green")
     pprint(inputTreeFile)
     
-    if len(inputTreeFile) > 1: # for 2016 only, combine preVFP and postVFP (trees and histograms)
+    if len(inputTreeFile) > 1:
         # https://root-forum.cern.ch/t/add-histograms-automatically-from-two-files/21561/2
         cmd = f"hadd -f tmp_{year}_{mass}_{productionMode}.root "
         for f2merged in inputTreeFile:
@@ -42,6 +45,15 @@ def main():
     # create work space
     ws_dir_name = inputWSName__.split("/")
     ws = ROOT.RooWorkspace(ws_dir_name[1], ws_dir_name[1])
+    
+    cprint("[INFO] Save WS in :", colorStr="green")
+    pprint(outputWSFile) 
+    outputWSDir = ROOT.gSystem.DirName(outputWSFile)
+    os.makedirs(outputWSDir, exist_ok=True)
+    
+    fout = ROOT.TFile(outputWSFile, "RECREATE")
+    foutdir = fout.mkdir(ws_dir_name[0])
+    foutdir.cd()
     
     # create variables
     CMS_higgs_mass = ROOT.RooRealVar("CMS_higgs_mass", "CMS_higgs_mass", mass, 110, 170, "GeV") # initial, lower bound, upper bound
@@ -57,7 +69,6 @@ def main():
         # nominal dataset
         dname = f"set_{mass}_{cat_name}"
         dset = ROOT.RooDataSet(dname, dname, outtree, aset, "", "weight")
-        cprint("{}".format(dset.sumEntries()), colorStr="red")
         ws.Import(dset)
 
         if doSystematics:
@@ -66,25 +77,36 @@ def main():
                 dhname = f"dh_{mass}_{cat_name}_{sw}"
                 hist_sys = ROOT.TH1D(hname, hname, 60, 110, 170)
                 outtree.Draw(f"CMS_higgs_mass >> {hname}", f"({sw})")
+                for b in range(hist_sys.GetNbinsX()+1): # prevent negative bin 
+                    if hist_sys.GetBinContent(b+1) < 0:
+                        hist_sys.SetBinContent(b+1, 0)
                 dh = ROOT.RooDataHist(dhname, dhname, CMS_higgs_mass, ROOT.RooFit.Import(hist_sys))
                 ws.Import(dh)
                 
-            for sh in sysHists: # affect shape 
-                cat_prefix = cat_cut.replace("category == ", "cat")
-                hist_sys = fin.Get(f"{cat_prefix}_{sh}")
+                hist_sys.Delete()
+            if args.useSystHist:
+                for sh in sysHists: # affect shape 
+                    cat_prefix = cat_cut.replace("category == ", "cat")
+                    hist_sys = fin.Get(f"{cat_prefix}_{sh}")
+                    dhname = f"dh_{mass}_{cat_name}_{sh}"
+                    dh = ROOT.RooDataHist(dhname, dhname, CMS_higgs_mass, ROOT.RooFit.Import(hist_sys))
+                    ws.Import(dh)
+                    
+    if (not args.useSystHist) and doSystematics:       
+        for sh in sysHists:
+            intree_sys = fin.Get(f"{inputTreeName}_{sh}")
+            for cat_name, cat_cut in category__.items():
                 dhname = f"dh_{mass}_{cat_name}_{sh}"
+                hname = f"hist_{mass}_{cat_name}_{sh}"
+                hist_sys = ROOT.TH1D(hname, hname, 60, 110, 170)    
+                intree_sys.Draw(f"CMS_higgs_mass >> {hname}", f"({cat_cut})*({sw})")
+                for b in range(hist_sys.GetNbinsX()+1): # prevent negative bin
+                    if hist_sys.GetBinContent(b+1) < 0:
+                        hist_sys.SetBinContent(b+1, 0)
                 dh = ROOT.RooDataHist(dhname, dhname, CMS_higgs_mass, ROOT.RooFit.Import(hist_sys))
                 ws.Import(dh)
+                hist_sys.Delete()
     
-    cprint("[INFO] Save WS in :", colorStr="green")
-    pprint(outputWSFile)
-     
-    outputWSDir = ROOT.gSystem.DirName(outputWSFile)
-    os.makedirs(outputWSDir, exist_ok=True)
-    
-    fout = ROOT.TFile(outputWSFile, "RECREATE")
-    foutdir = fout.mkdir(ws_dir_name[0])
-    foutdir.cd()
     ws.Write()
     fout.Close()
     
